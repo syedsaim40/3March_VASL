@@ -15,15 +15,19 @@ const Search = () => {
   };
   return (
     <Fragment>
-      <MetaData title="Search A Product -- ECOMMERCE" />
-      <form className="searchBox" onSubmit={searchSubmitHandler}>
-        <input
-          type="text"
-          placeholder="Search a Product ..."
-          onChange={(e) => setKeyword(e.target.value)}
-        />
-        <input type="submit" value="Search" />
-      </form>
+      <MetaData title="Search-VASL-Brings Tradition Up" />
+      <div className="search_holder">
+        <div className="search_bar">
+          <form className="searchBox" onSubmit={searchSubmitHandler}>
+            <input
+              type="text"
+              placeholder="Search a Product ..."
+              onChange={(e) => setKeyword(e.target.value)}
+            />
+            <input className="btn_primary" type="submit" value="Search" />
+          </form>
+        </div>
+      </div>
     </Fragment>
   );
 };

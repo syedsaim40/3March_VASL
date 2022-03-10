@@ -1,27 +1,21 @@
 import React, { Fragment, useEffect, useState } from "react";
-import "./product.css";
+import "../Products/product.css";
 import { useSelector, useDispatch } from "react-redux";
 import { CLEAR_Errors, getProduct } from "../../redux/action/productAction";
 //import Loader from "../Layout/Loader/Loader";
-import ProductCard from "./ProductCard";
+import ProductCard from "../Products/ProductCard";
 import Pagination from "react-js-pagination";
 import Slider from "@material-ui/core/Slider";
 import { useAlert } from "react-alert";
 import Typography from "@material-ui/core/Typography";
 import MetaData from "../Layout/Metadata";
 import { useParams } from "react-router-dom";
-import Search from "./Search";
-const cateogories = [
+import Search from "../Products/Search";
 
-  "Womens",
-  "Newinn",
-  "Accessories",
-  "Unstiched",
-  "AClothes",
-  "Replicas",
-  "ReadyToWear",
-];
+
 const Products = () => {
+const cateogories = "Replicas";
+    
   const { keyword } = useParams();
   const dispatch = useDispatch();
 
@@ -29,7 +23,6 @@ const Products = () => {
 
   const [currentPage, setCurrentPage] = useState();
   const [price, setPrice] = useState([0, 25000]);
-  const [cateogery, setcateogery] = useState("");
 
   const [ratings, setRatings] = useState(0);
 
@@ -41,7 +34,10 @@ const Products = () => {
     resultperpage,
     //filterproductCount,
   } = useSelector((state) => state.products);
-
+let r=products &&
+    products.filter((product) => {
+      return  product.cateogery===cateogories;
+    })
   const setCurrentPageNo = (e) => {
     setCurrentPage(e);
   };
@@ -57,8 +53,8 @@ const Products = () => {
       dispatch(CLEAR_Errors());
     }
 
-    dispatch(getProduct(keyword, currentPage, price, cateogery, ratings));
-  }, [dispatch, keyword, currentPage, price, cateogery, ratings, alert, error]);
+    dispatch(getProduct(keyword, currentPage, price,  ratings));
+  }, [dispatch, keyword, currentPage, price,  ratings, alert, error]);
 
   return (
     <Fragment>
@@ -67,9 +63,8 @@ const Products = () => {
       <h2 className="productsHeading">Products</h2>
 
       <div className="products">
-        {products&&
-          products.slice(0, 5).map((product) => (
-           
+        {r&&
+          r.map((product) => (
             <ProductCard key={product._id} product={product} />
           ))}
       </div>
@@ -87,17 +82,7 @@ const Products = () => {
         />
 
         <Typography>Categories</Typography>
-        <ul className="categoryBox">
-          {cateogories.map((cato) => (
-            <li
-              className="category-link"
-              key={cato}
-              onClick={() => setcateogery(cato)}
-            >
-              {cato}
-            </li>
-          ))}
-        </ul>
+        
 
         <fieldset>
           <Typography component="legend">Ratings Above</Typography>
@@ -114,25 +99,8 @@ const Products = () => {
           />
         </fieldset>
       </div>
-{/* 
-      {resultperpage < productsCount && (
-        <div className="paginationBox">
-          <Pagination
-            activePage={currentPage}
-            itemsCountPerPage={resultperpage}
-            totalItemsCount={productsCount}
-            onChange={setCurrentPageNo}
-            nextPageText="Next"
-            prevPageText="Prev"
-            firstPageText="1st"
-            lastPageText="Last"
-            itemClass="page-item"
-            linkClass="page-link"
-            activeClass="pageItemActive"
-            activeLinkClass="pageLinkActive"
-          />
-        </div>
-      )} */}
+
+      
     </Fragment>
   );
 };

@@ -1,7 +1,8 @@
 :root{
   --boxShadow: 0px 1px 38px -5px rgba(44,39,39,0.75);
-  --themeColor: #444;
-  --lightColor: #eee;
+  --themeColor: #444444;
+  --lightColor: #eeeeee;
+  --redColor: #FF0000;
 }
 *{
   margin: 0;
@@ -9,7 +10,7 @@
   box-sizing: border-box;
   transition: all ease-in-out 0.3s;
   text-decoration: none;
-  font-family: 'Fredoka', 'Great Vibes', 'Heebo', sans-serif;
+  font-family: 'Fredoka', 'Great Vibes', 'Heebo', sans-serif !important;
   /* 400 Regular
   600 SemiBold
   700 Bold */

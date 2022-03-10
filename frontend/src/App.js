@@ -18,6 +18,7 @@ import ProtectedRoute from "./components/Route/ProtectedRoute";
 //import { useSelector } from "react-redux";
 //import UserOptions from "./components/user/useroption.js";
 import Header from "./components/Layout/header/header";
+import Footer from "./components/Layout/Footer/Footer"
 import Profile from "./components/user/Profile";
 import UpdateProfile from "./components/user/UpdateProfile";
 import UpdatePassword from "./components/user/updatepassword";
@@ -41,6 +42,13 @@ import OrderList from "./components/Admin/OrderList";
 import ProcessOrder from "./components/Admin/ProcessOrder";
 import UsersList from "./components/Admin/UsersList";
 import UpdateUser from "./components/Admin/UpdateUser";
+import Newin from "./components/pages/Newin"
+import Womens from "./components/pages/Womens"
+import Accessories from "./components/pages/Accessories"
+import Replicas from "./components/pages/Replicas"
+import Ready from "./components/pages/ReadyToWear"
+import UnStiched from "./components/pages/Unstiched"
+import Aclothes from "./components/pages/AClothes"
 function App() {
   // const { user, isAuthenticated } = useSelector((state) => state.user);
 
@@ -155,9 +163,19 @@ function App() {
             path="/password/reset/:token"
             component={ResetPassword}
           />
-        </Switch>
 
-        {/* <Footer /> */}
+          {/* ALL PAGES */}
+          <Route exact path="/Newinn" component={Newin} />
+          <Route exact path="/Womens" component={Womens} />
+          <Route exact path="/Accessories" component={Accessories} />
+          <Route exact path="/Replicas" component={Replicas} />
+          <Route exact path="/ReadyToWear" component={Ready} />
+          <Route exact path="/AClothes" component={Aclothes} />
+          <Route exact path="/Unstiched" component={UnStiched} />
+
+        </Switch>
+ <Footer />
+       
       </Router>
     </div>
   );

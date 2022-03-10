@@ -29,13 +29,13 @@ const NewProduct = ({ history }) => {
   const [imagesPreview, setImagesPreview] = useState([]);
 
   const categories = [
-    "Men",
-    "T-Shirt",
-    "Women",
-    "UnStitch",
-    "Stitch",
-    "Underware",
-    "Mobiles",
+    "Womens",
+    "Newinn",
+    "Accessories",
+    "Unstiched",
+    "AClothes",
+    "Replicas",
+    "ReadyToWear",
   ];
 
   useEffect(() => {

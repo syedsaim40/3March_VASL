@@ -27,7 +27,7 @@ function Header() {
     <header>
       <div className="header_bar">
         <ul className="unstyled">
-          <li>Call Us: +92(0)320-9455811</li>
+          <li>Call Us: +92(0)3 209-455-811</li>
           <li>Free Shipping on all orders worth RS:5000 & above</li>
         </ul>
       </div>
@@ -201,12 +201,12 @@ function Header() {
             </Link>
           </li>
           <li>
-            <Link to="/login">
+            <Link to="/accounts">
               <AccountBoxOutlinedIcon />
             </Link>
           </li>
           <li>
-            <Link to="/login">
+            <Link to="/cart">
               <FavoriteBorderIcon />
             </Link>
           </li>
@@ -229,37 +229,53 @@ function Header() {
       <div className="bottom_header">
         <ul className="unstyled bottom_nav">
           <li>
-            <Link to="/login">
+            <Link to="/Newinn">
               New In
             </Link>
           </li>
           <li>
-            <Link to="/login">
+            <Link to="/Womens">
               women
             </Link>
           </li>
           <li>
-            <Link to="/login">
+            <Link to="/Accessories">
               ACCESSORIES
             </Link>
+            {/* <ul>
+              <li>Shoes</li>
+              <li>Bags</li>
+              <li>Scarves</li>
+              <li>Socks</li>
+            </ul> */}
           </li>
+          {/* <li>
+            <Link to="/Beauty">
+              Beauty
+            </Link>
+            <ul>
+              <li>Fragrances</li>
+              <li>Cosmetics</li>
+              <li>Scarves</li>
+              <li>Socks</li>
+            </ul>
+          </li> */}
           <li>
-            <Link to="/login">
+            <Link to="/Replicas">
               replicas
             </Link>
           </li>
           <li>
-            <Link to="/login">
+            <Link to="/ReadyToWear">
               ready to wear
             </Link>
           </li>
           <li>
-            <Link to="/login">
-              unstiched
+            <Link to="/Unstiched">
             </Link>
           </li>
           <li>
-            <Link to="/login">
+            <Link to="/AClothes">
               A+ Cloths
             </Link>
           </li>

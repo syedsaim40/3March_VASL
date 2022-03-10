@@ -130,11 +130,11 @@ const ProductDetails = ({ match }) => {
         <Fragment>
           <Metadata title={`${product.name} ----ECOMMERECE`} />
           <div className="ProductDetails">
-            <Carousel 
-              
-              next={ () => {<ArrowBackIosNewIcon />} }
-              prev={ () => {<ArrowForwardIosIcon />} } 
-              indicators={false} 
+            <Carousel
+
+              next={() => { <ArrowBackIosNewIcon /> }}
+              prev={() => { <ArrowForwardIosIcon /> }}
+              indicators={false}
               interval={3000}
             >
               {/* {!loaded && <Loader />} */}
@@ -145,7 +145,7 @@ const ProductDetails = ({ match }) => {
                     className="CarouselImage"
                     src={item.url}
                     alt={`${i} Slide`}
-                    // onLoad={stuffLoaded}
+                  // onLoad={stuffLoaded}
                   />
                 ))}
             </Carousel>
@@ -187,10 +187,12 @@ const ProductDetails = ({ match }) => {
               </div>
 
               <div className="detailsBlock-4">
-               <div className="desp_holder"> Description : <p>{product.description}</p></div>
-                {/* <BasicTabs /> */}
+                <div className="desp_holder"> Description : <p>{product.description}</p></div>
+                <div className="product_tabs">
+                  <BasicTabs />
+                </div>
               </div>
-              
+
             </div>
           </div>
           <h3 className="reviewsHeading">REVIEWS</h3>
@@ -216,12 +218,14 @@ const ProductDetails = ({ match }) => {
               ></textarea>
             </DialogContent>
             <DialogActions>
-              <Button onClick={submitReviewToggle} color="secondary">
-                Cancel
-              </Button>
-              <Button onClick={reviewSubmitHandler} color="primary">
-                Submit
-              </Button>
+              <div className="submit_holder">
+                <Button className="btn_primary" onClick={submitReviewToggle} color="secondary">
+                  Cancel
+                </Button>
+                <Button className="btn_primary" onClick={reviewSubmitHandler} color="primary">
+                  Submit
+                </Button>
+              </div>
             </DialogActions>
           </Dialog>
 

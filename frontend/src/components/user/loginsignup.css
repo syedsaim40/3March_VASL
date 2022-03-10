@@ -1,26 +1,18 @@
-.LoginSignUpContainer {
-  width: 100vw;
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* margin-top: 3%; */
+#login_phase{
+  padding: 20px 50px;
+  text-align: center;
 }
-.LoginSignUpBox {
-  background-color: white;
-  width: 560px;
-
+.LoginSignUpContainer {
+  width: 50%;
   display: inline-block;
   vertical-align: top;
+}
+.LoginSignUpBox {
+  background-color: var(--lightColor);
+  display: block;
   overflow: hidden;
-  /* box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.75); */
   padding: 10px 20px;
-  box-shadow: 0px 1px 38px -5px rgba(44, 39, 39, 0.75);
-  -webkit-box-shadow: 0px 1px 38px -5px rgba(44, 39, 39, 0.75);
-  -moz-box-shadow: 0px 1px 38px -5px rgba(44, 39, 39, 0.75);
+  box-shadow: var(--boxShadow);
   border-radius: 10px;
 }
 .login_signUp_toggle {
@@ -28,68 +20,53 @@
   height: 3vmax;
 }
 .login_signUp_toggle > p {
-  font: 300 1vmax "Roboto";
-  color: rgba(0, 0, 0, 0.678);
-  transition: all 0.5s;
+  color: var(--themeColor);
   cursor: pointer;
   display: grid;
   place-items: center;
   width: 50%;
 }
 .login_signUp_toggle > p:active {
-  background-color: #fff !important;
+  background-color: var(--lightColor) !important;
 }
 .login_signUp_toggle > p:hover {
-  color: #444 !important;
+  color: var(--themeColor) !important;
 }
-
 .LoginSignUpBox > button {
-  background-color: #444 !important;
-  color: #444 !important;
+  background-color: var(--themeColor) !important;
+  color: var(--lightColor) !important;
   height: 3px;
   width: 50%;
   border: none;
   transition: all 0.5s;
+  transform: translateX(-50%);
 }
-
-.loginForm {
-  padding-top: 30px;
-}
-
 .loginForm,
 .signUpForm {
-  padding-top: 20px;
-
-  display: flex;
-  flex-direction: column;
-
   margin: 0px;
-
-  justify-content: space-evenly;
-  height: 70%;
+  height: auto;
   transition: all 0.5s;
 }
-
-.signUpForm {
-  transform: translateY(-115%) translateX(-115vmax);
-  transition: all 0.5s;
-}
-
 .shiftToLeft {
   transform: translateX(-115%);
 }
 .shiftToNeutral {
-  transform: translateX(0%);
+  transform: translateX(-50%);
 }
-
 .shiftToNeutralForm {
-  transform: translateX(0%) translateY(-109%);
+  transform: translateX(0%) translateY(0);
 }
-
 .shiftToRight {
-  transform: translateX(100%);
+  transform: translateX(50%) !important;
 }
-
+form.loginForm.shiftToLeft,
+form.signUpForm{
+  display: none;
+}
+form.loginForm,
+form.signUpForm.shiftToNeutralForm{
+  display: block;
+}
 /* ----------------saim------------ */
 
 .group_field label {
@@ -122,22 +99,31 @@
   padding-top: 10px;
   text-align: center;
 }
+.group_field.log_opt h3{
+  float: left;
+  font-weight: 500;
+}
+.group_field.log_opt,
+.group_field.frg_pswd{
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.group_field.frg_pswd a{
+  float: right;
+}
+.group_field.frg_pswd a:focus,
+.group_field.frg_pswd a:hover{
+  color: var(--redColor);
+}
 .group_field.e_btn > button:hover {
-  background: rgba(238, 238, 238, 0.781);
-  color: #000;
-  border-bottom: 1px solid #444;
   cursor: pointer;
-  font-weight: bold;
 }
 .group_field button {
   display: block;
   width: 100%;
   margin-bottom: 20px;
-  padding: 20px;
-  background: #444;
   text-transform: uppercase;
-  color: #fff;
-  transition: all ease-in-out 0.3s;
+  padding: 20px;
 }
 .group_field .f_link {
   color: #444;
@@ -158,31 +144,34 @@
 .social_login {
   text-align: center;
 }
-.social_login button {
-  background-color: #444 !important;
-  color: #fff !important;
+.social_login button.social_btn{
+  background-color: #fff !important;
+  color: #444 !important;
   width: 40% !important;
   padding: 5px 10px !important;
-  box-shadow: none !important;
+  box-shadow: var(--boxShadow) !important;
   border: none !important;
   font-weight: normal !important;
   margin-right: 20px;
   border-radius: 0px !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif !important;
   transition: all ease-in-out 0.3s;
 }
 .social_login button div {
   background: transparent !important;
 }
-
 .social_login button:hover {
-  background-color: #eee !important;
-  color: #444 !important;
+  background-color: #444 !important;
+  color: #fff !important;
 }
 .group_field {
   text-align: center;
+}
+.form_link a{
+  color: var(--themeColor);
+}
+.form_link a:focus,
+.form_link a:hover{
+  color: var(--redColor);
 }
 
 @media screen and (max-width: 600px) {
@@ -191,10 +180,6 @@
   }
   .LoginSignUpBox {
     width: 100vw;
-  }
-
-  .login_signUp_toggle > p {
-    font: 300 1.5vmax "Roboto";
   }
 }
 /* -------saim */

@@ -44,6 +44,9 @@
   width: 100%;
   max-width: 100%;
 }
+.container.home_products{
+  padding: 0 0 50px 0;
+}
 .productCard {
   width: 20%;
   text-decoration: none;
@@ -270,8 +273,33 @@ div.alice-carousel__next-btn-wrapper p::after{
 ul.alice-carousel__dots{
   display: none;
 }
-
-
+.product_showcase{
+  overflow: hidden;
+}
+.product_showcase .productCard{
+  width: 100%;
+  overflow: hidden;
+}
+.product_slider{
+  width: 80%;
+  float: right;
+}
+.showcase_desp{
+  width: 20%;
+  float: left;
+  height: 60vh;
+  min-height: 100%;
+  text-align: center;
+  display: flex;
+  overflow: hidden;
+}
+.showcase_desp .desp_holder{
+  display: inline-flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+}
 
 
 

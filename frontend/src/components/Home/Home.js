@@ -13,6 +13,9 @@ import Loaderr from "../Layout/Loader/Loader";
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
 import bimg1 from '../../../src/images/bimg1.jpg';
 import bimg2 from '../../../src/images/bimg2.jpg';
 import bimg3 from '../../../src/images/bimg3.jpg';
@@ -32,6 +35,28 @@ const Home = () => {
     }
     dispatch(getProduct());
   }, [alert, dispatch, error]);
+
+
+  // const responsive = {
+  //   superLargeDesktop: {
+  //     // the naming can be any, depends on you.
+  //     breakpoint: { max: 4000, min: 3000 },
+  //     items: 5
+  //   },
+  //   desktop: {
+  //     breakpoint: { max: 3000, min: 1024 },
+  //     items: 3
+  //   },
+  //   tablet: {
+  //     breakpoint: { max: 1024, min: 464 },
+  //     items: 2
+  //   },
+  //   mobile: {
+  //     breakpoint: { max: 464, min: 0 },
+  //     items: 1
+  //   }
+  // };
+
 
   return (
     <Fragment>
@@ -70,14 +95,80 @@ const Home = () => {
               <h2>Trending</h2>
             </div>
           </div>
-          <div className="container" id="container">
-            {products ? (
-              products.map((product) => {
-                return <ProductCard key={product._id} product={product} />;
-              })
-            ) : (
-              <Loader />
-            )}
+          <div className="container home_products" id="container">
+            {products ?
+              products.slice(0, 10).map((product) => (
+
+                <ProductCard key={product._id} product={product} />
+              )
+              ) : (
+                <Loader />
+              )}
+          </div>
+          <div className="product_showcase">
+            <div className="showcase_desp">
+              <div className="desp_holder"><h2>Shop by category</h2></div>
+            </div>
+            {/* <Carousel responsive={responsive} > */}
+            <div className="product_slider">
+              <Carousel
+                additionalTransfrom={0}
+                arrows
+                autoPlaySpeed={2000}
+                centerMode
+                className=""
+                containerClass="container"
+                dotListClass=""
+                draggable
+                focusOnSelect={false}
+                infinite
+                itemClass=""
+                keyBoardControl
+                minimumTouchDrag={80}
+                renderButtonGroupOutside={false}
+                renderDotsOutside={false}
+                responsive={{
+                  desktop: {
+                    breakpoint: {
+                      max: 3000,
+                      min: 1024
+                    },
+                    items: 3,
+                    partialVisibilityGutter: 40
+                  },
+                  mobile: {
+                    breakpoint: {
+                      max: 464,
+                      min: 0
+                    },
+                    items: 1,
+                    partialVisibilityGutter: 30
+                  },
+                  tablet: {
+                    breakpoint: {
+                      max: 1024,
+                      min: 464
+                    },
+                    items: 2,
+                    partialVisibilityGutter: 30
+                  }
+                }}
+                showDots={false}
+                sliderClass=""
+                slidesToSlide={1}
+                swipeable
+              >
+                {products ?
+                  products.slice(0, 10).map((product) => (
+
+                    <ProductCard key={product._id} product={product} />
+                  )
+                  ) : (
+                    <Loader />
+                  )}
+
+              </Carousel>
+            </div>
           </div>
         </Fragment>
       )}

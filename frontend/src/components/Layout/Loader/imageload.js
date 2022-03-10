@@ -4,9 +4,9 @@ import gf from "../../../images/prod.gif";
 import "./imageload.css";
 const Imageloader = () => {
   return (
-    <div className="imageload">
+    <div className="productCard productCard_Holder">
       <div>
-        <img src={gf} alt="Loading" />
+        <h1>loading</h1>
       </div>
     </div>
   );

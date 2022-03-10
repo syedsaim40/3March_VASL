@@ -204,16 +204,54 @@ div.makeStyles-itemWrapper-18{
 .desp_holder{
   padding: 20px;
 }
-
-
-
-
+.product_tabs  button.MuiButtonBase-root {
+  background-color: transparent;
+  min-width: 60px;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  border: 1px solid transparent;
+  margin: 0 0 0 10px;
+  font-size: 8px;
+}
+.product_tabs button.Mui-selected{
+  background-color: var(--lightColor);
+  min-width: 60px;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  border: 1px solid #444;
+  margin: 0 0 0 10px;
+  box-shadow: 0 0 10px #444;
+  font-size: 8px;
+}
+.product_tabs .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: var(--themeColor);
+}
+.product_tabs div.css-1gsv261 {
+  border-bottom: 1px solid;
+  border-color: #4443;
+  padding: 20px 10px 0 10px;
+}
+.product_tabs button.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: var(--themeColor);
+}
+.product_tabs span.css-1aquho2-MuiTabs-indicator{
+  display: none;
+}.css-heg063-MuiTabs-flexContainer{
+  padding: 10px 5px;
+}
+.product_tabs  p{
+  margin-bottom: 20px;
+}
+.product_tabs  span{
+  color: red;
+}
 
 
 .submitReview {
   border: none;
   background-color: #444;
-  font: 500 0.7vmax "Roboto";
   border-radius: 20px;
   padding: 0.6vmax 2vmax;
   margin: 1vmax 0;
@@ -238,11 +276,9 @@ div.makeStyles-itemWrapper-18{
   margin: 1vmax 0;
   outline: none;
   padding: 1rem;
-  font: 300 1rem "Roboto";
 }
 .reviewsHeading {
   color: #000000be;
-  font: 500 1.4vmax "Roboto";
   text-align: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.226);
   padding: 1vmax;
@@ -270,7 +306,6 @@ div.makeStyles-itemWrapper-18{
 }
 .reviewCard > p {
   color: rgba(0, 0, 0, 0.836);
-  font: 600 0.9vmax "Roboto";
 }
 .reviewCardComment {
   color: rgba(0, 0, 0, 0.445);
@@ -281,7 +316,15 @@ div.makeStyles-itemWrapper-18{
   text-align: center;
   color: rgba(0, 0, 0, 0.548);
 }
-
+.submit_holder button.MuiButtonBase-root {
+  background-color: var(--lightColor);
+  color: var(--themeColor);
+  font-weight: 400;
+  margin-right: 10px;
+}
+.submit_holder button.MuiButtonBase-root:hover{
+  color: var(--lightColor);
+}
 @media screen and (max-width: 600px) {
   .ProductDetails {
     flex-direction: column;
@@ -321,10 +364,8 @@ div.makeStyles-itemWrapper-18{
   .detailsBlock-3-1-1 > input {
     padding: 1.5vmax;
     width: 3vmax;
-    font: 400 1.8vmax "Roboto";
   }
   .detailsBlock-3-1 > button:last-child {
-    font: 500 1.7vmax "Roboto";
     padding: 1.5vmax;
     width: 20vmax;
     margin: 3vmax 0;
@@ -332,7 +373,6 @@ div.makeStyles-itemWrapper-18{
   .detailsBlock-3 > p {
     padding: 2.5vmax 0;
     text-align: center;
-    font: 400 2vmax "Roboto";
   }
   .detailsBlock-4 {
     font: 500 2.5vmax sans-serif;
@@ -341,13 +381,9 @@ div.makeStyles-itemWrapper-18{
     font: 300 1.8vmax sans-serif;
   }
   .submitReview {
-    font: 500 1.7vmax "Roboto";
     padding: 1.5vmax;
     width: 20vmax;
     margin: 3vmax 0;
-  }
-  .reviewCard > p {
-    font: 600 3vw "Roboto";
   }
   .reviewCardComment {
     font: 300 5vw cursive;

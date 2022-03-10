@@ -9,10 +9,10 @@ import "./Loader.css";
 const loader1 = () => {
   return (
     <Fragment>
-      <div className="productload">
+      <div className="productCard productCard_Holder">
         <>
           <div>
-            <img src={gf} alt="" />
+            <img width="20%" src={gf} alt="" />
           </div>
         </>
       </div>
