@@ -2,17 +2,21 @@ import React, { Fragment, useEffect, useState } from "react";
 import "./product.css";
 import { useSelector, useDispatch } from "react-redux";
 import { CLEAR_Errors, getProduct } from "../../redux/action/productAction";
-//import Loader from "../Layout/Loader/Loader";
+import ploader from "../Layout/Loader/loader1";
 import ProductCard from "./ProductCard";
-import Pagination from "react-js-pagination";
-import Slider from "@material-ui/core/Slider";
+// import Pagination from "react-js-pagination";
+// import Slider from "@material-ui/core/Slider";
 import { useAlert } from "react-alert";
-import Typography from "@material-ui/core/Typography";
+// import Typography from "@material-ui/core/Typography";
 import MetaData from "../Layout/Metadata";
 import { useParams } from "react-router-dom";
-import Search from "./Search";
-const cateogories = [
+// import Search from "./Search";
 
+import gf from "../../../src/images/prod.gif";
+
+
+
+const cateogories = [
   "Womens",
   "Newinn",
   "Accessories",
@@ -63,18 +67,25 @@ const Products = () => {
   return (
     <Fragment>
       <MetaData title="PRODUCTS-VASL-Brings Tradition Up" />
-      <Search />
-      <h2 className="productsHeading">Products</h2>
-
-      <div className="products">
-        {products&&
-          products.slice(0, 5).map((product) => (
-           
-            <ProductCard key={product._id} product={product} />
-          ))}
+      <div className="section_heading">
+        <div className="homeHeading">
+          <h2>Products</h2>
+          <ploader />
+        </div>
       </div>
 
-      <div className="filterBox">
+      <div className="products">
+        {products ?
+          products.slice(0, 10).map((product) => (
+
+            <ProductCard key={product._id} product={product} />
+          )
+          ) : (
+            <ploader />
+          )}
+      </div>
+
+      {/* <div className="filterBox">
         <Typography>Price</Typography>
         <Slider
           value={price}
@@ -113,8 +124,8 @@ const Products = () => {
             className="slider"
           />
         </fieldset>
-      </div>
-{/* 
+      </div> */}
+      {/* 
       {resultperpage < productsCount && (
         <div className="paginationBox">
           <Pagination

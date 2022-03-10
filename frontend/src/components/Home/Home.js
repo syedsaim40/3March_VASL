@@ -106,6 +106,11 @@ const Home = () => {
               )}
           </div>
           <div className="product_showcase">
+            <div className="section_heading">
+              <div className="homeHeading">
+                <h2>DISCOVER MORE</h2>
+              </div>
+            </div>
             <div className="showcase_desp">
               <div className="desp_holder"><h2>Shop by category</h2></div>
             </div>
@@ -171,6 +176,7 @@ const Home = () => {
             </div>
           </div>
         </Fragment>
+        
       )}
     </Fragment>
   );

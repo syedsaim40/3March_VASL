@@ -35,7 +35,7 @@ const ButtonMailto = ({ mailto, label }) => {
 const Footer = () => {
   return (
     <footer id="footer">
-      <div className="top_footer">
+      {/* <div className="top_footer">
         <div className="tf_box">
           <Link to="/orders" className="tf_con">
             <AutorenewIcon />
@@ -60,7 +60,7 @@ const Footer = () => {
             <span>Free Shipping on all orders worth Rs. 2000 & above</span>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="mid_footer">
         <div className="mf_box">
           <h3>Get in Touch</h3>

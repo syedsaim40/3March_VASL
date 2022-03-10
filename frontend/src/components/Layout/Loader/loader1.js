@@ -6,15 +6,15 @@ import "react-loading-skeleton/dist/skeleton.css";
 import gf from "../../../images/prod.gif";
 
 import "./Loader.css";
-const loader1 = () => {
+const ploader = () => {
   return (
     <Fragment>
-      <div className="productCard productCard_Holder">
-        <>
-          <div>
+      <div className="loaderCard">
+        <div className="loader_logo_holder">
+          <div className="loaderCard_Holder">
             <img width="20%" src={gf} alt="" />
           </div>
-        </>
+        </div>
       </div>
       {/* <SkeletonTheme>
         <section>
@@ -28,4 +28,4 @@ const loader1 = () => {
   );
 };
 
-export default loader1;
+export default ploader;
