@@ -14,7 +14,7 @@ import Search from "../Products/Search";
 
 
 const Products = () => {
-   
+
 
   const { keyword } = useParams();
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const Products = () => {
   let [cateogery, setcateogery] = useState("");
 
   const [ratings, setRatings] = useState(0);
- cateogery =  "Newinn";
+  cateogery = "Newinn";
 
   const {
     products,
@@ -36,16 +36,16 @@ const Products = () => {
     resultperpage,
     filterproductCount,
   } = useSelector((state) => state.products);
-  
-  let r=products &&
-  products.filter((product) => {
-    
-    return  product.cateogery===cateogery;
-  })
+
+  let r = products &&
+    products.filter((product) => {
+
+      return product.cateogery === cateogery;
+    })
   const setCurrentPageNo = (e) => {
     setCurrentPage(e);
   };
-  
+
 
   const priceHandler = (event, newPrice) => {
     setPrice(newPrice);
@@ -58,64 +58,28 @@ const Products = () => {
       dispatch(CLEAR_Errors());
     }
 
-    dispatch(getProduct(keyword, currentPage, price,  ratings));
-  }, [dispatch, keyword, currentPage, price,  ratings, alert, error]);
+    dispatch(getProduct(keyword, currentPage, price, ratings));
+  }, [dispatch, keyword, currentPage, price, ratings, alert, error]);
 
   return (
     <Fragment>
       <MetaData title="PRODUCTS-VASL-Brings Tradition Up" />
       <Search />
-      <h2 className="productsHeading">Products</h2>
+      <div className="section_heading">
+        <div className="homeHeading">
+          <h2>New Inn</h2>
+        </div>
+      </div>
 
       <div className="products">
-      {r&&
+        {r &&
           r.map((product) => (
             <ProductCard key={product._id} product={product} />
           ))}
       </div>
 
-      <div className="filterBox">
-        <Typography>Price</Typography>
-        <Slider
-          value={price}
-          onChange={priceHandler}
-          valueLabelDisplay="auto"
-          aria-labelledby="range-slider"
-          min={0}
-          max={25000}
-          className="slider"
-        />
 
-        <Typography>Categories</Typography>
-        <ul className="categoryBox">
-          
-            <li
-              className="category-link"
-              key={"Newinn"}
-              onClick={() => setcateogery("Newinn")}
-            >
-            </li>
-         
-        </ul>
 
-        <fieldset>
-          <Typography component="legend">Ratings Above</Typography>
-          <Slider
-            value={ratings}
-            onChange={(e, newRating) => {
-              setRatings(newRating);
-            }}
-            aria-labelledby="continuous-slider"
-            valueLabelDisplay="auto"
-            min={0}
-            max={5}
-            className="slider"
-          />
-        </fieldset>
-      </div>
-
-   
-      
     </Fragment>
   );
 };

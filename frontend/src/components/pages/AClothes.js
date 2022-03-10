@@ -14,8 +14,8 @@ import Search from "../Products/Search";
 
 
 const Products = () => {
-const cateogories = "AClothes";
-    
+  const cateogories = "AClothes";
+
   const { keyword } = useParams();
   const dispatch = useDispatch();
 
@@ -34,9 +34,9 @@ const cateogories = "AClothes";
     resultperpage,
     //filterproductCount,
   } = useSelector((state) => state.products);
-let r=products &&
+  let r = products &&
     products.filter((product) => {
-      return  product.cateogery===cateogories;
+      return product.cateogery === cateogories;
     })
   const setCurrentPageNo = (e) => {
     setCurrentPage(e);
@@ -53,54 +53,28 @@ let r=products &&
       dispatch(CLEAR_Errors());
     }
 
-    dispatch(getProduct(keyword, currentPage, price,  ratings));
-  }, [dispatch, keyword, currentPage, price,  ratings, alert, error]);
+    dispatch(getProduct(keyword, currentPage, price, ratings));
+  }, [dispatch, keyword, currentPage, price, ratings, alert, error]);
 
   return (
     <Fragment>
       <MetaData title="PRODUCTS-VASL-Brings Tradition Up" />
       <Search />
-      <h2 className="productsHeading">Products</h2>
+      <div className="section_heading">
+        <div className="homeHeading">
+          <h2>A+ Clothes </h2>
+        </div>
+      </div>
 
       <div className="products">
-        {r&&
+        {r &&
           r.map((product) => (
             <ProductCard key={product._id} product={product} />
           ))}
       </div>
 
-      <div className="filterBox">
-        <Typography>Price</Typography>
-        <Slider
-          value={price}
-          onChange={priceHandler}
-          valueLabelDisplay="auto"
-          aria-labelledby="range-slider"
-          min={0}
-          max={25000}
-          className="slider"
-        />
 
-        <Typography>Categories</Typography>
-        
 
-        <fieldset>
-          <Typography component="legend">Ratings Above</Typography>
-          <Slider
-            value={ratings}
-            onChange={(e, newRating) => {
-              setRatings(newRating);
-            }}
-            aria-labelledby="continuous-slider"
-            valueLabelDisplay="auto"
-            min={0}
-            max={5}
-            className="slider"
-          />
-        </fieldset>
-      </div>
-
-     
     </Fragment>
   );
 };

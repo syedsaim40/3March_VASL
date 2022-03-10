@@ -5,9 +5,9 @@ import { CLEAR_Errors, getProduct } from "../../redux/action/productAction";
 import ploader from "../Layout/Loader/loader1";
 import ProductCard from "./ProductCard";
 // import Pagination from "react-js-pagination";
-// import Slider from "@material-ui/core/Slider";
+import Slider from "@material-ui/core/Slider";
 import { useAlert } from "react-alert";
-// import Typography from "@material-ui/core/Typography";
+import Typography from "@material-ui/core/Typography";
 import MetaData from "../Layout/Metadata";
 import { useParams } from "react-router-dom";
 // import Search from "./Search";
@@ -66,15 +66,58 @@ const Products = () => {
 
   return (
     <Fragment>
-      <MetaData title="PRODUCTS-VASL-Brings Tradition Up" />
+      <MetaData title="PRODUCTS VASL || Brings Tradition Up" />
       <div className="section_heading">
         <div className="homeHeading">
           <h2>Products</h2>
-          <ploader />
+        </div>
+      </div>
+      <div className="filterBox">
+        <div className="fl_box price_fil">
+          <h2>Price</h2>
+          <Slider
+            value={price}
+            onChange={priceHandler}
+            valueLabelDisplay="auto"
+            aria-labelledby="range-slider"
+            min={0}
+            max={25000}
+            className="slider"
+          />
+        </div>
+        <div className="fl_box cate_list">
+          <h2>Categories</h2>
+          <ul className="categoryBox unstyled">
+            {cateogories.map((cato) => (
+              <li
+                className="category-link"
+                key={cato}
+                onClick={() => setcateogery(cato)}
+              >
+                {cato}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="fl_box rate_fld">
+          <fieldset>
+            <Typography component="legend">Ratings Above</Typography>
+            <Slider
+              value={ratings}
+              onChange={(e, newRating) => {
+                setRatings(newRating);
+              }}
+              aria-labelledby="continuous-slider"
+              valueLabelDisplay="auto"
+              min={0}
+              max={5}
+              className="slider"
+            />
+          </fieldset>
         </div>
       </div>
 
-      <div className="products">
+      {/* <div className="products">
         {products ?
           products.slice(0, 10).map((product) => (
 
@@ -83,48 +126,9 @@ const Products = () => {
           ) : (
             <ploader />
           )}
-      </div>
-
-      {/* <div className="filterBox">
-        <Typography>Price</Typography>
-        <Slider
-          value={price}
-          onChange={priceHandler}
-          valueLabelDisplay="auto"
-          aria-labelledby="range-slider"
-          min={0}
-          max={25000}
-          className="slider"
-        />
-
-        <Typography>Categories</Typography>
-        <ul className="categoryBox">
-          {cateogories.map((cato) => (
-            <li
-              className="category-link"
-              key={cato}
-              onClick={() => setcateogery(cato)}
-            >
-              {cato}
-            </li>
-          ))}
-        </ul>
-
-        <fieldset>
-          <Typography component="legend">Ratings Above</Typography>
-          <Slider
-            value={ratings}
-            onChange={(e, newRating) => {
-              setRatings(newRating);
-            }}
-            aria-labelledby="continuous-slider"
-            valueLabelDisplay="auto"
-            min={0}
-            max={5}
-            className="slider"
-          />
-        </fieldset>
       </div> */}
+
+
       {/* 
       {resultperpage < productsCount && (
         <div className="paginationBox">

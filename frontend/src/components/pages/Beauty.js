@@ -14,7 +14,7 @@ import Search from "../Products/Search";
 
 
 const Products = () => {
-  const cateogories = "Unstiched";
+  const cateogories = "Beauty";
 
   const { keyword } = useParams();
   const dispatch = useDispatch();
@@ -62,7 +62,7 @@ const Products = () => {
       <Search />
       <div className="section_heading">
         <div className="homeHeading">
-          <h2>Unstiched</h2>
+          <h2>Beauty</h2>
         </div>
       </div>
 

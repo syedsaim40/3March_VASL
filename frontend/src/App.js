@@ -49,6 +49,7 @@ import Replicas from "./components/pages/Replicas"
 import Ready from "./components/pages/ReadyToWear"
 import UnStiched from "./components/pages/Unstiched"
 import Aclothes from "./components/pages/AClothes"
+import Beauty from "./components/pages/Beauty"
 function App() {
   // const { user, isAuthenticated } = useSelector((state) => state.user);
 
@@ -172,6 +173,7 @@ function App() {
           <Route exact path="/ReadyToWear" component={Ready} />
           <Route exact path="/AClothes" component={Aclothes} />
           <Route exact path="/Unstiched" component={UnStiched} />
+          <Route exact path="/Beauty" component={Beauty} />
 
         </Switch>
  <Footer />

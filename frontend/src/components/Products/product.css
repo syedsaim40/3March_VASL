@@ -17,7 +17,6 @@
   border-bottom: 1px solid #444;
   padding: 2vmax;
   color: #444;
-  font: 500 1.5vmax "Roboto";
   text-align: center;
 }
 .products {
@@ -49,7 +48,6 @@
 }
 .page-link {
   text-decoration: none;
-  font: 300 0.7vmax "Roboto";
   color: rgb(80, 80, 80);
   transition: all 0.3s;
 }
@@ -65,19 +63,16 @@
 .pageLinkActive {
   color: white;
 }
-.filterBox {
-  width: 10vmax;
-  position: absolute;
-  top: 10vmax;
-  left: 4vmax;
-}
 .categoryBox {
-  padding: 0%;
+  text-align: center;
+}
+ul.categoryBox li{
+  display: inline-block;
+  vertical-align: top;
 }
 .category-link {
   list-style: none;
   color: rgba(0, 0, 0, 0.61);
-  font: 400 0.8vmax "Roboto";
   margin: 0.4vmax;
   cursor: pointer;
   transition: all 0.5s;
@@ -85,14 +80,43 @@
 .category-link:hover {
   color: #444;
 }
-.filterBox > fieldset {
-  border: 1px solid rgba(0, 0, 0, 0.329);
+.filterBox .fl_box > fieldset {
+  border: none;
 }
-.filterBox > .slider {
+.filterBox .fl_box > .slider {
   color: #444;
 }
-fieldset > .slider {
+fieldset .fl_box > .slider {
   color: #444;
+}
+.filterBox {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  padding: 0 20px;
+}
+.fl_box{
+  display: inline-block;
+  vertical-align: top;
+  padding: 20px 0;
+}
+.fl_box h2{
+  display: inline-block;
+}
+.fl_box.price_fil{
+  float: left;
+  width: 10%;
+}
+.fl_box.cate_list{
+  display: inline-block;
+  vertical-align: top;
+}
+.fl_box.rate_fld{
+  float: right;
+  width: 10%;
+}
+.fl_box.rate_fld .MuiSlider-root{
+  color: var(--themeColor);
 }
 
 @media screen and (max-width: 600px) {
@@ -100,11 +124,5 @@ fieldset > .slider {
     width: 20vmax;
     position: static;
     margin: auto;
-  }
-  .page-link {
-    font: 300 1.7vmax "Roboto";
-  }
-  .category-link {
-    font: 400 1.8vmax "Roboto";
   }
 }

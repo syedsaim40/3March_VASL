@@ -8,6 +8,7 @@ import { useAlert } from "react-alert";
 import Loader from "./../Layout/Loader/Loader";
 import { Link } from "react-router-dom";
 import Loaderr from "../Layout/Loader/Loader";
+import Topfooter from "../Layout/Footer/Topfooter";
 
 
 import AliceCarousel from 'react-alice-carousel';
@@ -178,7 +179,10 @@ const Home = () => {
         </Fragment>
         
       )}
+      
+      <Topfooter />
     </Fragment>
+    
   );
 };
 

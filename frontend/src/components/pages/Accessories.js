@@ -60,7 +60,11 @@ let r=products &&
     <Fragment>
       <MetaData title="PRODUCTS-VASL-Brings Tradition Up" />
       <Search />
-      <h2 className="productsHeading">Products</h2>
+      <div className="section_heading">
+        <div className="homeHeading">
+          <h2>Accessories</h2>
+        </div>
+      </div>
 
       <div className="products">
         {r&&
@@ -69,36 +73,7 @@ let r=products &&
           ))}
       </div>
 
-      <div className="filterBox">
-        <Typography>Price</Typography>
-        <Slider
-          value={price}
-          onChange={priceHandler}
-          valueLabelDisplay="auto"
-          aria-labelledby="range-slider"
-          min={0}
-          max={25000}
-          className="slider"
-        />
-
-        <Typography>Categories</Typography>
-        
-
-        <fieldset>
-          <Typography component="legend">Ratings Above</Typography>
-          <Slider
-            value={ratings}
-            onChange={(e, newRating) => {
-              setRatings(newRating);
-            }}
-            aria-labelledby="continuous-slider"
-            valueLabelDisplay="auto"
-            min={0}
-            max={5}
-            className="slider"
-          />
-        </fieldset>
-      </div>
+      
 
       
     </Fragment>

@@ -249,17 +249,17 @@ function Header() {
               <li>Socks</li>
             </ul> */}
           </li>
-          {/* <li>
+          <li>
             <Link to="/Beauty">
               Beauty
             </Link>
-            <ul>
+            {/* <ul>
               <li>Fragrances</li>
               <li>Cosmetics</li>
               <li>Scarves</li>
               <li>Socks</li>
-            </ul>
-          </li> */}
+            </ul> */}
+          </li>
           <li>
             <Link to="/Replicas">
               replicas
@@ -272,6 +272,7 @@ function Header() {
           </li>
           <li>
             <Link to="/Unstiched">
+              Unstiched
             </Link>
           </li>
           <li>

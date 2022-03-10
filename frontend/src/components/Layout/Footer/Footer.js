@@ -3,10 +3,6 @@ import "./Footer.css";
 import { Link } from "react-router-dom";
 
 
-import AutorenewIcon from '@mui/icons-material/Autorenew';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import ReplayIcon from '@mui/icons-material/Replay';
-import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import FacebookIcon from '@mui/icons-material/Facebook';
