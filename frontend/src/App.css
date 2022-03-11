@@ -3,7 +3,8 @@
   --themeColor: #444444;
   --lightColor: #eeeeee;
   --redColor: #FF0000;
-  --lightBorder: rgb(0 0 0 / 10%);
+  --lightBorder: 0 2px 3px rgb(0 0 0 / 10%);
+  --boxBorder: rgb(0 0 0 / 10%);
 }
 *{
   margin: 0;

@@ -127,7 +127,11 @@ const OrderList = ({ history }) => {
       <div className="dashboard">
         <SideBar />
         <div className="productListContainer">
-          <h1 id="productListHeading">ALL ORDERS</h1>
+          <div className="section_heading">
+            <div className="homeHeading">
+              <h2>ALL ORDERS</h2>
+            </div>
+          </div>
 
           {loading ? (
             <Loader />

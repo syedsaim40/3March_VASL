@@ -6,43 +6,34 @@
 }
 
 .dashboardContainer {
-  border-left: 1px solid rgba(0, 0, 0, 0.13);
-  background-color: rgb(255, 255, 255);
+  border-left: 1px solid var(--lightBorder);
+  background-color: var(--lightColor);
   padding: 3rem 0;
 }
 
 .dashboardContainer > h1 {
-  color: rgba(0, 0, 0, 0.733);
-  font: 300 2rem "Roboto";
+  color: var(--themeColor);
   text-align: center;
   width: 50%;
   padding: 1.5rem;
   margin: auto;
 }
-
-.dashboardSummary {
-  margin: 2rem 0;
-}
-
 .dashboardSummary > div {
   display: flex;
-  background-color: white;
+  background-color: var(--lightColor);
   justify-content: center;
 }
 .dashboardSummary > div > p {
-  background-color: #444;
-  color: white;
-  font: 300 1.3rem "Roboto";
+  background-color: var(--themeColor);
+  color: var(--lightColor);
   text-align: center;
   padding: 1.5rem;
   width: 100%;
-  margin: 0 2rem;
 }
 .dashboardSummaryBox2 > a {
-  color: white;
-  font: 300 2rem "Roboto";
+  color: var(--lightColor);
   text-align: center;
-  background-color: #444;
+  background-color: var(--themeColor);
   text-decoration: none;
   padding: 1.5rem;
   width: 10vmax;
@@ -54,43 +45,38 @@
   align-items: center;
   flex-direction: column;
 }
-
 .dashboardSummaryBox2 > a:first-child {
-  background-color: #444;
-  color: rgb(255, 255, 255);
+  background-color: var(--themeColor);
+  color: var(--lightColor);
 }
-
 .dashboardSummaryBox2 > a:last-child {
-  background-color: #444;
-  color: rgb(255, 255, 255);
+  background-color: var(--themeColor);
+  color: var(--lightColor);
 }
-
 .lineChart {
   width: 80%;
   margin: auto;
 }
-
 .doughnutChart {
   width: 30vmax;
   margin: auto;
 }
 
+
+
+
 @media screen and (max-width: 600px) {
   .dashboard {
     grid-template-columns: 1fr;
   }
-
   .dashboardContainer {
     border-left: none;
   }
-
   .dashboardSummary > div > p {
     margin: 0;
   }
-
   .dashboardSummaryBox2 > a {
     padding: 0.5rem;
     margin: 1rem;
-    font: 300 0.9rem "Roboto";
   }
 }

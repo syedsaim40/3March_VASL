@@ -70,7 +70,12 @@ const Dashboard = () => {
       <Sidebar />
 
       <div className="dashboardContainer">
-        <Typography component="h1">Dashboard</Typography>
+      
+          <div className="section_heading">
+            <div className="homeHeading">
+              <h2>Dashboard</h2>
+            </div>
+          </div>
         <div className="dashboardSummary">
           <div>
             <p>

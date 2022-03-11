@@ -10,8 +10,8 @@
   overflow: hidden;
 }
 .emptyCart > svg {
-  font-size: 5vmax;
-  background-color: var(--themeColor);
+  font-size: 70px;
+  fill: var(--themeColor);
 }
 .emptyCart > p {
   font-size: 20px;

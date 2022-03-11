@@ -138,7 +138,11 @@ const ProductReviews = ({ history }) => {
             className="productReviewsForm"
             onSubmit={productReviewsSubmitHandler}
           >
-            <h1 className="productReviewsFormHeading">ALL REVIEWS</h1>
+          <div className="section_heading">
+            <div className="homeHeading">
+              <h2>ALL REVIEWS</h2>
+            </div>
+          </div>
 
             <div>
               <Star />
@@ -152,6 +156,7 @@ const ProductReviews = ({ history }) => {
             </div>
 
             <Button
+            className="btn_primary"
               id="createProductBtn"
               type="submit"
               disabled={
@@ -172,7 +177,7 @@ const ProductReviews = ({ history }) => {
               autoHeight
             />
           ) : (
-            <h1 className="productReviewsFormHeading">No Reviews Found</h1>
+            <h4 className="productReviewsFormHeading">No Reviews Found</h4>
           )}
         </div>
       </div>

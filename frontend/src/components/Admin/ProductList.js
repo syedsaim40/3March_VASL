@@ -127,7 +127,11 @@ const ProductList = ({ history }) => {
       <div className="dashboard">
         <SideBar />
         <div className="productListContainer">
-          <h1 id="productListHeading">ALL PRODUCTS</h1>
+          <div className="section_heading">
+            <div className="homeHeading">
+              <h2>ALL PRODUCTS</h2>
+            </div>
+          </div>
 
           {loading ? (
             <Loader />

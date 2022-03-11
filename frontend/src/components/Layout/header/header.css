@@ -351,9 +351,12 @@ nav.sidenav---sidenav---_2tBP div.sidenav---sidenav-nav---3tvij:nth-child(4) {
   display: none;
 }
 /* --------------------Bottom Menu Styles----------------- */
+.bottom_header{
+  box-shadow: var(--lightBorder);
+}
 .bottom_nav{
   background: var(--lightColor);
-  border-top: 1px solid #4442;
+  /* border-top: 1px solid #4442; */
   text-align: center;
 }
 ul.bottom_nav li{
