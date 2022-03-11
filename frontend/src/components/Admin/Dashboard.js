@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import Sidebar from "./Sidebar";
 import "./dashboard.css";
-
-import { Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { Chart } from "react-chartjs-2";
 import "chart.js/auto";

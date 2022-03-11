@@ -2,17 +2,15 @@ import React, { Fragment, useEffect, useState } from "react";
 import "./product.css";
 import { useSelector, useDispatch } from "react-redux";
 import { CLEAR_Errors, getProduct } from "../../redux/action/productAction";
-import ploader from "../Layout/Loader/loader1";
+// import ploader from "../Layout/Loader/loader1";
 import ProductCard from "./ProductCard";
 // import Pagination from "react-js-pagination";
 import Slider from "@material-ui/core/Slider";
 import { useAlert } from "react-alert";
-import Typography from "@material-ui/core/Typography";
 import MetaData from "../Layout/Metadata";
 import { useParams } from "react-router-dom";
 // import Search from "./Search";
 
-import gf from "../../../src/images/prod.gif";
 
 
 
@@ -31,7 +29,7 @@ const Products = () => {
 
   const alert = useAlert();
 
-  const [currentPage, setCurrentPage] = useState();
+  const [currentPage] = useState();
   const [price, setPrice] = useState([0, 25000]);
   const [cateogery, setcateogery] = useState("");
 
@@ -41,14 +39,7 @@ const Products = () => {
     products,
     //loading,
     error,
-    productsCount,
-    resultperpage,
-    //filterproductCount,
   } = useSelector((state) => state.products);
-
-  const setCurrentPageNo = (e) => {
-    setCurrentPage(e);
-  };
 
   const priceHandler = (event, newPrice) => {
     setPrice(newPrice);

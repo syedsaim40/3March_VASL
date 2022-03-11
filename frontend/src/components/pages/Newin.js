@@ -4,13 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { CLEAR_Errors, getProduct } from "../../redux/action/productAction";
 //import Loader from "../Layout/Loader/Loader";
 import ProductCard from "../Products/ProductCard";
-import Pagination from "react-js-pagination";
-import Slider from "@material-ui/core/Slider";
 import { useAlert } from "react-alert";
-import Typography from "@material-ui/core/Typography";
 import MetaData from "../Layout/Metadata";
 import { useParams } from "react-router-dom";
-import Search from "../Products/Search";
 
 
 const Products = () => {
@@ -21,20 +17,14 @@ const Products = () => {
 
   const alert = useAlert();
 
-  const [currentPage, setCurrentPage] = useState();
-  const [price, setPrice] = useState([0, 25000]);
-  let [cateogery, setcateogery] = useState("");
+  let [cateogery] = useState("");
 
-  const [ratings, setRatings] = useState(0);
   cateogery = "Newinn";
 
   const {
     products,
     //loading,
     error,
-    productsCount,
-    resultperpage,
-    filterproductCount,
   } = useSelector((state) => state.products);
 
   let r = products &&
@@ -42,15 +32,6 @@ const Products = () => {
 
       return product.cateogery === cateogery;
     })
-  const setCurrentPageNo = (e) => {
-    setCurrentPage(e);
-  };
-
-
-  const priceHandler = (event, newPrice) => {
-    setPrice(newPrice);
-  };
-  let count = filterproductCount;
 
   useEffect(() => {
     if (error) {
@@ -58,8 +39,8 @@ const Products = () => {
       dispatch(CLEAR_Errors());
     }
 
-    dispatch(getProduct(keyword, currentPage, price, ratings));
-  }, [dispatch, keyword, currentPage, price, ratings, alert, error]);
+    dispatch(getProduct(keyword));
+  }, [dispatch, keyword, alert, error]);
 
   return (
     <Fragment>

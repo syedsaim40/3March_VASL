@@ -26,7 +26,7 @@ import bimg4 from '../../../src/images/bimg4.jpg';
 const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
-  const { loading, products, error } = useSelector((state) => state.products);
+  const { products, error } = useSelector((state) => state.products);
 
   useEffect(() => {
     if (error) {
