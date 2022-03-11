@@ -312,10 +312,7 @@ ul.alice-carousel__dots{
 
 
 
-@media screen and (max-width: 600px) {
-  header{
-    display: none;
-  }
+@media only screen and (max-width:768px){
   .productCard > p {
     font-size: 1.7vmax;
   }

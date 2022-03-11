@@ -396,7 +396,7 @@ ul.bottom_nav li a:hover{
 }
 
 /* ------------------------Media Query for responsive for header ----------------------*/
-@media screen and (max-width: 480px) {
+@media only screen and (max-width:768px){
   #vasl-menu{
     display: block;
   }
@@ -406,6 +406,12 @@ ul.bottom_nav li a:hover{
   .header_bar ul li:first-child {
     float: none;
   }
+  .top_header {
+    padding: 20px 10px;
+  }
+  .header_bar ul li {
+    display: block;
+  }
   header ul.carT {
     font-size: 12px;
   }
@@ -414,7 +420,7 @@ ul.bottom_nav li a:hover{
     transform: translate(6px, 1px);
   }
   header img.main_logo {
-    width: 100%;
+    width: 60%;
   }
   ul.dp-box {
     float: right;
@@ -554,5 +560,36 @@ ul.bottom_nav li a:hover{
   }
   .productCard:hover div.shop_btn {
     top: 38%;
+  }
+  .top_footer{
+    display: none;
+  }
+  .showcase_desp{
+    height: 24vh;
+  }
+  .mid_footer{
+    padding: 30px 20px;
+  }
+  .mf_box {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  .mf_box .mail_link {
+    display: block;
+    padding: 10px 0;
+  }
+  ul.services_list {
+    text-align: center;
+  }
+  .social_icons {
+    text-align: center;
+    padding: 20px 0;
+  }
+  .bottom_footer span:first-child {
+    display: block;
+  }
+  .bottom_footer img {
+    float: none;
   }
 }
