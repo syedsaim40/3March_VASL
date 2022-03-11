@@ -98,7 +98,6 @@
   grid-template-columns: 2fr 1.2fr;
 }
 .cartGrossProfitBox {
-  border-top: 3px solid var(--themeColor);
   margin: 1vmax 3vmax;
   box-sizing: border-box;
   padding: 2vmax 0;

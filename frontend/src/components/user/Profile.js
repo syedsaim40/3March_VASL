@@ -20,11 +20,16 @@ const Profile = ({ history }) => {
       ) : (
         <Fragment>
           <MetaData title={`${user.name}'s Profile`} />
+          
+          <div className="section_heading">
+            <div className="homeHeading">
+              <h2>My Profile</h2>
+            </div>
+          </div>
           <div className="profileContainer">
             <div>
-              <h1>My Profile</h1>
               <img src={user.avatar.url} alt={user.name} />
-              <Link to="/profile/update">Edit Profile</Link>
+              <Link className="btn_primary" to="/profile/update">Edit Profile</Link>
             </div>
             <div>
               <div>
@@ -41,8 +46,8 @@ const Profile = ({ history }) => {
               </div>
 
               <div>
-                <Link to="/orders">My Orders</Link>
-                <Link to="/password/update">Change Password</Link>
+                <Link className="btn_primary" to="/orders">My Orders</Link>
+                <Link className="btn_primary" to="/password/update">Change Password</Link>
               </div>
             </div>
           </div>
