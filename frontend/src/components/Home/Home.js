@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useAlert } from "react-alert";
 import Loader from "./../Layout/Loader/Loader";
 import { Link } from "react-router-dom";
-import Loaderr from "../Layout/Loader/Loader";
+// import Loaderr from "../Layout/Loader/Loader";
 import Topfooter from "../Layout/Footer/Topfooter";
 
 
@@ -61,9 +61,9 @@ const Home = () => {
 
   return (
     <Fragment>
-      {loading ? (
+      {/* {loading ? (
         <Loaderr />
-      ) : (
+      ) : ( */}
         <Fragment>
           <MetaData title="VASL-Brings Tradition Up" />
           <div id="vasl_banner">
@@ -178,7 +178,7 @@ const Home = () => {
           </div>
         </Fragment>
         
-      )}
+      {/* )} */}
       
       <Topfooter />
     </Fragment>

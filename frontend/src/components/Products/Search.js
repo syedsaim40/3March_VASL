@@ -15,7 +15,7 @@ const Search = () => {
   };
   return (
     <Fragment>
-      <MetaData title="Search-VASL-Brings Tradition Up" />
+      <MetaData title="Search-VASL" />
       <div className="search_holder">
         <div className="search_bar">
           <form className="searchBox" onSubmit={searchSubmitHandler}>

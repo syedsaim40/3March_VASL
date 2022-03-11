@@ -325,6 +325,11 @@ div.makeStyles-itemWrapper-18{
 .submit_holder button.MuiButtonBase-root:hover{
   color: var(--lightColor);
 }
+.reviews_section{
+  margin-bottom: 30px;
+}
+
+
 @media screen and (max-width: 600px) {
   .ProductDetails {
     flex-direction: column;

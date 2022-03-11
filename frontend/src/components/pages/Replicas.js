@@ -58,8 +58,7 @@ const Products = () => {
 
   return (
     <Fragment>
-      <MetaData title="PRODUCTS-VASL-Brings Tradition Up" />
-      <Search />
+      <MetaData title="Replicas-VASL" />
       <div className="section_heading">
         <div className="homeHeading">
           <h2>Replicas</h2>

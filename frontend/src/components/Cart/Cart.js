@@ -7,10 +7,11 @@ import {
   removeItemsFromCart,
 } from "../../redux/action/cartAction";
 import { Typography } from "@material-ui/core";
-import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
+// import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
 import { Link } from "react-router-dom";
 import { useAlert } from "react-alert";
 import DeleteForeverRoundedIcon from "@mui/icons-material/DeleteForeverRounded";
+import RemoveShoppingCartOutlinedIcon from '@mui/icons-material/RemoveShoppingCartOutlined';
 
 const Cart = ({ history }) => {
   const alert = useAlert();
@@ -50,10 +51,9 @@ const Cart = ({ history }) => {
     <Fragment>
       {cartItems.length === 0 ? (
         <div className="emptyCart">
-          <RemoveShoppingCartIcon />
-
+          <RemoveShoppingCartOutlinedIcon /> 
           <Typography>No Product in Your Cart</Typography>
-          <Link to="/products">View Products</Link>
+          <Link className="btn_primary" to="/products">View Products</Link>
         </div>
       ) : (
         <Fragment>
@@ -149,7 +149,7 @@ const Cart = ({ history }) => {
               </div>
               <div></div>
               <div className="checkOutBtn">
-                <button onClick={checkoutHandler}>Check Out</button>
+                <button className="btn_primary" onClick={checkoutHandler}>Check Out</button>
               </div>
             </div>
           </div>

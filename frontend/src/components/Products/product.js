@@ -66,10 +66,10 @@ const Products = () => {
 
   return (
     <Fragment>
-      <MetaData title="PRODUCTS VASL || Brings Tradition Up" />
+      <MetaData title="Products-VASL" />
       <div className="section_heading">
         <div className="homeHeading">
-          <h2>Products</h2>
+          <h2>vasl Products</h2>
         </div>
       </div>
       <div className="filterBox">
@@ -101,7 +101,7 @@ const Products = () => {
         </div>
         <div className="fl_box rate_fld">
           <fieldset>
-            <Typography component="legend">Ratings Above</Typography>
+            <h2>Ratings Above</h2>
             <Slider
               value={ratings}
               onChange={(e, newRating) => {
@@ -117,7 +117,7 @@ const Products = () => {
         </div>
       </div>
 
-      {/* <div className="products">
+      <div className="products">
         {products ?
           products.slice(0, 10).map((product) => (
 
@@ -126,7 +126,7 @@ const Products = () => {
           ) : (
             <ploader />
           )}
-      </div> */}
+      </div>
 
 
       {/* 

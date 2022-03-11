@@ -102,6 +102,9 @@ fieldset .fl_box > .slider {
 }
 .fl_box h2{
   display: inline-block;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
 }
 .fl_box.price_fil{
   float: left;

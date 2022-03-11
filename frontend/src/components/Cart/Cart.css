@@ -1,77 +1,62 @@
 .emptyCart {
   margin: auto;
   text-align: center;
-  padding: 10vmax;
-  height: 50vh;
+  padding: 100px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .emptyCart > svg {
   font-size: 5vmax;
-  background-color: #444;
+  background-color: var(--themeColor);
 }
 .emptyCart > p {
-  font-size: 2vmax;
+  font-size: 20px;
+  line-height: 25px;
+  padding: 20px 5px;
 }
-
 .delitem {
   align-items: center;
   cursor: pointer;
   border: none;
-  background-color: #444;
-
-  cursor: pointer;
-  color: white;
-  transition: all 0.5s;
+  background-color: var(--themeColor);
+  color: var(--lightColor);
 }
-
 .delitem :hover {
-  color: red;
-}
-.emptyCart > a {
-  background-color: rgb(51, 51, 51);
-  color: white;
-  border: none;
-  padding: 1vmax 3vmax;
-  cursor: pointer;
-  font: 400 1vmax "Roboto";
-  text-decoration: none;
-}
-.emptyCart > a:hover {
-  background-color: white;
-  border: 1.5px solid rgb(51, 51, 51);
-  color: rgb(51, 51, 51);
+  color: var(--redColor);
 }
 .cartPage {
-  padding: 5vmax;
+  padding: 2vmax;
 }
-
 .cartHeader {
-  background-color: #444;
-  width: 90%;
+  background-color: var(--lightColor);
+  width: 100%;
   box-sizing: border-box;
   margin: auto;
-  color: white;
+  color: var(--themeColor);
   display: grid;
   grid-template-columns: 4fr 1fr 1fr;
-  font: 300 0.7vmax "Roboto";
+  padding: 10px 50px;
+  border-bottom: 1px solid var();
 }
 .cartHeader > p {
-  margin: 10px;
+  font-size: 14px;
+  line-height: 20px;
 }
 .cartHeader > p:last-child {
   text-align: end;
 }
-
 .cartContainer {
-  width: 90%;
+  width: 100%;
   margin: auto;
   display: grid;
   grid-template-columns: 4fr 1fr 1fr;
+  padding: 20px 5px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
 }
-
 .cartInput {
   display: flex;
   align-items: center;
@@ -80,10 +65,10 @@
 
 .cartInput > button {
   border: none;
-  background-color: #444;
+  background-color: var(--themeColor);
   padding: 0.5vmax;
   cursor: pointer;
-  color: white;
+  color: var(--lightColor);
   transition: all 0.5s;
 }
 .cartInput > button:hover {
@@ -92,17 +77,15 @@
 
 .cartInput > input {
   border: none;
-  padding: 0.5vmax;
-  width: 2vmax;
+  padding: 0;
+  width: 40px;
   text-align: center;
   outline: none;
-  font: 400 0.8vmax "Roboto";
   color: rgba(0, 0, 0, 0.74);
 }
-
 .cartSubtotal {
   display: flex;
-  padding: 0.5vmax;
+  padding: 3.5vmax;
   height: 8vmax;
   align-items: center;
   box-sizing: border-box;
@@ -110,37 +93,35 @@
   justify-content: flex-end;
   color: rgba(0, 0, 0, 0.753);
 }
-
 .cartGrossProfit {
   display: grid;
   grid-template-columns: 2fr 1.2fr;
 }
-
 .cartGrossProfitBox {
-  border-top: 3px solid #444;
-  margin: 1vmax 4vmax;
+  border-top: 3px solid var(--themeColor);
+  margin: 1vmax 3vmax;
   box-sizing: border-box;
   padding: 2vmax 0;
-  font: 300 1vmax "Roboto";
   display: flex;
   justify-content: space-between;
 }
-
 .checkOutBtn {
-  display: flex;
-  justify-content: flex-end;
+  padding: 5px 3vmax;
 }
-.checkOutBtn > button {
-  background-color: #444;
-  color: white;
+.checkOutBtn > button{
+  width: 100%;
+  padding: 15px 20px;
+}
+/* .checkOutBtn > button {
+  background-color: var(--themeColor);
+  color: var(--lightColor);
   border: none;
   padding: 0.8vmax 4vmax;
   width: 50%;
-  font: 300 0.8vmax "Roboto";
   margin: 1vmax 4vmax;
   cursor: pointer;
   border-radius: 30px;
-}
+} */
 
 @media screen and (max-width: 600px) {
   .cartPage {
@@ -150,7 +131,6 @@
 
   .cartHeader {
     width: 100%;
-    font: 300 1.7vmax "Roboto";
     grid-template-columns: 3fr 1fr 1fr;
   }
 
@@ -170,13 +150,11 @@
   .cartInput > input {
     width: 2vmax;
     padding: 1.5vmax;
-    font: 400 1.8vmax "Roboto";
   }
 
   .cartSubtotal {
     padding: 1.5vmax;
     height: 20vmax;
-    font: 300 2vmax "Roboto";
   }
 
   .cartGrossProfit {
@@ -186,12 +164,10 @@
 
   .cartGrossProfitBox {
     padding: 2vmax;
-    font: 300 2vmax "Roboto";
   }
 
   .checkOutBtn > button {
     padding: 2vmax 4vmax;
     width: 100%;
-    font: 300 2vmax "Roboto";
   }
 }
