@@ -330,14 +330,64 @@ div.makeStyles-itemWrapper-18{
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
+  .ProductDetails > div.product_details_holder {
+    width: 100%;
+  }
+  .ProductDetails > div{
+    width: 100%;
+    float: none;
+    padding: 0;
+  }
   .ProductDetails {
     flex-direction: column;
     height: unset;
   }
+  .ProductDetails div.makeStyles-root-31 {
+    height: 800px;
+    margin-bottom: 50px;
+  }
+  div.makeStyles-itemWrapper-33{
+    height: 100% !important;
+  }
   .ProductDetails > div:last-child {
     align-items: center;
+    padding: 50px;
   }
+  .ProductDetails .makeStyles-prev-45 {
+    left: calc(0% - -1px);
+    z-index: 9;
+  }
+  .ProductDetails .makeStyles-next-44 {
+    right: calc(0% - -1px);
+  }
+  .ProductDetails .makeStyles-buttonHidden-42 {
+    opacity: 1;
+    width: 50px;
+    height: 60px;
+  }
+  .makeStyles-buttonWrapper-38:hover .makeStyles-button-43
+  {
+    background-color: #444 !important;
+    opacity: 1 !important;
+  }
+  .ProductDetails button svg.MuiSvgIcon-root{
+    fill: var(--lightColor) !important;
+  }
+  .ProductDetails button:hover svg.MuiSvgIcon-root{
+    fill: var(--themeColor) !important;
+  }
+  .ProductDetails button.makeStyles-button-43:hover {
+    opacity: 1 !important;
+    background: #fff;
+    background-color: #fff !important;
+  }
+  .detailsBlock-3-1-1 > button{
+    margin-right: 50px;
+  }
+  .detailsBlock-3-1-1 > input {
+    width: 4vmax;
+}
   .detailsBlock-1 > h2 {
     font-size: 2.8vmax;
     text-align: center;
@@ -359,21 +409,20 @@ div.makeStyles-itemWrapper-18{
   .detailsBlock-3-1 {
     flex-direction: column;
   }
+  .detailsBlock-3-1 .btn_primary {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
   .detailsBlock-3-1-1 {
     padding: 2vmax 0;
   }
   .detailsBlock-3-1-1 > button {
     padding: 1.2vmax;
-    width: 4vmax;
+    width: 5vmax;
   }
   .detailsBlock-3-1-1 > input {
     padding: 1.5vmax;
-    width: 3vmax;
-  }
-  .detailsBlock-3-1 > button:last-child {
-    padding: 1.5vmax;
-    width: 20vmax;
-    margin: 3vmax 0;
+    width: 4vmax;
   }
   .detailsBlock-3 > p {
     padding: 2.5vmax 0;

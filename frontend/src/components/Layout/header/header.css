@@ -593,3 +593,9 @@ ul.bottom_nav li a:hover{
     float: none;
   }
 }
+@media only screen and (max-width:480px){
+  button.sidenav---sidenav-toggle---1KRjR {
+    padding: 10px;
+    margin: 4vmax 20px 0 0;
+  }
+}
