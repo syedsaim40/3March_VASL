@@ -275,6 +275,13 @@ nav.sidenav---sidenav---_2tBP a{
   width: 100%;
   text-decoration: none;
   overflow: hidden;
+  color: var(--lightColor);
+}
+nav.sidenav---sidenav---_2tBP a:hover{
+  color: #444;
+}
+div.sidenav---navitem---9uL5T{
+  padding: 0 !important;
 }
 nav.sidenav---sidenav---_2tBP span.item_text{
   padding: 0 0 0 0;
@@ -597,5 +604,78 @@ ul.bottom_nav li a:hover{
   button.sidenav---sidenav-toggle---1KRjR {
     padding: 10px;
     margin: 4vmax 20px 0 0;
+  }
+  .showcase_desp{
+    height: 5vh;
+    width: 100%;
+  }
+  .product_slider {
+    width: 100%;
+    float: none;
+  }
+  .showcase_desp .desp_holder h2 {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+  }
+  button.sidenav---sidenav-toggle---1KRjR {
+    padding: 10px;
+    margin: 5vmax 20px 0 0;
+  }
+  .ProductDetails {
+    overflow: hidden;
+    padding: 20px;
+  }
+  .ProductDetails > div:last-child {
+    align-items: center;
+    padding: 20px;
+  }
+  .detailsBlock-2 {
+    justify-content: center;
+    text-align: center;
+  }
+  .detailsBlock-2 span {
+    float: none;
+  }
+  .detailsBlock-3-1-1 > button {
+    margin-left: 5px;
+    margin-right: 20px;
+  }
+  .detailsBlock-3 > p {
+    padding: 1.5vmax 0;
+    text-align: center;
+  }
+  .desp_holder {
+    padding: 0px;
+    font-size: 18px;
+    color: var(--redColor);
+  }
+  .desp_holder p{
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--themeColor);
+  }
+  div.css-19kzrtu {
+    padding: 0px;
+  }
+  .detailsBlock-4{
+    padding: 0px;
+  }
+  .reviewsHeading{
+    width: 20vmax;
+  }
+  .reviews {
+    display: block;
+  }
+  .reviewCard {
+    flex: none;
+    box-shadow: 0 0 5px rgb(0 0 0 / 23%);
+    border: 1px solid rgba(56, 56, 56, 0.116);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 1vmax;
   }
 }

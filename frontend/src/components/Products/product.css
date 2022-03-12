@@ -122,10 +122,39 @@ fieldset .fl_box > .slider {
   color: var(--themeColor);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .filterBox {
     width: 20vmax;
     position: static;
     margin: auto;
   }
+  .fl_box.price_fil {
+    float: none;
+    width: 100%;
+  }
+  .fl_box.rate_fld {
+    float: none;
+    width: 100%;
+  }
+  ul.categoryBox li {
+    display: block;
+  }
+  .filterBox .fl_box > .slider {
+    color: #444;
+    padding: 10px 0;
+  }
+  span.MuiSlider-root {
+    padding: 10px 0;
+  }
 }
+@media screen and (max-width: 480px) {
+  .fl_box.price_fil {
+    float: none;
+    width: 100%;
+  }
+  .fl_box.rate_fld {
+    float: none;
+    width: 100%;
+  }
+}
+

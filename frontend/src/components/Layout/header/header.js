@@ -58,36 +58,50 @@ function Header() {
                 </NavText>
                 <NavItem eventKey="categories/linechart">
                   <NavText>
-                    New Inn
+                    <Link to="/Newinn">
+                      New Inn
+                    </Link>
                   </NavText>
                 </NavItem>
                 <NavItem eventKey="categories/linechart">
                   <NavText>
-                    Womens
+                    <Link to="/Womens">
+                      Womens
+                    </Link>
                   </NavText>
                 </NavItem><NavItem eventKey="categories/linechart">
                   <NavText>
-                  Accessories
+                    <Link to="/Accessories">
+                      Accessories
+                    </Link>
                   </NavText>
                 </NavItem>
                 <NavItem eventKey="categories/linechart">
                   <NavText>
-                    Replicas
+                    <Link to="/Replicas">
+                      Replicas
+                    </Link>
                   </NavText>
                 </NavItem>
                 <NavItem eventKey="categories/linechart">
                   <NavText>
-                    Ready to wear
+                    <Link to="/ReadyToWear">
+                      Ready to wear
+                    </Link>
                   </NavText>
                 </NavItem>
                 <NavItem eventKey="categories/linechart">
                   <NavText>
-                    Unstiched
+                    <Link to="/Unstiched">
+                      Unstiched
+                    </Link>
                   </NavText>
                 </NavItem>
                 <NavItem eventKey="categories/linechart">
                   <NavText>
-                    A+ Cloths
+                    <Link to="/AClothes">
+                      A+ Cloths
+                    </Link>
                   </NavText>
                 </NavItem>
               </NavItem>
