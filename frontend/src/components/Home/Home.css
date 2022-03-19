@@ -1,14 +1,14 @@
-:root{
-  --boxShadow: 0px 1px 38px -5px rgba(44,39,39,0.75);
+:root {
+  --boxShadow: 0px 1px 38px -5px rgba(44, 39, 39, 0.75);
   --themeColor: #444;
   --lightColor: #fff;
 }
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.section_heading{
+.section_heading {
   padding: 60px 50px;
   text-align: center;
   color: var(--themeColor);
@@ -21,7 +21,7 @@
   text-transform: uppercase;
 }
 .homeHeading::before,
-.homeHeading::after{
+.homeHeading::after {
   position: absolute;
   content: " ";
   left: 100%;
@@ -31,11 +31,11 @@
   background: var(--themeColor);
   right: auto;
 }
-.homeHeading::before{
+.homeHeading::before {
   right: 100%;
   left: auto;
 }
-.homeHeading h2{
+.homeHeading h2 {
   font-size: 22px;
   font-weight: 400;
   letter-spacing: 2px;
@@ -62,7 +62,7 @@
   z-index: 1;
   transition: all ease-in-out 0.3s;
 }
-.productCard::after{
+.productCard::after {
   position: absolute;
   content: " ";
   top: 0;
@@ -75,7 +75,7 @@
   z-index: 0;
   transition: all ease-in-out 0.3s;
 }
-.productCard:hover ::after{
+.productCard:hover ::after {
   visibility: visible;
   opacity: 0.7;
 }
@@ -85,10 +85,10 @@
   height: 100%;
   transition: all ease-in-out 0.8s;
 }
-.productCard:hover img{
+.productCard:hover img {
   transform: scale(1.3);
 }
-.productCard .productCard_Holder{
+.productCard .productCard_Holder {
   margin: 0;
   color: #444;
   min-width: 100%;
@@ -113,7 +113,7 @@
   visibility: hidden;
   opacity: 0;
 }
-.productCard:hover div.product_desp{
+.productCard:hover div.product_desp {
   bottom: 0;
   visibility: visible;
   opacity: 1;
@@ -144,13 +144,13 @@
   color: var(--lightColor);
   bottom: 5%;
 }
-.productCard .product_desp span{
+.productCard .product_desp span {
   font-size: 12px;
   font-weight: 600;
   color: red;
 }
 .productCard:hover p,
-.productCard:hover span{
+.productCard:hover span {
   visibility: visible;
   opacity: 1;
 }
@@ -158,10 +158,10 @@
   bottom: 5%;
   top: auto;
 }
-.productCard:hover span{
+.productCard:hover span {
   left: calc(50% - 30px);
 }
-.productCard div.shop_btn{
+.productCard div.shop_btn {
   position: absolute;
   z-index: 9;
   top: calc(0% - 15%);
@@ -170,15 +170,15 @@
   bottom: auto;
   text-align: center;
 }
-.productCard:hover div.shop_btn{
+.productCard:hover div.shop_btn {
   top: 48%;
 }
-.productCard div.shop_btn span{
+.productCard div.shop_btn span {
   display: block;
   padding: 0 5px;
   color: var(--lightColor);
 }
-.productCard div.shop_btn svg{
+.productCard div.shop_btn svg {
   fill: var(--lightColor);
 }
 .view {
@@ -221,12 +221,13 @@
   background-color: white;
   color: black;
 }
-.sliderimg{
+.sliderimg {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-div.alice-carousel__prev-btn, div.alice-carousel__next-btn {
+div.alice-carousel__prev-btn,
+div.alice-carousel__next-btn {
   display: inline-block;
   box-sizing: border-box;
   width: 30px;
@@ -237,56 +238,58 @@ div.alice-carousel__prev-btn, div.alice-carousel__next-btn {
   top: 40%;
   z-index: 1008;
 }
-div.alice-carousel__prev-btn{
+div.alice-carousel__prev-btn {
   left: 20px;
 }
 div.alice-carousel__prev-btn-item p,
-div.alice-carousel__next-btn-wrapper p{
+div.alice-carousel__next-btn-wrapper p {
   width: 40px;
   height: 40px;
   color: transparent;
 }
 div.alice-carousel__next-btn-wrapper p,
-div.alice-carousel__prev-btn-wrapper p{
+div.alice-carousel__prev-btn-wrapper p {
   position: relative;
 }
 div.alice-carousel__next-btn-wrapper p::after,
 div.alice-carousel__prev-btn-wrapper p::after {
   position: absolute;
   content: " ";
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   content: "arrow_back";
   color: var(--themeColor);
   font-size: 40px;
   top: 0;
   left: -10px;
 }
-div.alice-carousel__next-btn-wrapper p::after{
+div.alice-carousel__next-btn-wrapper p::after {
   content: "arrow_forward";
 }
-.alice-carousel__prev-btn-item:hover, .alice-carousel__next-btn-item:hover{
+.alice-carousel__prev-btn-item:hover,
+.alice-carousel__next-btn-item:hover {
   color: transparent !important;
 }
-.alice-carousel__prev-btn-item, .alice-carousel__next-btn-item{
+.alice-carousel__prev-btn-item,
+.alice-carousel__next-btn-item {
   width: 40px;
   height: 40px;
   color: transparent !important;
 }
-ul.alice-carousel__dots{
+ul.alice-carousel__dots {
   display: none;
 }
-.product_showcase{
+.product_showcase {
   overflow: hidden;
 }
-.product_showcase .productCard{
+.product_showcase .productCard {
   width: 100%;
   overflow: hidden;
 }
-.product_slider{
+.product_slider {
   width: 70%;
   float: right;
 }
-.showcase_desp{
+.showcase_desp {
   width: 30%;
   float: left;
   height: 64vh;
@@ -295,7 +298,7 @@ ul.alice-carousel__dots{
   display: flex;
   overflow: hidden;
 }
-.showcase_desp .desp_holder{
+.showcase_desp .desp_holder {
   display: inline-flex;
   flex-direction: column;
   justify-items: center;
@@ -304,15 +307,13 @@ ul.alice-carousel__dots{
   text-align: center;
   width: 100%;
 }
-.showcase_desp .desp_holder h2{
+.showcase_desp .desp_holder h2 {
   font-weight: 400;
   font-size: 30px;
   line-height: 35px;
 }
 
-
-
-@media only screen and (max-width:768px){
+@media only screen and (max-width: 768px) {
   .productCard > p {
     font-size: 1.7vmax;
   }
@@ -325,37 +326,38 @@ ul.alice-carousel__dots{
   .productCard > div > span {
     margin: 0;
   }
-  div.alice-carousel{
+  div.alice-carousel {
     height: auto;
     overflow: hidden;
   }
-  div.alice-carousel__wrapper{
+  div.alice-carousel__wrapper {
     height: auto;
   }
-  .productCard{
+  .productCard {
     width: 50%;
   }
   .section_heading {
     padding: 15px 30px;
   }
-  .productCard > span{
+  .productCard > span {
     top: 65%;
   }
-  .productCard > div{
+  .productCard > div {
     height: 300px;
   }
   .homeHeading h2 {
     font-size: 18px;
   }
-  .homeHeading::before, .homeHeading::after {
+  .homeHeading::before,
+  .homeHeading::after {
     width: 30%;
   }
 }
-@media only screen and (max-width:480px){
-  .header_bar ul li:first-child{
+@media only screen and (max-width: 480px) {
+  .header_bar ul li:first-child {
     display: none;
   }
 }
-body{
-  background-color: #444;
+body {
+  background-color: red;
 }
