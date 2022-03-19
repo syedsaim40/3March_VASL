@@ -1,35 +1,35 @@
-:root{
-  --boxShadow: 0px 1px 38px -5px rgba(44,39,39,0.75);
+:root {
+  --boxShadow: 0px 1px 38px -5px rgba(44, 39, 39, 0.75);
   --themeColor: #444444;
   --lightColor: #eeeeee;
-  --redColor: #FF0000;
+  --redColor: #ff0000;
   --lightBorder: 0 2px 3px rgb(0 0 0 / 10%);
   --boxBorder: rgb(0 0 0 / 10%);
 }
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   transition: all ease-in-out 0.3s;
   text-decoration: none;
-  font-family: 'Fredoka', 'Great Vibes', 'Heebo', sans-serif !important;
+  font-family: "Fredoka", "Great Vibes", "Heebo", sans-serif !important;
   /* 400 Regular
   600 SemiBold
   700 Bold */
 }
-body{
+body {
   background: var(--lightColor);
   margin: 0;
-  padding: 0;
+  padding: 10;
   min-width: 320px;
 }
-.unstyled{
+.unstyled {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.btn_primary{
+.btn_primary {
   border: none;
   cursor: pointer;
   color: white;
@@ -49,11 +49,11 @@ body{
   text-transform: uppercase;
   /* background: #4448; */
 }
-.btn_primary:hover{
+.btn_primary:hover {
   color: var(--lightColor);
   box-shadow: var(--boxShadow);
 }
-.btn_primary::after{
+.btn_primary::after {
   position: absolute;
   content: " ";
   top: 0;
@@ -66,7 +66,7 @@ body{
   transition: all ease-in-out 0.3s;
   background: var(--themeColor);
 }
-.btn_primary:hover::after{
+.btn_primary:hover::after {
   border: 1px solid transparent;
   width: 100%;
   color: var(--lightColor);
