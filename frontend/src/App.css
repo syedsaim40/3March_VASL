@@ -53,9 +53,6 @@ body {
   color: var(--lightColor);
   box-shadow: var(--boxShadow);
 }
-body {
-  background-color: #ff0000;
-}
 .btn_primary::after {
   position: absolute;
   content: " ";
