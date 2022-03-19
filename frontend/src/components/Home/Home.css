@@ -8,9 +8,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  background-color: beige;
-}
+
 .section_heading {
   padding: 60px 50px;
   text-align: center;
