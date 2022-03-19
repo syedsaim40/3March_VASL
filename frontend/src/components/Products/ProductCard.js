@@ -31,12 +31,12 @@ export const Product = ({ product }) => {
               <img alt={product.name} src={product.images[0].url} />
               <div className="shop_btn">
                 <ShoppingBasketIcon />
-                <span>Shop Now</span>
-              </div>
-              <div className="shop_btn2">
+                {/* <span>Shop Now</span> */}
                 <FavoriteTwoToneIcon />
-                <span>Favourite</span>
+                {/* <span>Favourite</span> */}
               </div>
+              {/* <div className="shop_btn2">
+              </div> */}
               <div className="product_desp">
                 <p>{product.name}</p>
                 <span>{`PKR ${product.price}`}</span>
