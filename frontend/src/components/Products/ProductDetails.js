@@ -140,7 +140,7 @@ const ProductDetails = ({ match }) => {
         <Fragment>
           <Metadata title={`${product.name} ----ECOMMERECE`} />
           <div className="ProductDetails">
-            <Carousel
+            {/* <Carousel
               next={() => {
                 <ArrowBackIosNewIcon />;
               }}
@@ -150,7 +150,7 @@ const ProductDetails = ({ match }) => {
               indicators={false}
               interval={3000}
             >
-              {/* {!loaded && <Loader />} */}
+              {!loaded && <Loader />}
 
               {product.images &&
                 product.images.map((item, i) => (
@@ -161,7 +161,18 @@ const ProductDetails = ({ match }) => {
                     // onLoad={stuffLoaded}
                   />
                 ))}
-            </Carousel>
+            </Carousel> */}
+            <AliceCarousel autoPlay autoPlayInterval="3000">
+              {product.images &&
+                product.images.map((item, i) => (
+                  <img
+                    className="CarouselImage"
+                    src={item.url}
+                    alt={`${i} Slide`}
+                  // onLoad={stuffLoaded}
+                  />
+                ))}
+            </AliceCarousel>
 
             <div className="product_details_holder">
               <div className="detailsBlock-1">
