@@ -5,10 +5,11 @@ import MetaData from "../Layout/Metadata";
 import { CLEAR_Errors, getProduct } from "../../redux/action/productAction";
 import { useSelector, useDispatch } from "react-redux";
 import { useAlert } from "react-alert";
-import Loader from "./../Layout/Loader/Loader";
+// import Loader from "./../Layout/Loader/Loader";
 import { Link } from "react-router-dom";
 // import Loaderr from "../Layout/Loader/Loader";
 import Topfooter from "../Layout/Footer/Topfooter";
+import Loader1 from "../Layout/Loader/loader1";
 
 
 import AliceCarousel from 'react-alice-carousel';
@@ -66,31 +67,32 @@ const Home = () => {
       {/* {loading ? (
         <Loaderr />
       ) : ( */}
-        <Fragment>
-          <MetaData title="VASL-Brings Tradition Up" />
-          <div id="vasl_banner">
-            <AliceCarousel autoPlay autoPlayInterval="3000">
-              <Link to="/products">
-                <img src={bimg1} className="sliderimg" alt="vasl-banner" />
-              </Link>
-              <Link to="/products">
-                <img src={bimg2} className="sliderimg" alt="vasl-banner" />
-              </Link>
-              <Link to="/products">
-                <img src={bimg3} className="sliderimg" alt="vasl-banner" />
-              </Link>
-              <Link to="/products">
-                <img src={bimg4} className="sliderimg" alt="vasl-banner" />
-              </Link>
-              <Link to="/products">
-                <img src={bimg5} className="sliderimg" alt="vasl-banner" />
-              </Link>
-              <Link to="/products">
-                <img src={bimg6} className="sliderimg" alt="vasl-banner" />
-              </Link>
-            </AliceCarousel>
-          </div>
-          {/* <div className="banner">
+      <Fragment>
+        <MetaData title="VASL-Brings Tradition Up" />
+        <div id="vasl_banner">
+          <AliceCarousel autoPlay autoPlayInterval="3000">
+            <Link to="/products">
+              <img src={bimg1} className="sliderimg" alt="vasl-banner" />
+            </Link>
+            <Link to="/products">
+              <img src={bimg2} className="sliderimg" alt="vasl-banner" />
+            </Link>
+            <Link to="/products">
+              <img src={bimg3} className="sliderimg" alt="vasl-banner" />
+            </Link>
+            <Link to="/products">
+              <img src={bimg4} className="sliderimg" alt="vasl-banner" />
+            </Link>
+            <Link to="/products">
+              <img src={bimg5} className="sliderimg" alt="vasl-banner" />
+            </Link>
+            <Link to="/products">
+              <img src={bimg6} className="sliderimg" alt="vasl-banner" />
+            </Link>
+          </AliceCarousel>
+        </div>
+        {/* <Loader1 /> */}
+        {/* <div className="banner">
             <TypeWriterEffect
               textStyle={{ fontFamily: "Red Hat Display" }}
               startDelay={100}
@@ -99,12 +101,12 @@ const Home = () => {
               typeSpeed={100}
             />
           </div> */}
-          {/* <div className="section_heading">
+        {/* <div className="section_heading">
             <div className="homeHeading">
               <h2>Trending</h2>
             </div>
           </div> */}
-          {/* <div className="container home_products" id="container">
+        {/* <div className="container home_products" id="container">
             {products ?
               products.slice(0, 10).map((product) => (
 
@@ -114,230 +116,178 @@ const Home = () => {
                 <Loader />
               )}
           </div> */}
-          
-          <div className="product_showcase">
-            {/* <div className="showcase_desp">
+
+        <div className="product_showcase">
+          {/* <div className="showcase_desp">
               <div className="desp_holder"><h2>Shop by category</h2></div>
             </div> */}
-            {/* <Carousel responsive={responsive} > */}
-            
-            <div className="section_heading">
-              <div className="homeHeading">
-                <h2>Trending</h2>
-              </div>
-            </div>
-            
-            <div className="product_slider">
-              <Carousel
-                additionalTransfrom={0}
-                arrows
-                autoPlaySpeed={2000}
-                centerMode
-                className=""
-                containerClass="container"
-                dotListClass=""
-                draggable
-                focusOnSelect={false}
-                infinite
-                itemClass=""
-                keyBoardControl
-                minimumTouchDrag={80}
-                renderButtonGroupOutside={false}
-                renderDotsOutside={false}
-                responsive={{
-                  desktop: {
-                    breakpoint: {
-                      max: 3000,
-                      min: 1024
-                    },
-                    items: 3,
-                    partialVisibilityGutter: 40
-                  },
-                  mobile: {
-                    breakpoint: {
-                      max: 464,
-                      min: 0
-                    },
-                    items: 1,
-                    partialVisibilityGutter: 30
-                  },
-                  tablet: {
-                    breakpoint: {
-                      max: 1024,
-                      min: 464
-                    },
-                    items: 2,
-                    partialVisibilityGutter: 30
-                  }
-                }}
-                showDots={false}
-                sliderClass=""
-                slidesToSlide={1}
-                swipeable
-              >
-                {products ?
-                  products.slice(0, 10).map((product) => (
+          {/* <Carousel responsive={responsive} > */}
 
-                    <ProductCard key={product._id} product={product} />
-                  )
-                  ) : (
-                    <Loader />
-                  )}
-
-              </Carousel>
+          <div className="section_heading">
+            <div className="homeHeading">
+              <h2>Trending</h2>
             </div>
           </div>
-          <div className="product_showcase">
-            {/* <div className="showcase_desp">
+
+          <div className="product_slider">
+            <Carousel
+              additionalTransfrom={0}
+              arrows
+              autoPlaySpeed={10000000}
+              centerMode
+              className=""
+              containerClass="container"
+              dotListClass=""
+              draggable
+              focusOnSelect={false}
+              infinite
+              itemClass=""
+              keyBoardControl
+              minimumTouchDrag={80}
+              renderButtonGroupOutside={false}
+              renderDotsOutside={false}
+              autoPlay={false}
+              responsive={{
+                desktop: {
+                  breakpoint: {
+                    max: 3000,
+                    min: 1024
+                  },
+                  items: 3,
+                  partialVisibilityGutter: 40
+                },
+                mobile: {
+                  breakpoint: {
+                    max: 464,
+                    min: 0
+                  },
+                  items: 1,
+                  partialVisibilityGutter: 30
+                },
+                tablet: {
+                  breakpoint: {
+                    max: 1024,
+                    min: 464
+                  },
+                  items: 2,
+                  partialVisibilityGutter: 30
+                }
+              }}
+              showDots={false}
+              sliderClass=""
+              slidesToSlide={1}
+              swipeable
+            >
+              {products ?
+                products.slice(0, 10).map((product) => (
+
+                  <ProductCard key={product._id} product={product} />
+                )
+                ) : (
+                  <Loader1 />
+                )}
+
+            </Carousel>
+          </div>
+        </div>
+        <div className="product_showcase">
+          {/* <div className="showcase_desp">
               <div className="desp_holder"><h2>Shop by category</h2></div>
             </div> */}
-            {/* <Carousel responsive={responsive} > */}
-            
-            <div className="section_heading">
-              <div className="homeHeading">
-                <h2>DISCOVER MORE</h2>
-              </div>
-            </div>
-            
-            <div className="product_slider">
-              <Carousel
-                additionalTransfrom={0}
-                arrows
-                autoPlaySpeed={2000}
-                centerMode
-                className=""
-                containerClass="container"
-                dotListClass=""
-                draggable
-                focusOnSelect={false}
-                infinite
-                itemClass=""
-                keyBoardControl
-                minimumTouchDrag={80}
-                renderButtonGroupOutside={false}
-                renderDotsOutside={false}
-                responsive={{
-                  desktop: {
-                    breakpoint: {
-                      max: 3000,
-                      min: 1024
-                    },
-                    items: 3,
-                    partialVisibilityGutter: 40
-                  },
-                  mobile: {
-                    breakpoint: {
-                      max: 464,
-                      min: 0
-                    },
-                    items: 1,
-                    partialVisibilityGutter: 30
-                  },
-                  tablet: {
-                    breakpoint: {
-                      max: 1024,
-                      min: 464
-                    },
-                    items: 2,
-                    partialVisibilityGutter: 30
-                  }
-                }}
-                showDots={false}
-                sliderClass=""
-                slidesToSlide={1}
-                swipeable
-              >
-                {products ?
-                  products.slice(0, 10).map((product) => (
+          {/* <Carousel responsive={responsive} > */}
 
-                    <ProductCard key={product._id} product={product} />
-                  )
-                  ) : (
-                    <Loader />
-                  )}
-
-              </Carousel>
+          <div className="section_heading">
+            <div className="homeHeading">
+              <h2>DISCOVER MORE</h2>
             </div>
           </div>
-          <div className="product_showcase">
-            {/* <div className="showcase_desp">
+
+          <div className="product_slider">
+            <Carousel
+              additionalTransfrom={0}
+              arrows
+              autoPlaySpeed={2000}
+              centerMode
+              className=""
+              containerClass="container"
+              dotListClass=""
+              draggable
+              focusOnSelect={false}
+              infinite
+              itemClass=""
+              keyBoardControl
+              minimumTouchDrag={80}
+              renderButtonGroupOutside={false}
+              renderDotsOutside={false}
+              responsive={{
+                desktop: {
+                  breakpoint: {
+                    max: 3000,
+                    min: 1024
+                  },
+                  items: 3,
+                  partialVisibilityGutter: 40
+                },
+                mobile: {
+                  breakpoint: {
+                    max: 464,
+                    min: 0
+                  },
+                  items: 1,
+                  partialVisibilityGutter: 30
+                },
+                tablet: {
+                  breakpoint: {
+                    max: 1024,
+                    min: 464
+                  },
+                  items: 2,
+                  partialVisibilityGutter: 30
+                }
+              }}
+              showDots={false}
+              sliderClass=""
+              slidesToSlide={1}
+              swipeable
+            >
+              {products ?
+                products.slice(0, 10).map((product) => (
+
+                  <ProductCard key={product._id} product={product} />
+                )
+                ) : (
+                  <Loader1 />
+                )}
+
+            </Carousel>
+          </div>
+        </div>
+        <div className="product_showcase">
+          {/* <div className="showcase_desp">
               <div className="desp_holder"><h2>Shop by category</h2></div>
             </div> */}
-            {/* <Carousel responsive={responsive} > */}
-            
-            <div className="section_heading">
-              <div className="homeHeading">
-                <h2>sHOP BY category</h2>
-              </div>
-            </div>
-            
-            <div className="product_slider">
-              <Carousel
-                additionalTransfrom={0}
-                arrows
-                autoPlaySpeed={2000}
-                centerMode
-                className=""
-                containerClass="container"
-                dotListClass=""
-                draggable
-                focusOnSelect={false}
-                infinite
-                itemClass=""
-                keyBoardControl
-                minimumTouchDrag={80}
-                renderButtonGroupOutside={false}
-                renderDotsOutside={false}
-                responsive={{
-                  desktop: {
-                    breakpoint: {
-                      max: 3000,
-                      min: 1024
-                    },
-                    items: 3,
-                    partialVisibilityGutter: 40
-                  },
-                  mobile: {
-                    breakpoint: {
-                      max: 464,
-                      min: 0
-                    },
-                    items: 1,
-                    partialVisibilityGutter: 30
-                  },
-                  tablet: {
-                    breakpoint: {
-                      max: 1024,
-                      min: 464
-                    },
-                    items: 2,
-                    partialVisibilityGutter: 30
-                  }
-                }}
-                showDots={false}
-                sliderClass=""
-                slidesToSlide={1}
-                swipeable
-              >
-                {products ?
-                  products.slice(0, 10).map((product) => (
+          {/* <Carousel responsive={responsive} > */}
 
-                    <ProductCard key={product._id} product={product} />
-                  )
-                  ) : (
-                    <Loader />
-                  )}
-
-              </Carousel>
+          <div className="section_heading">
+            <div className="homeHeading">
+              <h2>sHOP BY category</h2>
             </div>
           </div>
-        </Fragment>
-        
+          <div className="categorized_products">
+            <Link to="/products" className="cp_item"></Link>
+            <Link to="/products" className="cp_item"></Link>
+            <Link to="/products" className="cp_item"></Link>
+            <Link to="/products" className="cp_item"></Link>
+          </div>
+
+        </div>
+      </Fragment>
+
       {/* )} */}
-      
+
       <Topfooter />
     </Fragment>
-    
+
   );
 };
 
