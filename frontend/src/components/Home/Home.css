@@ -198,9 +198,6 @@
   fill: #444;
   transition: all ease-in-out 0.3s;
 }
-.productCard div.shop_btn svg {
-  margin-right: 10px;
-}
 .productCard:hover div.shop_btn {
   top: calc(50% - 50px);
 }
@@ -403,7 +400,7 @@ div.alice-carousel__next-btn-wrapper p::after {
     height: auto;
   }
   #vasl_banner div.alice-carousel__next-btn-wrapper p::after,
-  #vasl_banner div.alice-carousel__prev-btn-wrapper p::after {
+  #vasl_banner div.alice-carousel__prev-btn-wrapper p::after{
     left: -15px;
   }
   .productCard {
