@@ -190,13 +190,31 @@
   z-index: 99999 !important;
   cursor: grab;
   transition: all ease-in-out 0.3s;
-  position: relative;
   background-color: #fff3;
 }
 .productCard div.shop_btn svg:hover{
   background-color: #fff;
   fill: #444;
   transition: all ease-in-out 0.3s;
+}
+.productCard .wishList_btn{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.productCard .wishList_btn svg{
+  fill: #fff;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.productCard .wishList_btn svg:hover{
+  fill: red;
+}
+.productCard:hover .wishList_btn svg{
+  visibility: visible;
+  opacity: 1;
+  z-index: 99;
 }
 .productCard:hover div.shop_btn {
   top: calc(50% - 50px);
