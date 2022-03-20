@@ -106,6 +106,26 @@ fieldset .fl_box > .slider {
   font-size: 18px;
   line-height: 22px;
 }
+.fl_box h2.deco{
+  position: relative;
+  padding: 0 10px;
+  font-weight: 600;
+}
+.fl_box h2.deco::before,
+.fl_box h2.deco::after {
+  position: absolute;
+  content: " ";
+  left: 100%;
+  top: 50%;
+  width: 25%;
+  height: 2px;
+  background: var(--themeColor);
+  right: auto;
+}
+.fl_box h2.deco::before {
+  right: 100%;
+  left: auto;
+}
 .fl_box.price_fil{
   float: left;
   width: 10%;

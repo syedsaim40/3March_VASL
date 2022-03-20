@@ -423,7 +423,7 @@ ul.bottom_nav li a:hover{
     font-size: 12px;
   }
   header .logo {
-    width: 25%;
+    width: 35%;
     transform: translate(6px, 1px);
   }
   header img.main_logo {
@@ -600,7 +600,12 @@ ul.bottom_nav li a:hover{
     float: none;
   }
 }
+
+
 @media only screen and (max-width:480px){
+  .dp-box1 li sup{
+    right: 48%;
+  }
   button.sidenav---sidenav-toggle---1KRjR {
     padding: 10px;
     margin: 4vmax 20px 0 0;
@@ -620,7 +625,7 @@ ul.bottom_nav li a:hover{
   }
   button.sidenav---sidenav-toggle---1KRjR {
     padding: 10px;
-    margin: 5vmax 20px 0 0;
+    margin: 4vmax 20px 0 0;
   }
   .ProductDetails {
     overflow: hidden;
@@ -677,5 +682,8 @@ ul.bottom_nav li a:hover{
     align-items: center;
     margin: 0;
     padding: 1vmax;
+  }
+  .top_header {
+    padding: 10px 10px;
   }
 }

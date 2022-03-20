@@ -77,7 +77,7 @@ const Products = () => {
           />
         </div>
         <div className="fl_box cate_list">
-          <h2>Categories</h2>
+          <h2 className="deco">Categories</h2>
           <ul className="categoryBox unstyled">
             {cateogories.map((cato) => (
               <li

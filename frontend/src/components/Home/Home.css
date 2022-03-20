@@ -307,7 +307,7 @@ div.alice-carousel__next-btn-wrapper p::after {
   height: 40px;
   color: transparent !important;
 }
-ul.alice-carousel__dots {
+#vasl_banner ul.alice-carousel__dots {
   display: none;
 }
 .product_showcase {
@@ -358,15 +358,19 @@ ul.alice-carousel__dots {
   .productCard > div > span {
     margin: 0;
   }
-  div.alice-carousel {
+  #vasl_banner div.alice-carousel {
     height: auto;
     overflow: hidden;
   }
-  div.alice-carousel__wrapper {
+  #vasl_banner div.alice-carousel__wrapper {
     height: auto;
   }
+  #vasl_banner div.alice-carousel__next-btn-wrapper p::after,
+  #vasl_banner div.alice-carousel__prev-btn-wrapper p::after{
+    left: -15px;
+  }
   .productCard {
-    width: 50%;
+    width: calc(50% - 6px);
   }
   .section_heading {
     padding: 15px 30px;

@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import Carousel from "react-material-ui-carousel";
+// import Carousel from "react-material-ui-carousel";
 import "./ProductDetails.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -30,10 +30,13 @@ import {
 import { NEW_REVIEW_RESET } from "../../redux/constant/productConstants";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+// import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+// import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 import BasicTabs from "./ProductsDetailsTabs";
+
+import AliceCarousel from 'react-alice-carousel';
+import "react-alice-carousel/lib/alice-carousel.css";
 
 const ProductDetails = ({ match }) => {
   // const [loaded, setLoaded] = useState(false);

@@ -21,6 +21,8 @@ import bimg1 from '../../../src/images/bimg1.jpg';
 import bimg2 from '../../../src/images/bimg2.jpg';
 import bimg3 from '../../../src/images/bimg3.jpg';
 import bimg4 from '../../../src/images/bimg4.jpg';
+import bimg5 from '../../../src/images/bimg5.jpg';
+import bimg6 from '../../../src/images/bimg6.jpg';
 
 
 const Home = () => {
@@ -79,6 +81,12 @@ const Home = () => {
               </Link>
               <Link to="/products">
                 <img src={bimg4} className="sliderimg" alt="vasl-banner" />
+              </Link>
+              <Link to="/products">
+                <img src={bimg5} className="sliderimg" alt="vasl-banner" />
+              </Link>
+              <Link to="/products">
+                <img src={bimg6} className="sliderimg" alt="vasl-banner" />
               </Link>
             </AliceCarousel>
           </div>

@@ -20,8 +20,10 @@
   display: block;
   margin-bottom: 30px;
 }
-.profileContainer > a.btn_primary{
-  float: left;
+.profileContainer div > a.btn_primary{
+  float: none;
+  display: block;
+  margin-bottom: 30px;
 }
 /* .profileContainer > div:first-child > a {
   border: none;
@@ -83,9 +85,6 @@
   }
   .profileContainer > div:first-child > h1 {
     transform: translateY(-2vmax);
-  }
-  .profileContainer > div:first-child > a {
-    padding: 1vmax;
   }
   .profileContainer > div:last-child {
     text-align: center;

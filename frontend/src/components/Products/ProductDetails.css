@@ -33,6 +33,32 @@ div.makeStyles-item-17 {
 }
 .ProductDetails > div:first-child{
   padding-top: 0px;
+  height: 500px;
+  overflow: hidden;
+}
+.ProductDetails div.alice-carousel__prev-btn {
+  left: 50px;
+}
+.ProductDetails div.alice-carousel__prev-btn,
+.ProductDetails div.alice-carousel__next-btn{
+  right: 50px;
+  background-color: #444 !important;
+  top: calc(50% - 20px);
+}
+
+.ProductDetails div.alice-carousel__next-btn-wrapper p::after,
+.ProductDetails div.alice-carousel__prev-btn-wrapper p::after {
+  position: absolute;
+  content: " ";
+  font-family: "Material Icons";
+  content: "arrow_back";
+  color: var(--lightColor);
+  font-size: 30px;
+  top: calc(60% - 20px);
+  left: 0;
+}
+.ProductDetails div.alice-carousel__next-btn-wrapper p::after {
+  content: "arrow_forward";
 }
 .ProductDetails div.makeStyles-indicators-34,
 .ProductDetails div.makeStyles-indicators-19{
@@ -61,6 +87,8 @@ div.makeStyles-item-17 {
 }
 .CarouselImage {
   width: 100%;
+  max-width: 100%;
+  min-height: 100%;
 }
 button.makeStyles-buttonWrapper-38:hover button.makeStyles-button-43 {
   filter: brightness(120%);
@@ -331,6 +359,13 @@ div.makeStyles-itemWrapper-18{
 
 
 @media screen and (max-width: 768px) {
+  .ProductDetails div.alice-carousel__prev-btn,
+  .ProductDetails div.alice-carousel__next-btn {
+    right: 0;
+  }
+  .ProductDetails div.alice-carousel__prev-btn {
+    left: 0;
+  }
   .ProductDetails > div.product_details_holder {
     width: 100%;
   }
@@ -441,5 +476,14 @@ div.makeStyles-itemWrapper-18{
   }
   .reviewCardComment {
     font: 300 5vw cursive;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ProductDetails > div:first-child {
+    padding-top: 0px;
+    height: 380px;
+    overflow: hidden;
+    width: 100%;
   }
 }
