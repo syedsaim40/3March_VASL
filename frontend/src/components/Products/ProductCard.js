@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { CLEAR_Errors } from "../../redux/action/productAction";
 // import Imageload from "../Layout/Loader/imageload";
 import Loader1 from "../Layout/Loader/loader1";
-import { FavouriteToCart } from "../../redux/action/cartAction";
+import { addItemsToCart, FavouriteToCart } from "../../redux/action/cartAction";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import FavoriteTwoToneIcon from "@mui/icons-material/FavoriteTwoTone";
 import { useAlert } from "react-alert";
@@ -24,6 +24,14 @@ export const Product = ({ product }) => {
   //   readOnly: true,
   //   precision: 0.5,
   // };
+  const addToCartHandler = () => {
+    if (product.stock === 0) {
+      alert.error("Sorry !Out Of Stock");
+      return;
+    }
+    dispatch(addItemsToCart(product._id, quantity));
+    alert.success("Item Added To Cart");
+  };
   const FavouriteCart = () => {
     dispatch(FavouriteToCart(product._id, quantity));
     alert.success(" Favourite Item Added");
@@ -41,33 +49,32 @@ export const Product = ({ product }) => {
   return (
     <Fragment>
       {loaded ? (
-          <>
-            <div className="productCard productCard_Holder">
-              
+        <>
+          <div className="productCard productCard_Holder">
             {/* <div className="wishList_btn"></div> */}
-        <Link className="productCard" to={`/oneproduct/${product._id}`}>
+            <Link className="productCard" to={`/oneproduct/${product._id}`}>
               <img alt={product.name} src={product.images[0].url} />
-              </Link>
-              <div className="shop_btn">
-                <ShoppingBasketIcon />
-                {/* <span>Shop Now</span> */}
-                <FavoriteTwoToneIcon onClick={() => FavouriteCart()} />
-                {/* <span>Favourite</span> */}
-              </div>
-              {/* <div className="shop_btn2">
-              </div> */}
-              <div className="product_desp">
-                <p>{product.name}</p>
-                <span>{`PKR ${product.price}`}</span>
-              </div>
+            </Link>
+            <div className="shop_btn">
+              <ShoppingBasketIcon onClick={() => addToCartHandler()} />
+              {/* <span>Shop Now</span> */}
+              <FavoriteTwoToneIcon onClick={() => FavouriteCart()} />
+              {/* <span>Favourite</span> */}
             </div>
-            {/* <div>
+            {/* <div className="shop_btn2">
+              </div> */}
+            <div className="product_desp">
+              <p>{product.name}</p>
+              <span>{`PKR ${product.price}`}</span>
+            </div>
+          </div>
+          {/* <div>
               <Rating {...options} />{" "}
               <span className="productCardSpan">
                 ({product.numofreviews} Reviews)
               </span>
             </div> */}
-          </>
+        </>
       ) : (
         <>
           {/* <Imageload /> */}
