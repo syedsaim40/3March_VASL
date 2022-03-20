@@ -120,9 +120,9 @@ const Home = () => {
                 <h2>DISCOVER MORE</h2>
               </div>
             </div>
-            <div className="showcase_desp">
+            {/* <div className="showcase_desp">
               <div className="desp_holder"><h2>Shop by category</h2></div>
-            </div>
+            </div> */}
             {/* <Carousel responsive={responsive} > */}
             <div className="product_slider">
               <Carousel

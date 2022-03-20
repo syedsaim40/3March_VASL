@@ -318,7 +318,7 @@ div.alice-carousel__next-btn-wrapper p::after {
   overflow: hidden;
 }
 .product_slider {
-  width: 70%;
+  width: 100%;
   float: right;
 }
 .showcase_desp {
