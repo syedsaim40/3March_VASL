@@ -201,17 +201,23 @@
   position: absolute;
   top: 20px;
   left: 20px;
+  z-index: 9;
 }
 .productCard .wishList_btn svg{
   fill: #fff;
   visibility: hidden;
   opacity: 0;
+  cursor: pointer;
+  z-index: 99;
+  transition: all ease-in-out 0.3s;
 }
 
 .productCard .wishList_btn svg:hover{
   fill: red;
+  font-size: 28px;
 }
 .productCard:hover .wishList_btn svg{
+  transition: all ease-in-out 0.3s;
   visibility: visible;
   opacity: 1;
   z-index: 99;
@@ -358,6 +364,7 @@ div.alice-carousel__next-btn-wrapper p::after {
 .product_showcase .productCard {
   width: 100%;
   overflow: hidden;
+  height: 500px;
 }
 .product_slider {
   width: 100%;

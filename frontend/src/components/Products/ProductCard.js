@@ -41,33 +41,29 @@ export const Product = ({ product }) => {
   return (
     <Fragment>
       {loaded ? (
-          <>
-            <div className="productCard productCard_Holder">
-              
-            {/* <div className="wishList_btn"></div> */}
-        <Link className="productCard" to={`/oneproduct/${product._id}`}>
-              <img alt={product.name} src={product.images[0].url} />
-              </Link>
-              <div className="shop_btn">
-                <ShoppingBasketIcon />
-                <FavoriteTwoToneIcon onClick={() => FavouriteCart()} />
-                {/* <span>Shop Now</span> */}
-                {/* <span>Favourite</span> */}
-              </div>
-              {/* <div className="shop_btn2">
-              </div> */}
-              <div className="product_desp">
-                <p>{product.name}</p>
-                <span>{`PKR ${product.price}`}</span>
-              </div>
+        <>
+          <div className="productCard productCard_Holder">
+            <div className="wishList_btn">
+              <FavoriteTwoToneIcon onClick={() => FavouriteCart()} />
             </div>
-            {/* <div>
+            <Link className="productCard" to={`/oneproduct/${product._id}`}>
+              <img alt={product.name} src={product.images[0].url} />
+            </Link>
+            <div className="shop_btn">
+              <ShoppingBasketIcon />
+            </div>
+            <div className="product_desp">
+              <p>{product.name}</p>
+              <span>{`PKR ${product.price}`}</span>
+            </div>
+          </div>
+          {/* <div>
               <Rating {...options} />{" "}
               <span className="productCardSpan">
                 ({product.numofreviews} Reviews)
               </span>
             </div> */}
-          </>
+        </>
       ) : (
         <>
           {/* <Imageload /> */}
