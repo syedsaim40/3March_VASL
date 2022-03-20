@@ -69,7 +69,7 @@
 }
 .productCard::after {
   position: absolute;
-  content: " ";
+  /* content: " "; */
   top: 0;
   right: 0;
   bottom: 0;
@@ -84,13 +84,13 @@
   visibility: visible;
   opacity: 0.4;
 }
-.productCard > img {
+.productCard > a img {
   width: 100%;
   object-fit: cover;
   height: 100%;
   transition: all ease-in-out 0.8s;
 }
-.productCard:hover img {
+.productCard:hover a img {
   transform: scale(1.3);
 }
 .productCard .productCard_Holder {

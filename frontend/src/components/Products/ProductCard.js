@@ -49,13 +49,14 @@ export const Product = ({ product }) => {
     <Fragment>
       {loaded ? (
         <>
+        <div className="productCard">
           <div className="productCard productCard_Holder">
             {/* ye btn dil wala mene add ,kia h */}
             <div className="wishList_btn">
               <FavoriteTwoToneIcon onClick={() => FavouriteCart()} />
               <span>Add to Wishlist</span>
             </div>
-            <Link className="productCard" to={`/oneproduct/${product._id}`}>
+            <Link to={`/oneproduct/${product._id}`}>
               <img alt={product.name} src={product.images[0].url} />
             </Link>
             <div className="shop_btn">
@@ -72,6 +73,7 @@ export const Product = ({ product }) => {
                 ({product.numofreviews} Reviews)
               </span>
             </div> */}
+            </div>
         </>
       ) : (
         <>
