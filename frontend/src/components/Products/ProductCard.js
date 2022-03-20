@@ -43,6 +43,7 @@ export const Product = ({ product }) => {
       {loaded ? (
         <>
           <div className="productCard productCard_Holder">
+            {/* ye btn dil wala mene add ,kia h */}
             <div className="wishList_btn">
               <FavoriteTwoToneIcon onClick={() => FavouriteCart()} />
             </div>
