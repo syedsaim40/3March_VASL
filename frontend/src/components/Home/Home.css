@@ -204,23 +204,46 @@
   z-index: 9;
 }
 .productCard .wishList_btn svg{
-  fill: #fff;
+  fill: var(--lightColor);
   visibility: hidden;
   opacity: 0;
   cursor: pointer;
   z-index: 99;
   transition: all ease-in-out 0.3s;
 }
-
+@keyframes mymove {
+  50% {font-size: 22px;}
+}
 .productCard .wishList_btn svg:hover{
   fill: red;
-  font-size: 28px;
+  /* font-size: 28px; */
+  animation: mymove 0.5s infinite;
 }
 .productCard:hover .wishList_btn svg{
   transition: all ease-in-out 0.3s;
   visibility: visible;
   opacity: 1;
   z-index: 99;
+}
+.productCard .wishList_btn span{
+  display: block;
+  background-color: var(--themeColor);
+  color: var(--lightColor);
+  position: absolute;
+  top: 4%;
+  left: 100%;
+  width: 100px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 0px 5px 0 8px;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+}
+.productCard .wishList_btn:hover span{
+  visibility: visible;
+  opacity: 1;
 }
 .productCard:hover div.shop_btn {
   top: calc(50% - 50px);
@@ -289,16 +312,16 @@
   text-align: Left;
   height: auto;
   border-radius: 0%;
-  background-color: #444;
+  background-color: var(--themeColor);
   border: none;
   padding: 5px;
   width: 100%;
   cursor: pointer;
-  color: white;
+  color: var(--lightColor);
   transition: all 0.5s;
 }
 .searchBox > input[type="button"]:hover {
-  background-color: white;
+  background-color: var(--lightColor);
   color: black;
 }
 .sliderimg {
