@@ -24,10 +24,11 @@ export const Product = ({ product }) => {
   //   readOnly: true,
   //   precision: 0.5,
   // };
-  const FavouriteCart = () => {
+  const FavouriteCart = (event) => {
     dispatch(FavouriteToCart(product._id, quantity));
     alert.success(" Favourite Item Added");
   };
+
   setTimeout(() => {
     setLoaded(true);
   }, 1000);
@@ -41,7 +42,7 @@ export const Product = ({ product }) => {
   return (
     <Fragment>
       {loaded ? (
-        <Link className="productCard" to={`/oneproduct/${product._id}`}>
+        <Link className="productCard" to={`/oneproduct/${product._id}`} add>
           <>
             <div className="productCard productCard_Holder">
               <img alt={product.name} src={product.images[0].url} />
