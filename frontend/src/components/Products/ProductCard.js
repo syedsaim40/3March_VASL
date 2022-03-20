@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { CLEAR_Errors } from "../../redux/action/productAction";
 // import Imageload from "../Layout/Loader/imageload";
 import Loader1 from "../Layout/Loader/loader1";
-import { FavouriteToCart } from "../../redux/action/cartAction";
+import { addItemsToCart, FavouriteToCart } from "../../redux/action/cartAction";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import FavoriteTwoToneIcon from "@mui/icons-material/FavoriteTwoTone";
 import { useAlert } from "react-alert";
@@ -18,7 +18,14 @@ export const Product = ({ product }) => {
   const alert = useAlert();
   const dispatch = useDispatch();
   const [quantity] = useState(1);
-
+  const addToCartHandler = () => {
+    if (product.stock === 0) {
+      alert.error("Sorry !Out Of Stock");
+      return;
+    }
+    dispatch(addItemsToCart(product._id, quantity));
+    alert.success("Item Added To Cart");
+  };
   // const options = {
   //   value: product.ratings,
   //   readOnly: true,
@@ -51,7 +58,7 @@ export const Product = ({ product }) => {
               <img alt={product.name} src={product.images[0].url} />
             </Link>
             <div className="shop_btn">
-              <ShoppingBasketIcon />
+              <ShoppingBasketIcon onClick={() => addToCartHandler()} />
             </div>
             <div className="product_desp">
               <p>{product.name}</p>
