@@ -51,11 +51,18 @@ export const Product = ({ product }) => {
       {loaded ? (
         <>
           <div className="productCard productCard_Holder">
+<<<<<<< HEAD
             {/* <div className="wishList_btn"></div> */}
+=======
+            <div className="wishList_btn">
+              <FavoriteTwoToneIcon onClick={() => FavouriteCart()} />
+            </div>
+>>>>>>> 2dd63df020b0cf35084f5f3482b21d22f635bdfd
             <Link className="productCard" to={`/oneproduct/${product._id}`}>
               <img alt={product.name} src={product.images[0].url} />
             </Link>
             <div className="shop_btn">
+<<<<<<< HEAD
               <ShoppingBasketIcon onClick={() => addToCartHandler()} />
               {/* <span>Shop Now</span> */}
               <FavoriteTwoToneIcon onClick={() => FavouriteCart()} />
@@ -67,6 +74,14 @@ export const Product = ({ product }) => {
               <p>{product.name}</p>
               <span>{`PKR ${product.price}`}</span>
             </div>
+=======
+              <ShoppingBasketIcon />
+            </div>
+            <div className="product_desp">
+              <p>{product.name}</p>
+              <span>{`PKR ${product.price}`}</span>
+            </div>
+>>>>>>> 2dd63df020b0cf35084f5f3482b21d22f635bdfd
           </div>
           {/* <div>
               <Rating {...options} />{" "}
