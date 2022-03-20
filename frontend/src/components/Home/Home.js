@@ -125,7 +125,7 @@ const Home = () => {
 
           <div className="section_heading">
             <div className="homeHeading">
-              <h2>Trending</h2>
+              <h2>DISCOVER MORE</h2>
             </div>
           </div>
 
@@ -133,7 +133,7 @@ const Home = () => {
             <Carousel
               additionalTransfrom={0}
               arrows
-              autoPlaySpeed={10000000}
+              autoPlaySpeed={2000000}
               centerMode
               className=""
               containerClass="container"
@@ -146,7 +146,6 @@ const Home = () => {
               minimumTouchDrag={80}
               renderButtonGroupOutside={false}
               renderDotsOutside={false}
-              autoPlay={false}
               responsive={{
                 desktop: {
                   breakpoint: {

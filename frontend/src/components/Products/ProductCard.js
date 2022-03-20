@@ -45,6 +45,8 @@ export const Product = ({ product }) => {
         <Link className="productCard" to={`/oneproduct/${product._id}`} add>
           <>
             <div className="productCard productCard_Holder">
+              
+            {/* <div className="wishList_btn"></div> */}
               <img alt={product.name} src={product.images[0].url} />
               <div className="shop_btn">
                 <ShoppingBasketIcon />
