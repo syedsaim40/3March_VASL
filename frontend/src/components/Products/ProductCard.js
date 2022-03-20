@@ -42,12 +42,15 @@ export const Product = ({ product }) => {
   return (
     <Fragment>
       {loaded ? (
-        <Link className="productCard" to={`/oneproduct/${product._id}`} add>
+        <Link className="productCard">
           <>
             <div className="productCard productCard_Holder">
-              
-            {/* <div className="wishList_btn"></div> */}
-              <img alt={product.name} src={product.images[0].url} />
+              {/* <div className="wishList_btn"></div> */}
+              <img
+                alt={product.name}
+                src={product.images[0].url}
+                to={`/oneproduct/${product._id}`}
+              />
               <div className="shop_btn">
                 <ShoppingBasketIcon />
                 {/* <span>Shop Now</span> */}
