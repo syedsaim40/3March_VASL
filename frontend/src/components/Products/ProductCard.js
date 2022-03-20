@@ -50,8 +50,8 @@ export const Product = ({ product }) => {
               </Link>
               <div className="shop_btn">
                 <ShoppingBasketIcon />
-                {/* <span>Shop Now</span> */}
                 <FavoriteTwoToneIcon onClick={() => FavouriteCart()} />
+                {/* <span>Shop Now</span> */}
                 {/* <span>Favourite</span> */}
               </div>
               {/* <div className="shop_btn2">
