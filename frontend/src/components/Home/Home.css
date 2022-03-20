@@ -175,7 +175,7 @@
   bottom: auto;
   text-align: center;
 }
-.productCard div.shop_btn svg{
+.productCard div.shop_btn svg {
   margin-right: 10px;
 }
 .productCard:hover div.shop_btn {
@@ -366,7 +366,7 @@ div.alice-carousel__next-btn-wrapper p::after {
     height: auto;
   }
   #vasl_banner div.alice-carousel__next-btn-wrapper p::after,
-  #vasl_banner div.alice-carousel__prev-btn-wrapper p::after{
+  #vasl_banner div.alice-carousel__prev-btn-wrapper p::after {
     left: -15px;
   }
   .productCard {

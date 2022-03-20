@@ -214,11 +214,18 @@ function Header() {
             </Link>
           </li>
           <li>
-            <Link to="/FavouriteCart">
+            <Link
+              to="/FavouriteCart"
+              style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
+            >
               {favouriteItems.length === 0 ? (
-                <FavoriteBorderIcon style={{ color: "black" }} />
+                <FavoriteBorderIcon
+                  style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
+                />
               ) : (
-                <FavoriteTwoToneIcon />
+                <FavoriteTwoToneIcon
+                  style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
+                />
               )}
             </Link>
           </li>
