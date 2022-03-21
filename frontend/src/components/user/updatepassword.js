@@ -1,7 +1,7 @@
 import "./UpdateProfile.css";
 import React, { Fragment, useState, useEffect } from "react";
 
-import Loader from "../Layout/Loader/Loader";
+// import Loader from "../Layout/Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { CLEAR_Errors, updatePassword } from "../../redux/action/useraction";
 import { useAlert } from "react-alert";
@@ -13,7 +13,7 @@ const UpdatePassword = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
-  const { error, isUpdated, loading } = useSelector((state) => state.profile);
+  const { error, isUpdated } = useSelector((state) => state.profile);
 
   const [oldpassword, setOldPassword] = useState("");
   const [newpassword, setNewPassword] = useState("");
@@ -47,9 +47,9 @@ const UpdatePassword = () => {
   }, [dispatch, error, alert, history, isUpdated]);
   return (
     <Fragment>
-      {loading ? (
+      {/* {loading ? (
         <Loader />
-      ) : (
+      ) : ( */}
         <Fragment>
           <div className="updateProfileContainer">
             <div className="LoginSignUpBox">
@@ -102,7 +102,7 @@ const UpdatePassword = () => {
             </div>
           </div>
         </Fragment>
-      )}
+      {/* )} */}
     </Fragment>
   );
 };

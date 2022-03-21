@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useRef, useState } from "react";
 import "./loginsignup.css";
 import { Link } from "react-router-dom";
-import Loader from "./../Layout/Loader/Loader";
+// import Loader from "./../Layout/Loader/Loader";
 import { useSelector, useDispatch } from "react-redux";
 import { CLEAR_Errors, login, register } from "../../redux/action/useraction";
 import { useHistory } from "react-router-dom";
@@ -94,7 +94,7 @@ const LoginSignUp = ({ location }) => {
 
   const dispatch = useDispatch();
   const alert = useAlert();
-  const { loading, error, isAuthenticated } = useSelector(
+  const { error, isAuthenticated } = useSelector(
     (state) => state.user
   );
   const loginTab = useRef(null);
@@ -160,9 +160,9 @@ const LoginSignUp = ({ location }) => {
   };
   return (
     <Fragment>
-      {loading ? (
+      {/* {loading ? (
         <Loader />
-      ) : (
+      ) : ( */}
         <Fragment>
           <div id="login_phase">
             <div className="LoginSignUpContainer">
@@ -326,7 +326,7 @@ const LoginSignUp = ({ location }) => {
             </div>
           </div>
         </Fragment>
-      )}
+      {/* )} */}
     </Fragment>
   );
 };

@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./UpdateProfile.css";
-import Loader from "../Layout/Loader/Loader";
+// import Loader from "../Layout/Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import {
   CLEAR_Errors,
@@ -16,7 +16,7 @@ const UpdateProfile = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
   const { user } = useSelector((state) => state.user);
-  const { error, isUpdated, loading } = useSelector((state) => state.profile);
+  const { error, isUpdated } = useSelector((state) => state.profile);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -73,9 +73,9 @@ const UpdateProfile = () => {
 
   return (
     <Fragment>
-      {loading ? (
+      {/* {loading ? (
         <Loader />
-      ) : (
+      ) : ( */}
         <Fragment>
           <div className="updateProfileContainer">
             <div className="LoginSignUpBox">
@@ -137,7 +137,7 @@ const UpdateProfile = () => {
             </div>
           </div>
         </Fragment>
-      )}
+      {/* )} */}
     </Fragment>
   );
 };

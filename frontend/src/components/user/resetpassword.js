@@ -1,7 +1,7 @@
 import "./UpdateProfile.css";
 import React, { Fragment, useState, useEffect } from "react";
 
-import Loader from "../Layout/Loader/Loader";
+// import Loader from "../Layout/Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { CLEAR_Errors, resetPassword } from "../../redux/action/useraction";
 import { useAlert } from "react-alert";
@@ -10,7 +10,7 @@ const UpdatePassword = ({ history, match }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
-  const { error, success, loading } = useSelector(
+  const { error, success } = useSelector(
     (state) => state.forgotPassword
   );
 
@@ -43,9 +43,9 @@ const UpdatePassword = ({ history, match }) => {
 
   return (
     <Fragment>
-      {loading ? (
+      {/* {loading ? (
         <Loader />
-      ) : (
+      ) : ( */}
         <Fragment>
           <div className="updateProfileContainer">
             <div className="LoginSignUpBox">
@@ -86,7 +86,7 @@ const UpdatePassword = ({ history, match }) => {
             </div>
           </div>
         </Fragment>
-      )}
+      {/* )} */}
     </Fragment>
   );
 };

@@ -8,7 +8,7 @@ import { Button } from "@material-ui/core";
 import MetaData from "../Layout/Metadata";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
-import Loader from "../Layout/Loader/Loader";
+// import Loader from "../Layout/Loader/Loader";
 
 import SideBar from "./Sidebar";
 import {
@@ -23,7 +23,7 @@ const OrderList = ({ history }) => {
 
   const alert = useAlert();
 
-  const { error, orders, loading } = useSelector((state) => state.allOrders);
+  const { error, orders } = useSelector((state) => state.allOrders);
 
   const { error: deleteError, isDeleted } = useSelector((state) => state.order);
 
@@ -133,9 +133,9 @@ const OrderList = ({ history }) => {
             </div>
           </div>
 
-          {loading ? (
+          {/* {loading ? (
             <Loader />
-          ) : (
+          ) : ( */}
             <DataGrid
               rows={rows}
               columns={columns}
@@ -144,7 +144,7 @@ const OrderList = ({ history }) => {
               className="productListTable"
               autoHeight
             />
-          )}
+          {/* )} */}
         </div>
       </div>
     </Fragment>

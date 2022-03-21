@@ -3,7 +3,7 @@ import "./myOrders.css";
 import { DataGrid } from "@material-ui/data-grid";
 import { useSelector, useDispatch } from "react-redux";
 import { clearErrors, myOrders } from "../../redux/action/orderaction";
-import Loader from "../Layout/Loader/Loader";
+// import Loader from "../Layout/Loader/Loader";
 import { Link } from "react-router-dom";
 import { useAlert } from "react-alert";
 import Typography from "@material-ui/core/Typography";
@@ -15,7 +15,7 @@ const MyOrders = () => {
 
   const alert = useAlert();
 
-  const { loading, error, orders } = useSelector((state) => state.myOrders);
+  const { error, orders } = useSelector((state) => state.myOrders);
   const { user } = useSelector((state) => state.user);
 
   const columns = [
@@ -88,10 +88,10 @@ const MyOrders = () => {
   return (
     <Fragment>
       <MetaData title={`${user.name} - Orders`} />
-
+{/* 
       {loading ? (
         <Loader />
-      ) : (
+      ) : ( */}
         <div className="myOrdersPage">
           <DataGrid
             rows={rows}
@@ -104,7 +104,7 @@ const MyOrders = () => {
 
           <Typography id="myOrdersHeading">{user.name}'s Orders</Typography>
         </div>
-      )}
+      {/* )} */}
     </Fragment>
   );
 };

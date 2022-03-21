@@ -12,7 +12,7 @@ import { Rating } from "@material-ui/lab";
 import ReviewCard from "./ReviewCard";
 import { useAlert } from "react-alert";
 
-import Loader from "../Layout/Loader/Loader";
+// import Loader from "../Layout/Loader/Loader";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import Metadata from "./../Layout/Metadata";
 // import Imageload from "../Layout/Loader/imageload";
@@ -44,7 +44,7 @@ const ProductDetails = ({ match }) => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const alert = useAlert();
-  const { loading, product, error } = useSelector(
+  const { product, error } = useSelector(
     (state) => state.productDetails
   );
   const { success, error: reviewError } = useSelector(
@@ -137,9 +137,9 @@ const ProductDetails = ({ match }) => {
   }, [dispatch, id, error, alert, reviewError, success]);
   return (
     <Fragment>
-      {loading ? (
+      {/* {loading ? (
         <Loader />
-      ) : (
+      ) : ( */}
         <Fragment>
           <Metadata title={`${product.name} ----ECOMMERECE`} />
           <div className="ProductDetails">
@@ -180,7 +180,7 @@ const ProductDetails = ({ match }) => {
             <div className="product_details_holder">
               <div className="detailsBlock-1">
                 <h2>{product.name}</h2>
-                {/* <p>Product # {product._id}</p> */}
+                <p>SKU # {product._id}</p>
               </div>
               <div className="detailsBlock-2">
                 <span>({product.numofreviews} Reviews)</span>
@@ -284,7 +284,7 @@ const ProductDetails = ({ match }) => {
             </div>
           )}
         </Fragment>
-      )}
+      {/* )} */}
     </Fragment>
   );
 };

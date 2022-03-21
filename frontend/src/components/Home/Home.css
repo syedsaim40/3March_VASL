@@ -171,31 +171,54 @@
   position: absolute;
   z-index: 9;
   top: calc(0% - 35%);
-  left: 0;
-  right: 0;
+  left: calc(50% - 17%);
+  right: calc(50% - 17%);
   bottom: auto;
   text-align: center;
   z-index: 99999 !important;
+  width: auto;
+  border: 1px solid #fff;
+  background-color: #fff3;
+  padding: 5px 0;
+  overflow: hidden;
+}
+.productCard div.shop_btn:hover{
+  background-color: #fff;
+  transition: all ease-in-out 0.3s;
 }
 .productCard div.shop_btn svg{
-  margin-right: 0;
-  display: block;
-  width: 30%;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  height: 30px;
-  border: 1px solid #fff;
-  padding: 5px 0px;
+  display: inline-block;
+  vertical-align: top;
+  /* border: 1px solid #fff; */
   fill: var(--lightColor);
   z-index: 99999 !important;
-  cursor: grab;
   transition: all ease-in-out 0.3s;
-  background-color: #fff3;
 }
-.productCard div.shop_btn svg:hover{
-  background-color: #fff;
+.productCard div.shop_btn:hover svg{
   fill: #444;
-  transition: all ease-in-out 0.3s;
+}
+.productCard div.shop_btn span.sbtn_txt{
+  color: #444;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 15px;
+  padding: 2px 0 0 0;
+  transform: translate(-140%, 0px);
+  cursor: pointer;
+}
+.productCard div.shop_btn:hover span.sbtn_txt{
+  transform: translate(0, 0px);
+}
+.productCard:hover div.shop_btn {
+  top: calc(50% - 50px);
+}
+.productCard div.shop_btn span {
+  display: block;
+  color: var(--lightColor);
+}
+.productCard div.shop_btn svg {
+  fill: var(--lightColor);
+  font-size: 20px;
 }
 .productCard .wishList_btn{
   position: absolute;
@@ -244,18 +267,6 @@
 .productCard .wishList_btn:hover span{
   visibility: visible;
   opacity: 1;
-}
-.productCard:hover div.shop_btn {
-  top: calc(50% - 50px);
-}
-.productCard div.shop_btn span {
-  display: block;
-  padding: 0 5px;
-  color: var(--lightColor);
-  margin-bottom: 10px;
-}
-.productCard div.shop_btn svg {
-  fill: var(--lightColor);
 }
 
 .react-multi-carousel-item{

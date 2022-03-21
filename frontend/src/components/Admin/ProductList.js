@@ -14,7 +14,7 @@ import MetaData from "../Layout/Metadata";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import SideBar from "./Sidebar";
-import Loader from "../Layout/Loader/Loader";
+// import Loader from "../Layout/Loader/Loader";
 import { DELETE_PRODUCT_RESET } from "../../redux/constant/productConstants";
 
 const ProductList = ({ history }) => {
@@ -22,7 +22,7 @@ const ProductList = ({ history }) => {
 
   const alert = useAlert();
 
-  const { products, error, loading } = useSelector((state) => state.products);
+  const { products, error } = useSelector((state) => state.products);
 
   const { error: deleteError, isDeleted } = useSelector(
     (state) => state.product
@@ -91,9 +91,9 @@ const ProductList = ({ history }) => {
             <Link to={`/admin/product/${params.getValue(params.id, "id")}`}>
               <EditIcon />
             </Link>
-            {loading ? (
+            {/* {loading ? (
               <Loader />
-            ) : (
+            ) : ( */}
               <Button
                 onClick={() =>
                   deleteProductHandler(params.getValue(params.id, "id"))
@@ -101,7 +101,7 @@ const ProductList = ({ history }) => {
               >
                 <DeleteIcon />
               </Button>
-            )}
+            {/* )} */}
           </Fragment>
         );
       },
@@ -133,9 +133,9 @@ const ProductList = ({ history }) => {
             </div>
           </div>
 
-          {loading ? (
+          {/* {loading ? (
             <Loader />
-          ) : (
+          ) : ( */}
             <DataGrid
               rows={rows}
               columns={columns}
@@ -144,7 +144,7 @@ const ProductList = ({ history }) => {
               className="productListTable"
               autoHeight
             />
-          )}
+          {/* )} */}
         </div>
       </div>
     </Fragment>

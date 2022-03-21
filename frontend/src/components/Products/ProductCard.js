@@ -8,7 +8,8 @@ import { CLEAR_Errors } from "../../redux/action/productAction";
 // import Imageload from "../Layout/Loader/imageload";
 import Loader1 from "../Layout/Loader/loader1";
 import { addItemsToCart, FavouriteToCart } from "../../redux/action/cartAction";
-import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+// import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import FavoriteTwoToneIcon from "@mui/icons-material/FavoriteTwoTone";
 import { useAlert } from "react-alert";
 
@@ -60,7 +61,8 @@ export const Product = ({ product }) => {
               <img alt={product.name} src={product.images[0].url} />
             </Link>
             <div className="shop_btn">
-              <ShoppingBasketIcon onClick={() => addToCartHandler()} />
+              <ShoppingBagOutlinedIcon onClick={() => addToCartHandler()} />
+              <span className="sbtn_txt">Add to Bag</span>
             </div>
             <div className="product_desp">
               <p>{product.name}</p>
