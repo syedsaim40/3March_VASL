@@ -94,9 +94,7 @@ const LoginSignUp = ({ location }) => {
 
   const dispatch = useDispatch();
   const alert = useAlert();
-  const { error, isAuthenticated } = useSelector(
-    (state) => state.user
-  );
+  const { error, isAuthenticated } = useSelector((state) => state.user);
   const loginTab = useRef(null);
   const registerTab = useRef(null);
   const switcherTab = useRef(null);
@@ -163,139 +161,139 @@ const LoginSignUp = ({ location }) => {
       {/* {loading ? (
         <Loader />
       ) : ( */}
-        <Fragment>
-          <div id="login_phase">
-            <div className="LoginSignUpContainer">
-              <div className="LoginSignUpBox">
-                <div className="login_signUp_toggle">
-                  <p className="login" onClick={(e) => switchTabs(e, "login")}>
-                    LOGIN
-                  </p>
-                  <p onClick={(e) => switchTabs(e, "register")}>REGISTER</p>
+      <Fragment>
+        <div id="login_phase">
+          <div className="LoginSignUpContainer">
+            <div className="LoginSignUpBox">
+              <div className="login_signUp_toggle">
+                <p className="login" onClick={(e) => switchTabs(e, "login")}>
+                  LOGIN
+                </p>
+                <p onClick={(e) => switchTabs(e, "register")}>REGISTER</p>
+              </div>
+              <button ref={switcherTab}></button>
+
+              <form className="loginForm" ref={loginTab} onSubmit={loginSubmit}>
+                <div className="group_field">
+                  <label htmlFor="email">
+                    Email<span>*</span>
+                  </label>
+
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    required
+                    value={loginEmail}
+                    onChange={(e) => setLoginEmail(e.target.value)}
+                  />
                 </div>
-                <button ref={switcherTab}></button>
-
-                <form className="loginForm" ref={loginTab} onSubmit={loginSubmit}>
-                  <div className="group_field">
-                    <label htmlFor="email">
-                      Email<span>*</span>
-                    </label>
-
-                    <input
-                      type="email"
-                      placeholder="Email"
-                      required
-                      value={loginEmail}
-                      onChange={(e) => setLoginEmail(e.target.value)}
-                    />
-                  </div>
-                  <div className="group_field">
-                    {/* <LockOpenIcon /> */}
-                    <label htmlFor="password">
-                      Password<span>*</span>
-                    </label>
-                    <input
-                      type="password"
-                      placeholder="Password"
-                      required
-                      value={loginPassword}
-                      onChange={(e) => setLoginPassword(e.target.value)}
-                    />
-                  </div>
-                  <div className="row group_field e_btn">
-                    <button className="btn_primary" type="submit" value="Login">
-                      Sign In
-                    </button>
-                  </div>
-                  <div className="row group_field e_btn frg_pswd">
-                    <Link className="f_link" to="/forgot_password">
-                      Forget Password?
-                    </Link>
-                  </div>
-                  <div className="row group_field e_btn log_opt">
-                    <h3>Or login with</h3>
-                  </div>
-                  <div className="social_login">
-                    {/* For Google Login Authentication */}
-                    <GoogleLogin
-                      clientId="968709430379-dkv5gov48ieuc3t5kmq5s7in57sri6er.apps.googleusercontent.com"
-                      buttonText="Login google"
-                      // onSuccess={responseGoogle}
-                      cookiePolicy={"single_host_origin"} 
-                      className="btn_primary social_btn"
-                    />
-                    <GoogleLogin
-                      clientId="968709430379-dkv5gov48ieuc3t5kmq5s7in57sri6er.apps.googleusercontent.com"
-                      buttonText="Login Facebook"
-                      // onSuccess={responseGoogle}
-                      cookiePolicy={"single_host_origin"} 
-                      className="btn_primary social_btn"
-                    />
-                    ,{/* For Facebbok Login Authentication */}
-                    {/* <FacebookLogin
+                <div className="group_field">
+                  {/* <LockOpenIcon /> */}
+                  <label htmlFor="password">
+                    Password<span>*</span>
+                  </label>
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    required
+                    value={loginPassword}
+                    onChange={(e) => setLoginPassword(e.target.value)}
+                  />
+                </div>
+                <div className="row group_field e_btn">
+                  <button className="btn_primary" type="submit" value="Login">
+                    Sign In
+                  </button>
+                </div>
+                <div className="row group_field e_btn frg_pswd">
+                  <Link className="f_link" to="/forgot_password">
+                    Forget Password?
+                  </Link>
+                </div>
+                <div className="row group_field e_btn log_opt">
+                  <h3>Or login with</h3>
+                </div>
+                <div className="social_login">
+                  {/* For Google Login Authentication */}
+                  <GoogleLogin
+                    clientId="968709430379-dkv5gov48ieuc3t5kmq5s7in57sri6er.apps.googleusercontent.com"
+                    buttonText="Login google"
+                    // onSuccess={responseGoogle}
+                    cookiePolicy={"single_host_origin"}
+                    className="btn_primary social_btn"
+                  />
+                  <GoogleLogin
+                    clientId="968709430379-dkv5gov48ieuc3t5kmq5s7in57sri6er.apps.googleusercontent.com"
+                    buttonText="Login Facebook"
+                    // onSuccess={responseGoogle}
+                    cookiePolicy={"single_host_origin"}
+                    className="btn_primary social_btn"
+                  />
+                  ,{/* For Facebbok Login Authentication */}
+                  {/* <FacebookLogin
                       appId="452032583149631"
                       autoLoad={false}
                       fields="name,email,picture"
                       // callback={responseFacebook}
                     /> */}
-                  </div>
-                  <div className="group_field form_link">
-                    <p onClick={(e) => switchTabs(e, "register")}>
-                      {" "}
-                      New Customer? <Link>Register</Link>
-                    </p>
-                  </div>
-                </form>
+                </div>
+                <div className="group_field form_link">
+                  <p onClick={(e) => switchTabs(e, "register")}>
+                    {" "}
+                    New Customer? <Link>Register</Link>
+                  </p>
+                </div>
+              </form>
 
-                <form
-                  className="signUpForm"
-                  ref={registerTab}
-                  enctype="multipart/form-data"
-                  onSubmit={registerSubmit}
-                >
-                  <div className="group_field">
-                    <label htmlFor="name">
-                      Name<span>*</span>
-                    </label>
-                    {/* <FaceIcon /> */}
-                    <input
-                      type="text"
-                      placeholder="Name"
-                      required
-                      name="name"
-                      value={name}
-                      onChange={registerDataChange}
-                    />
-                  </div>
-                  <div className="group_field">
-                    {/* <MailOutlineIcon /> */}
-                    <label htmlFor="email">
-                      Email<span>*</span>
-                    </label>
-                    <input
-                      type="email"
-                      placeholder="Email"
-                      required
-                      name="email"
-                      value={email}
-                      onChange={registerDataChange}
-                    />
-                  </div>
-                  <div className="group_field">
-                    {/* <LockOpenIcon /> */}
-                    <label htmlFor="password">
-                      Password<span>*</span>
-                    </label>
-                    <input
-                      type="password"
-                      placeholder="Password"
-                      required
-                      name="password"
-                      value={password}
-                      onChange={registerDataChange}
-                    />
-                  </div>
-                  {/* <div className="group_field ">
+              <form
+                className="signUpForm"
+                ref={registerTab}
+                enctype="multipart/form-data"
+                onSubmit={registerSubmit}
+              >
+                <div className="group_field">
+                  <label htmlFor="name">
+                    Name<span>*</span>
+                  </label>
+                  {/* <FaceIcon /> */}
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    required
+                    name="name"
+                    value={name}
+                    onChange={registerDataChange}
+                  />
+                </div>
+                <div className="group_field">
+                  {/* <MailOutlineIcon /> */}
+                  <label htmlFor="email">
+                    Email<span>*</span>
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    required
+                    name="email"
+                    value={email}
+                    onChange={registerDataChange}
+                  />
+                </div>
+                <div className="group_field">
+                  {/* <LockOpenIcon /> */}
+                  <label htmlFor="password">
+                    Password<span>*</span>
+                  </label>
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    required
+                    name="password"
+                    value={password}
+                    onChange={registerDataChange}
+                  />
+                </div>
+                {/* <div className="group_field ">
                     <label htmlFor="name">
                       <img src="./Profile.png" alt="Avatar Preview" />
                     </label>
@@ -307,25 +305,29 @@ const LoginSignUp = ({ location }) => {
                     />
                   </div> */}
 
-                  <div className="row group_field e_btn">
-                    <button className="btn_primary" type="submit" value="Register">
-                      Register
-                    </button>
-                  </div>
+                <div className="row group_field e_btn">
+                  <button
+                    className="btn_primary"
+                    type="submit"
+                    value="Register"
+                  >
+                    Register
+                  </button>
+                </div>
 
-                  <div className="group_field_log form_link">
-                    <p className="login" onClick={(e) => switchTabs(e, "login")}>
-                      Already have an account?{" "}
-                      <Link className="f_link" to="/login">
-                        Login
-                      </Link>
-                    </p>
-                  </div>
-                </form>
-              </div>
+                <div className="group_field_log form_link">
+                  <p className="login" onClick={(e) => switchTabs(e, "login")}>
+                    Already have an account?{" "}
+                    <Link className="f_link" to="/login">
+                      Login
+                    </Link>
+                  </p>
+                </div>
+              </form>
             </div>
           </div>
-        </Fragment>
+        </div>
+      </Fragment>
       {/* )} */}
     </Fragment>
   );

@@ -99,7 +99,9 @@ const UpdateProduct = ({ history, match }) => {
     images.forEach((image) => {
       myForm.append("images", image);
     });
-    dispatch(updateProduct(productId, myForm));
+    const value = Object.fromEntries(myForm.entries());
+
+    dispatch(updateProduct(productId, value));
   };
 
   const updateProductImagesChange = (e) => {

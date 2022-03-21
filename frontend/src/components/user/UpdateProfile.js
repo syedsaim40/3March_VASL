@@ -17,7 +17,7 @@ const UpdateProfile = () => {
   const alert = useAlert();
   const { user } = useSelector((state) => state.user);
   const { error, isUpdated } = useSelector((state) => state.profile);
-
+  const [load, setLoad] = React.useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [avatar, setAvatar] = useState();
@@ -31,7 +31,9 @@ const UpdateProfile = () => {
     myForm.set("name", name);
     myForm.set("email", email);
     myForm.set("avatar", avatar);
-    dispatch(updateProfile(myForm));
+    const value = Object.fromEntries(myForm.entries());
+    setLoad(true);
+    dispatch(updateProfile(value));
   };
 
   const updateProfileDataChange = (e) => {
@@ -76,67 +78,67 @@ const UpdateProfile = () => {
       {/* {loading ? (
         <Loader />
       ) : ( */}
-        <Fragment>
-          <div className="updateProfileContainer">
-            <div className="LoginSignUpBox">
-              <h2 className="updateProfileHeading">Update Profile</h2>
+      <Fragment>
+        <div className="updateProfileContainer">
+          <div className="LoginSignUpBox">
+            <h2 className="updateProfileHeading">Update Profile</h2>
 
-              <form
-                className="signinForm"
-                encType="multipart/form-data"
-                onSubmit={updateProfileSubmit}
-              >
-                <div className="group_field">
-                  <label htmlFor="name">
-                    Name<span>*</span>
-                  </label>
+            <form
+              className="signinForm"
+              encType="multipart/form-data"
+              onSubmit={updateProfileSubmit}
+            >
+              <div className="group_field">
+                <label htmlFor="name">
+                  Name<span>*</span>
+                </label>
 
-                  <input
-                    type="text"
-                    placeholder="Name"
-                    required
-                    name="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                  />
-                </div>
-                <div className="group_field">
-                  <label htmlFor="name">
-                    Email<span>*</span>
-                  </label>
+                <input
+                  type="text"
+                  placeholder="Name"
+                  required
+                  name="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+              <div className="group_field">
+                <label htmlFor="name">
+                  Email<span>*</span>
+                </label>
 
-                  <input
-                    type="email"
-                    placeholder="Name"
-                    required
-                    name="name"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
+                <input
+                  type="email"
+                  placeholder="Name"
+                  required
+                  name="name"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
 
-                <div className="group_field ">
-                  <label htmlFor="name">
-                    <img src={avatarPreview} alt="Avatar Preview" />
-                  </label>
-                  <input
-                    type="file"
-                    name="avatar"
-                    accept="image/*"
-                    onChange={updateProfileDataChange}
-                  />
-                </div>
+              <div className="group_field ">
+                <label htmlFor="name">
+                  <img src={avatarPreview} alt="Avatar Preview" />
+                </label>
+                <input
+                  type="file"
+                  name="avatar"
+                  accept="image/*"
+                  onChange={updateProfileDataChange}
+                />
+              </div>
 
-                <div className="row group_field e_btn">
-                  <button type="submit" value="update">
-                    UPDATE
-                  </button>
-                </div>
-                {/* <input type="submit" value="Update" className="updateProfileBtn" /> */}
-              </form>
-            </div>
+              <div className="row group_field e_btn">
+                <button type="submit" value="update" disabled={load}>
+                  UPDATE
+                </button>
+              </div>
+              {/* <input type="submit" value="Update" className="updateProfileBtn" /> */}
+            </form>
           </div>
-        </Fragment>
+        </div>
+      </Fragment>
       {/* )} */}
     </Fragment>
   );

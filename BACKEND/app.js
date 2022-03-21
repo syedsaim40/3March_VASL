@@ -1,15 +1,16 @@
 const express = require("express");
 const app = express();
+app.use(express.json({ limit: "50mb" }));
+app.use(express.urlencoded({ limit: "50mb", extended: true }));
+
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 const fileupload = require("express-fileupload");
 const coookieparser = require("cookie-parser");
 app.use(express.json());
 app.use(coookieparser());
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileupload());
-app.use(express.json({ limit: "50mb" }));
-app.use(express.urlencoded({ limit: "50mb", extended: true }));
 //middleware for error
 const errormiddleware = require("./middleware/error");
 app.get("/", (req, res) => {

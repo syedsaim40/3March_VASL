@@ -66,7 +66,9 @@ const NewProduct = ({ history }) => {
     });
     // const value = Object.fromEntries(myForm.entries());
     // value.topics = myForm.getAll("topics");
-    dispatch(createProduct(myForm));
+    const value = Object.fromEntries(myForm.entries());
+
+    dispatch(createProduct(value));
   };
 
   const createProductImagesChange = (e) => {
@@ -94,7 +96,7 @@ const NewProduct = ({ history }) => {
       <MetaData title="Create Product" />
       <div className="dashboard">
         <SideBar />
-        
+
         <div className="newProductContainer">
           <form
             className="createProductForm"

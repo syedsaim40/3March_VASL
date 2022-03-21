@@ -11,9 +11,6 @@ import MetaData from "../Layout/Metadata";
 import { useParams } from "react-router-dom";
 // import Search from "./Search";
 
-
-
-
 const cateogories = [
   "Womens",
   "Newinn",
@@ -109,16 +106,16 @@ const Products = () => {
       </div>
 
       <div className="products">
-        {products ?
-          products.slice(0, 10).map((product) => (
-
-            <ProductCard key={product._id} product={product} />
-          )
-          ) : (
-            <ploader />
-          )}
+        {products ? (
+          products
+            .slice(0, 10)
+            .map((product) => (
+              <ProductCard key={product._id} product={product} />
+            ))
+        ) : (
+          <ploader />
+        )}
       </div>
-
 
       {/* 
       {resultperpage < productsCount && (
