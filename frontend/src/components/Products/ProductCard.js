@@ -8,14 +8,11 @@ import { CLEAR_Errors } from "../../redux/action/productAction";
 // import Imageload from "../Layout/Loader/imageload";
 import Loader1 from "../Layout/Loader/loader1";
 import { addItemsToCart, FavouriteToCart } from "../../redux/action/cartAction";
-<<<<<<< HEAD
 // import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
-=======
->>>>>>> 2e2be6c69c74367eff561f99c33385ffed8ad02e
 import FavoriteTwoToneIcon from "@mui/icons-material/FavoriteTwoTone";
 import { useAlert } from "react-alert";
-import LocalMallIcon from "@mui/icons-material/LocalMall";
+
 export const Product = ({ product }) => {
   const { error } = useSelector((state) => state.productDetails);
   const [loaded, setLoaded] = useState(false);
@@ -53,7 +50,6 @@ export const Product = ({ product }) => {
     <Fragment>
       {loaded ? (
         <>
-<<<<<<< HEAD
         <div className="productCard">
           <div className="productCard productCard_Holder">
             {/* ye btn dil wala mene add ,kia h */}
@@ -71,33 +67,15 @@ export const Product = ({ product }) => {
             <div className="product_desp">
               <p>{product.name}</p>
               <span>{`PKR ${product.price}`}</span>
-=======
-          <div className="productCard">
-            <div className="productCard productCard_Holder">
-              {/* ye btn dil wala mene add ,kia h */}
-              <div className="wishList_btn">
-                <FavoriteTwoToneIcon onClick={() => FavouriteCart()} />
-                <span>Add to Wishlist</span>
-              </div>
-              <Link to={`/oneproduct/${product._id}`}>
-                <img alt={product.name} src={product.images[0].url} />
-              </Link>
-              <div className="shop_btn">
-                <LocalMallIcon onClick={() => addToCartHandler()} />
-              </div>
-              <div className="product_desp">
-                <p>{product.name}</p>
-                <span>{`PKR ${product.price}`}</span>
-              </div>
->>>>>>> 2e2be6c69c74367eff561f99c33385ffed8ad02e
             </div>
-            {/* <div>
+          </div>
+          {/* <div>
               <Rating {...options} />{" "}
               <span className="productCardSpan">
                 ({product.numofreviews} Reviews)
               </span>
             </div> */}
-          </div>
+            </div>
         </>
       ) : (
         <>
