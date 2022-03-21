@@ -30,18 +30,36 @@
   color: red;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 480px) {
+  .cartContainer {
+    width: 100%;
+    margin: auto;
+    display: block;
+  }
   .CartItemCard {
-    padding: 3vmax;
-    height: 25vmax;
+    padding: 20px;
+    height: auto;
+    overflow: hidden;
+    display: block;
+    align-items: unset;
+  }
+  .CartItemCard a{
+    float: left;
   }
   .CartItemCard > img {
     width: 10vmax;
   }
   .CartItemCard > div {
-    margin: 1vmax 2vmax;
+    display: inline-block;
+    margin: 0 0 0 20px;
+    float: none;
+    justify-content: unset;
+    flex-direction: unset;
   }
-  .CartItemCard > div > a {
-    font: 300 2vmax cursive;
+  .CartItemCard > div > p svg{
+    font-size: 30px;
+  }
+  .CartItemCard > div > span {
+    display: block;
   }
 }
