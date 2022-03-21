@@ -47,27 +47,6 @@ const Home = () => {
   }, [alert, dispatch, error]);
 
 
-  // const responsive = {
-  //   superLargeDesktop: {
-  //     // the naming can be any, depends on you.
-  //     breakpoint: { max: 4000, min: 3000 },
-  //     items: 5
-  //   },
-  //   desktop: {
-  //     breakpoint: { max: 3000, min: 1024 },
-  //     items: 3
-  //   },
-  //   tablet: {
-  //     breakpoint: { max: 1024, min: 464 },
-  //     items: 2
-  //   },
-  //   mobile: {
-  //     breakpoint: { max: 464, min: 0 },
-  //     items: 1
-  //   }
-  // };
-
-
   return (
     <Fragment>
       {/* {loading ? (
@@ -97,49 +76,17 @@ const Home = () => {
             </Link>
           </AliceCarousel>
         </div>
-        {/* <Loader1 /> */}
-        {/* <div className="banner">
-            <TypeWriterEffect
-              textStyle={{ fontFamily: "Red Hat Display" }}
-              startDelay={100}
-              cursorColor="white"
-              text="WELLCOME TO VASL CLOTHINGS"
-              typeSpeed={100}
-            />
-          </div> */}
-        {/* <div className="section_heading">
-            <div className="homeHeading">
-              <h2>Trending</h2>
-            </div>
-          </div> */}
-        {/* <div className="container home_products" id="container">
-            {products ?
-              products.slice(0, 10).map((product) => (
-
-                <ProductCard key={product._id} product={product} />
-              )
-              ) : (
-                <Loader />
-              )}
-          </div> */}
-
         <div className="product_showcase">
-          {/* <div className="showcase_desp">
-              <div className="desp_holder"><h2>Shop by category</h2></div>
-            </div> */}
-          {/* <Carousel responsive={responsive} > */}
-
           <div className="section_heading">
             <div className="homeHeading">
               <h2>Trending</h2>
             </div>
           </div>
-
           <div className="product_slider">
-            <Carousel
+          <Carousel
               additionalTransfrom={0}
               arrows
-              autoPlaySpeed={3000}
+              autoPlaySpeed={2000}
               centerMode
               className=""
               containerClass="container"
@@ -184,7 +131,7 @@ const Home = () => {
               swipeable
             >
               {products ?
-                products.slice(3, 11).map((product) => (
+                products.slice(0, 10).map((product) => (
 
                   <ProductCard key={product._id} product={product} />
                 )

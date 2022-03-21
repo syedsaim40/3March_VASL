@@ -729,3 +729,9 @@ div.alice-carousel__next-btn-wrapper p::after {
     right: calc(50% - 20%);
   }
 }
+
+
+.pc_item{
+  max-width: 230px;
+  min-width: 230px;
+}
