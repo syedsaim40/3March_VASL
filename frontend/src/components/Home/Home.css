@@ -157,13 +157,12 @@
 }
 .productCard div.shop_btn {
   position: absolute;
-  z-index: 9;
+  z-index: 1;
   top: calc(0% - 35%);
   left: calc(50% - 17%);
   right: calc(50% - 17%);
   bottom: auto;
   text-align: center;
-  z-index: 99999 !important;
   width: auto;
   border: 1px solid #fff;
   background-color: #fff3;
@@ -420,14 +419,16 @@ div.alice-carousel__next-btn-wrapper p::after {
   overflow: hidden;
   margin-bottom: 50px;
   text-align: center;
+  display: flex;
 }
 .categorized_products div.cp_item{
-  display: inline-block;
-  vertical-align: top;
+  /* display: inline-block;
+  vertical-align: top; */
+  flex: 1;
   width: calc(25% - 6px);
-  background-color: #000;
   margin: 0 3px;
   position: relative;
+  background: #000;
 }
 .categorized_products div.cp_item a{
   display: block;
@@ -436,8 +437,8 @@ div.alice-carousel__next-btn-wrapper p::after {
 }
 .categorized_products .cp_item img.cp_img{
   max-width: 100%;
-  height: auto;
-  object-fit: fill;
+  height: 100%;
+  object-fit: cover;
   margin: 0;
   padding: 0;
   transition: all ease-in-out 0.5s;
@@ -508,18 +509,19 @@ div.alice-carousel__next-btn-wrapper p::after {
   width: 80%;
   float: left;
   margin: 0 0 0 0;
-  flex: 1 1;
+  flex: 2;
 }
 #mosaic_wrapper .panel {
   float: left;
   width: 30%;
   height: 150px;
   margin: 1px;
-  background: url('../../../../frontend/src/images/bimg4.jpg') no-repeat 0 0 fixed;
+  background: url('../../../../frontend/src/images/bimg4.jpg') repeat-y 0 0 fixed;
+  background-size: cover;
   border-radius: 5px;
   overflow: hidden;
   transition: all ease-in-out 5s;
-  background-size: 100%;
+  /* background-size: 100%; */
   position: relative;
   background-color: var(--lightColor);
   animation-fill-mode: forwards;
@@ -527,7 +529,7 @@ div.alice-carousel__next-btn-wrapper p::after {
 }
 @keyframes zoomin {
   0% {
-     background-size: 100%; 
+     background-size: 101%; 
   }
   50% {
      background-size: 105%; 
@@ -539,7 +541,7 @@ div.alice-carousel__next-btn-wrapper p::after {
 #mosaic_wrapper .panel:hover{
   transition: all ease-in-out 5s;
   /* background-position: -100px -100px ; */
-  /* background-size: 110%; */
+  background-size: 110%;
   animation: zoomin 5s linear;
 }
 #mosaic_wrapper .panel::after{
@@ -600,15 +602,43 @@ div.alice-carousel__next-btn-wrapper p::after {
   .productCard > span {
     top: 65%;
   }
-  .productCard > div {
+  /* .productCard > div {
     height: 300px;
-  }
+  } */
   .homeHeading h2 {
     font-size: 18px;
   }
   .homeHeading::before,
   .homeHeading::after {
     width: 30%;
+  }
+  .product_showcase .productCard {
+    height: 400px;
+  }
+  .productCard div.shop_btn {
+    top: calc(0% - 100%);
+  }
+  .categorized_products div.cp_item a {
+    display: block;
+    overflow: hidden;
+    height: 300px;
+  }
+  .categorized_products div.cp_item .cp_btn {
+    position: absolute;
+    top: 70%;
+    left: 40%;
+    transform: translate(-35%, -50%);
+  }
+  #mosaic_wrapper .panel {
+    width: 30%;
+    height: 100px;
+    background-size: contain;
+  }
+  .ms_desp .ms_holder {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-70%, -50%);
   }
 }
 @media only screen and (max-width: 480px) {
@@ -617,5 +647,85 @@ div.alice-carousel__next-btn-wrapper p::after {
   }
   .productCard .productCard_Holder{
     height: 300px;
+  }
+  button.react-multiple-carousel__arrow--right,
+  button.react-multiple-carousel__arrow--left {
+    top: 40%;
+  }
+  .product_showcase .productCard {
+    height: 300px;
+  }
+  .homeHeading::before, .homeHeading::after {
+    width: 20%;
+  }
+  .categorized_products {
+    margin-bottom: 30px;
+    text-align: center;
+    display: block;
+  }
+  .categorized_products div.cp_item {
+    flex: none;
+    width: calc(50% - 10px);
+    margin: 5px 5px;
+    float: left;
+  }
+  .masonary_section {
+    overflow: hidden;
+    margin-bottom: 50px;
+    padding: 0 30px;
+    display: block;
+  }
+  .ms_desp .ms_holder {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: unset;
+  }
+  .ms_desp {
+    float: none;
+    background: var(--lightColor);
+    width: 100%;
+    flex: none;
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+  }
+  #mosaic_wrapper {
+    width: 100%;
+    float: none;
+    margin: 0 0 0 0;
+    flex: none;
+  }
+  #mosaic_wrapper .panel {
+    width: 32%;
+    height: 100px;
+    background-size: contain;
+  }
+  #mosaic_wrapper .panel {
+    width: 32%;
+    height: 100px;
+    background-size: contain;
+  }
+  #vasl_banner div.alice-carousel__wrapper {
+    height: 400px;
+  }
+  .sliderimg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+  }
+  .bottom_footer {
+    padding: 20px 20px;
+  }
+  .bottom_footer span:first-child {
+    margin-bottom: 20px;
+  }
+  .react-multi-carousel-item {
+    margin: 0 3px !important;
+  }
+  .productCard div.shop_btn {
+    left: calc(50% - 20%);
+    right: calc(50% - 20%);
   }
 }

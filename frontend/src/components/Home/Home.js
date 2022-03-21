@@ -76,7 +76,7 @@ const Home = () => {
       <Fragment>
         <MetaData title="VASL-Brings Tradition Up" />
         <div id="vasl_banner">
-          <AliceCarousel autoPlay autoPlayInterval="3000">
+          <AliceCarousel autoPlay autoPlayInterval="3000" infinite>
             <Link to="/products">
               <img src={bimg1} className="sliderimg" alt="vasl-banner" />
             </Link>

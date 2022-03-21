@@ -109,6 +109,11 @@
     width: calc(100% - 20px);
   }
   .loaderCard {
+    height: 400px;
+  }
+}
+@media only screen and (max-width:480px){
+  .loaderCard {
     height: 300px;
   }
 }

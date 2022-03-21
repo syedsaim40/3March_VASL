@@ -563,7 +563,7 @@ ul.bottom_nav li a:hover{
     line-height: 14px;
   }
   .productCard:hover div.product_desp {
-    bottom: calc(-60% - 0px);
+    bottom: calc(0% - 0px);
   }
   .productCard:hover div.shop_btn {
     top: 38%;
@@ -595,9 +595,16 @@ ul.bottom_nav li a:hover{
   }
   .bottom_footer span:first-child {
     display: block;
+    text-align: center;
   }
   .bottom_footer img {
     float: none;
+  }
+  .bottom_footer img:nth-child(1) {
+    float: left;
+  }
+  .bottom_footer img:nth-child(2) {
+    float: right;
   }
 }
 

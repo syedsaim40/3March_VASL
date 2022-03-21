@@ -62,7 +62,7 @@ export const Product = ({ product }) => {
             </Link>
             <div className="shop_btn">
               <ShoppingBagOutlinedIcon onClick={() => addToCartHandler()} />
-              <span className="sbtn_txt">Add to Bag</span>
+              {/* <span className="sbtn_txt">Add to Bag</span> */}
             </div>
             <div className="product_desp">
               <p>{product.name}</p>
