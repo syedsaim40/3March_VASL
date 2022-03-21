@@ -18,6 +18,7 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
+// IMAGES FOR MAIN SLIDER OF HOME
 import bimg1 from '../../../src/images/bimg1.jpg';
 import bimg2 from '../../../src/images/bimg2.jpg';
 import bimg3 from '../../../src/images/bimg3.jpg';
@@ -25,6 +26,11 @@ import bimg4 from '../../../src/images/bimg4.jpg';
 import bimg5 from '../../../src/images/bimg5.jpg';
 import bimg6 from '../../../src/images/bimg6.jpg';
 
+// IMAGES FOR CATEGORIES SECTION @ HOME 
+import cimg1 from '../../../src/images/cimg1.jpg';
+import cimg2 from '../../../src/images/cimg2.jpg';
+import cimg3 from '../../../src/images/cimg3.jpg';
+import cimg4 from '../../../src/images/cimg4.jpg';
 
 const Home = () => {
   const alert = useAlert();
@@ -125,7 +131,7 @@ const Home = () => {
 
           <div className="section_heading">
             <div className="homeHeading">
-              <h2>DISCOVER MORE</h2>
+              <h2>Trending</h2>
             </div>
           </div>
 
@@ -133,7 +139,7 @@ const Home = () => {
             <Carousel
               additionalTransfrom={0}
               arrows
-              autoPlaySpeed={2000000}
+              autoPlaySpeed={3000}
               centerMode
               className=""
               containerClass="container"
@@ -178,7 +184,7 @@ const Home = () => {
               swipeable
             >
               {products ?
-                products.slice(0, 10).map((product) => (
+                products.slice(3, 11).map((product) => (
 
                   <ProductCard key={product._id} product={product} />
                 )
@@ -273,12 +279,68 @@ const Home = () => {
             </div>
           </div>
           <div className="categorized_products">
-            <Link to="/products" className="cp_item"></Link>
-            <Link to="/products" className="cp_item"></Link>
-            <Link to="/products" className="cp_item"></Link>
-            <Link to="/products" className="cp_item"></Link>
+            <div className="cp_item">
+              <Link to="/Newinn">
+                <img src={cimg1} className="cp_img" alt="category-img" />
+                <div className="cp_btn">Shop now</div>
+              </Link>
+              <div className="cp_desp">
+                <h2>new Inn</h2>
+              </div>
+            </div>
+            <div className="cp_item">
+              <Link to="/products">
+                <img src={cimg2} className="cp_img" alt="category-img" />
+                <div className="cp_btn">Shop now</div>
+              </Link>
+              <div className="cp_desp">
+                <h2>day to day</h2>
+              </div>
+            </div>
+            <div className="cp_item">
+              <Link to="/products">
+                <img src={cimg3} className="cp_img" alt="category-img" />
+                <div className="cp_btn">Shop now</div>
+              </Link>
+              <div className="cp_desp">
+                <h2>the edit</h2>
+              </div>
+            </div>
+            <div className="cp_item">
+              <Link to="/products">
+                <img src={cimg4} className="cp_img" alt="category-img" />
+                <div className="cp_btn">Shop now</div>
+              </Link>
+              <div className="cp_desp">
+                <h2>vasl featured</h2>
+              </div>
+            </div>
           </div>
-
+        </div>
+        <div className="masonary_section">
+          <div className="ms_desp">
+            <div className="ms_holder">
+              <h2>#Vasl Featured</h2>
+              <Link to="/products">shop now</Link>
+            </div>
+          </div>
+          <div id="mosaic_wrapper">
+            <div>
+              <div class="panel"></div>
+              <div class="panel"></div>
+              <div class="panel"></div>
+            </div>
+            <div>
+              <div class="panel"></div>
+              <div class="panel"></div>
+              <div class="panel"></div>
+            </div>
+            <div className="bt_panel">
+              <div class="panel"></div>
+              <div class="panel"></div>
+              <div class="panel"></div>
+            </div>
+          </div>
         </div>
       </Fragment>
 

@@ -32,7 +32,6 @@ body {
 .btn_primary {
   border: none;
   cursor: pointer;
-  color: white;
   transition: all 0.5s;
   border-radius: 0px;
   padding: 5px 20px;

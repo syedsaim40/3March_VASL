@@ -47,9 +47,6 @@
   width: 100%;
   max-width: 100%;
 }
-/* .container.home_products{
-  padding: 0 0 50px 0;
-} */
 .productCard {
   width: calc(25% - 6px);
   margin: 0 3px 6px 3px;
@@ -67,31 +64,22 @@
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
-.productCard::after {
-  position: absolute;
-  /* content: " "; */
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: #000;
-  visibility: hidden;
-  opacity: 0;
-  z-index: 0;
-  transition: all ease-in-out 0.3s;
-}
 .productCard:hover ::after {
   visibility: visible;
   opacity: 0.4;
 }
 .productCard > a img {
   width: 100%;
+  max-width: 100%;
   object-fit: cover;
   height: 100%;
-  transition: all ease-in-out 0.8s;
+  transition: all ease-in-out 0.6s;
+  position: relative;
 }
 .productCard:hover a img {
   transform: scale(1.3);
+  filter: contrast(110%);
+  /* filter: grayscale(100%); */
 }
 .productCard .productCard_Holder {
   margin: 0;
@@ -430,13 +418,154 @@ div.alice-carousel__next-btn-wrapper p::after {
 .categorized_products{
   width: 100%;
   overflow: hidden;
+  margin-bottom: 50px;
+  text-align: center;
 }
-.categorized_products a.cp_item{
-  float: left;
-  width: 25%;
+.categorized_products div.cp_item{
+  display: inline-block;
+  vertical-align: top;
+  width: calc(25% - 6px);
   background-color: #000;
-  height: 500px;
+  margin: 0 3px;
+  position: relative;
 }
+.categorized_products div.cp_item a{
+  display: block;
+  overflow: hidden;
+  height: 400px;
+}
+.categorized_products .cp_item img.cp_img{
+  max-width: 100%;
+  height: auto;
+  object-fit: fill;
+  margin: 0;
+  padding: 0;
+  transition: all ease-in-out 0.5s;
+}
+.categorized_products .cp_item:hover img.cp_img{
+  transform: scale(1.3);
+  filter: contrast(110%);
+}
+.categorized_products div.cp_item .cp_btn{
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  padding: 5px 20px;
+  color: var(--themeColor);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: var(--lightColor);
+}
+.categorized_products div.cp_item .cp_desp{
+  background: #f8f8f8;
+  padding: 10px;
+  text-align: center;
+}
+.categorized_products div.cp_item .cp_desp h2{
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--themeColor);
+  font-size: 18px;
+  text-align: center;
+}
+.masonary_section{
+  overflow: hidden;
+  margin-bottom: 50px;
+  padding: 0 100px;
+  display: flex;
+}
+.ms_desp{
+  float: left;
+  background: var(--lightColor);
+  width: 20%;
+  flex: 1;
+  position: relative;
+}
+.ms_desp .ms_holder{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: var(--themeColor);
+  text-align: center;
+  text-transform: capitalize;
+}
+.ms_desp .ms_holder h2{
+  font-weight: 400;
+  font-size: 26px;
+}
+.ms_desp .ms_holder a{
+  text-transform: capitalize;
+  color: var(--themeColor);
+  border-bottom: 1px solid var(--themeColor);
+}
+#mosaic_wrapper {
+  width: 80%;
+  float: left;
+  margin: 0 0 0 0;
+  flex: 1 1;
+}
+#mosaic_wrapper .panel {
+  float: left;
+  width: 30%;
+  height: 150px;
+  margin: 1px;
+  background: url('../../../../frontend/src/images/bimg4.jpg') no-repeat 0 0 fixed;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all ease-in-out 5s;
+  background-size: 100%;
+  position: relative;
+  background-color: var(--lightColor);
+  animation-fill-mode: forwards;
+  background-origin:center;
+}
+@keyframes zoomin {
+  0% {
+     background-size: 100%; 
+  }
+  50% {
+     background-size: 105%; 
+  }
+  100% {
+     background-size: 110%; 
+  }
+}
+#mosaic_wrapper .panel:hover{
+  transition: all ease-in-out 5s;
+  /* background-position: -100px -100px ; */
+  /* background-size: 110%; */
+  animation: zoomin 5s linear;
+}
+#mosaic_wrapper .panel::after{
+  position: absolute;
+  content: " ";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #0001;
+  transition: all ease-in-out 0.5s;
+}
+#mosaic_wrapper .panel:hover::after{
+  transition: all ease-in-out 0.5s;
+  background-color: #0006;
+  opacity: 1;
+  z-index: 1;
+}
+
+
+/* #mosaic_wrapper div.bt_panel .panel:hover{
+  background-position: -100px 100px ;
+} */
+
+
+
 
 @media only screen and (max-width: 768px) {
   .productCard > p {

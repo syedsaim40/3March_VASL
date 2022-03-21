@@ -32,7 +32,7 @@ function Topfooter() {
                 <div className="tf_box">
                     <div className="tf_con">
                         <DirectionsCarIcon />
-                        <span>Free Shipping on all orders worth Rs. 2000 & above</span>
+                        <span>Free Shipping on all orders worth Rs. 5000 & above</span>
                     </div>
                 </div>
             </div>

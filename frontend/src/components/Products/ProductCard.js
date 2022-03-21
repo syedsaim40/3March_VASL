@@ -57,7 +57,7 @@ export const Product = ({ product }) => {
               <FavoriteTwoToneIcon onClick={() => FavouriteCart()} />
               <span>Add to Wishlist</span>
             </div>
-            <Link to={`/oneproduct/${product._id}`}>
+            <Link className="prd_img" to={`/oneproduct/${product._id}`}>
               <img alt={product.name} src={product.images[0].url} />
             </Link>
             <div className="shop_btn">
