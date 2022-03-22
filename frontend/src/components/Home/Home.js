@@ -31,8 +31,9 @@ import cimg1 from '../../../src/images/cimg1.jpg';
 import cimg2 from '../../../src/images/cimg2.jpg';
 import cimg3 from '../../../src/images/cimg3.jpg';
 import cimg4 from '../../../src/images/cimg4.jpg';
-
-const Home = () => {
+import "react-multi-carousel/lib/styles.css";
+const Home = ({ req }) => {
+ 
   const alert = useAlert();
   const dispatch = useDispatch();
   const { products, error } = useSelector((state) => state.products);
@@ -45,8 +46,23 @@ const Home = () => {
     }
     dispatch(getProduct());
   }, [alert, dispatch, error]);
-
-
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 2000, min: 102 },
+      items: 4,
+      paritialVisibilityGutter: 0
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+      paritialVisibilityGutter: 0
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 2,
+      paritialVisibilityGutter: 0
+    }
+  };
   return (
     <Fragment>
       {/* {loading ? (
@@ -83,53 +99,32 @@ const Home = () => {
             </div>
           </div>
           <div className="product_slider">
-          <Carousel
-              additionalTransfrom={0}
-              arrows
-              autoPlaySpeed={2000}
-              centerMode
-              className=""
-              containerClass="container"
-              dotListClass=""
-              draggable
-              focusOnSelect={false}
-              infinite
-              itemClass=""
-              keyBoardControl
-              minimumTouchDrag={80}
-              renderButtonGroupOutside={false}
-              renderDotsOutside={false}
-              responsive={{
-                desktop: {
-                  breakpoint: {
-                    max: 3000,
-                    min: 1024
-                  },
-                  items: 3,
-                  partialVisibilityGutter: 40
-                },
-                mobile: {
-                  breakpoint: {
-                    max: 464,
-                    min: 0
-                  },
-                  items: 1,
-                  partialVisibilityGutter: 30
-                },
-                tablet: {
-                  breakpoint: {
-                    max: 1024,
-                    min: 464
-                  },
-                  items: 2,
-                  partialVisibilityGutter: 30
-                }
-              }}
-              showDots={false}
-              sliderClass=""
-              slidesToSlide={1}
-              swipeable
+          <Carousel 
+           additionalTransfrom={0}
+           arrows
+           centerMode={false}
+           className=""
+           dotListClass=""
+           draggable
+           focusOnSelect={true}
+           itemClass=""
+           keyBoardControl
+           minimumTouchDrag={80}
+           renderButtonGroupOutside={false}
+           renderDotsOutside={false}
+           autoPlay={false}
+           autoPlaySpeed={1000000000}
+          /*
+          swipeable={false}
+          draggable={false}
+          */
+          responsive={responsive}
+          ssr          
+          containerClass=" container"
+          slidesToSlide={4}
+          infinite={false}         
             >
+              
               {products ?
                 products.slice(0, 10).map((product) => (
 
@@ -156,54 +151,32 @@ const Home = () => {
 
           <div className="product_slider">
             <Carousel
-              additionalTransfrom={0}
-              arrows
-              autoPlaySpeed={2000}
-              centerMode
-              className=""
-              containerClass="container"
-              dotListClass=""
-              draggable
-              focusOnSelect={false}
-              infinite
-              itemClass=""
-              keyBoardControl
-              minimumTouchDrag={80}
-              renderButtonGroupOutside={false}
-              renderDotsOutside={false}
-              responsive={{
-                desktop: {
-                  breakpoint: {
-                    max: 3000,
-                    min: 1024
-                  },
-                  items: 3,
-                  partialVisibilityGutter: 40
-                },
-                mobile: {
-                  breakpoint: {
-                    max: 464,
-                    min: 0
-                  },
-                  items: 1,
-                  partialVisibilityGutter: 30
-                },
-                tablet: {
-                  breakpoint: {
-                    max: 1024,
-                    min: 464
-                  },
-                  items: 2,
-                  partialVisibilityGutter: 30
-                }
-              }}
-              showDots={false}
-              sliderClass=""
+               additionalTransfrom={0}
+               arrows
+               centerMode={false}
+               className=""
+               dotListClass=""
+               draggable
+               focusOnSelect={true}
+               itemClass=""
+               keyBoardControl
+               minimumTouchDrag={80}
+               renderButtonGroupOutside={false}
+               renderDotsOutside={false}
+               autoPlay={false}
+               autoPlaySpeed={1000000000}
+              /*
+              swipeable={false}
+              draggable={false}
+              */
+              responsive={responsive}
+              ssr          
+              containerClass=" container"
               slidesToSlide={1}
-              swipeable
+              infinite={false}
             >
               {products ?
-                products.slice(0, 10).map((product) => (
+                products.slice(5, 11).map((product) => (
 
                   <ProductCard key={product._id} product={product} />
                 )
