@@ -809,4 +809,7 @@ ul.bottom_nav li a:hover{
   .top_header {
     padding: 10px 10px;
   }
+  #mobile_menu {
+    top: 4%;
+  }
 }
