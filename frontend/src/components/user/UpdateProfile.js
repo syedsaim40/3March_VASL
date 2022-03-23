@@ -17,7 +17,6 @@ const UpdateProfile = () => {
   const alert = useAlert();
   const { user } = useSelector((state) => state.user);
   const { error, isUpdated } = useSelector((state) => state.profile);
-  const [load, setLoad] = React.useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [avatar, setAvatar] = useState();
@@ -32,7 +31,7 @@ const UpdateProfile = () => {
     myForm.set("email", email);
     myForm.set("avatar", avatar);
     const value = Object.fromEntries(myForm.entries());
-    setLoad(true);
+    // setLoad(true);
     dispatch(updateProfile(value));
   };
 
@@ -85,7 +84,7 @@ const UpdateProfile = () => {
 
             <form
               className="signinForm"
-              encType="multipart/form-data"
+              encType="application/x-www-form-urlencoded"
               onSubmit={updateProfileSubmit}
             >
               <div className="group_field">
@@ -130,7 +129,7 @@ const UpdateProfile = () => {
               </div>
 
               <div className="row group_field e_btn">
-                <button type="submit" value="update" disabled={load}>
+                <button type="submit" value="update">
                   UPDATE
                 </button>
               </div>
