@@ -175,6 +175,7 @@ ul.szh-menu{
   position: absolute;
   top: 6%;
   left: 1%;
+  z-index: auto;
 }
 .mn_open_btn{
   box-shadow: none;

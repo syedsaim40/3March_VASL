@@ -47,6 +47,7 @@ body {
   font-weight: 500;
   text-transform: uppercase;
   /* background: #4448; */
+  z-index: 0;
 }
 .btn_primary:hover {
   color: var(--lightColor);
