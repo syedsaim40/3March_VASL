@@ -5,14 +5,15 @@ import "./header.css";
 import { useSelector } from "react-redux";
 import UserOptions from "../../user/useroption";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import SearchIcon from "@mui/icons-material/Search";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import AccountBoxOutlinedIcon from "@mui/icons-material/AccountBoxOutlined";
 import CategoryOutlinedIcon from "@mui/icons-material/CategoryOutlined";
-import MenuOpenIcon from '@mui/icons-material/MenuOpen';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import MenuOpenIcon from "@mui/icons-material/MenuOpen";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 
 import SideNav, { NavItem, NavText } from "@trendmicro/react-sidenav";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
@@ -20,7 +21,7 @@ import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 import SlidingPane from "react-sliding-pane";
 import "react-sliding-pane/dist/react-sliding-pane.css";
 
-import Collapsible from 'react-collapsible';
+import Collapsible from "react-collapsible";
 
 //creating the unique header component for all vasl pages
 function Header() {
@@ -46,12 +47,19 @@ function Header() {
         <div id="mobile_menu">
           <div>
             <div style={{}}>
-              <button className="mn_open_btn" onClick={() => setState({ isPaneOpenLeft: true })}>
+              <button
+                className="mn_open_btn"
+                onClick={() => setState({ isPaneOpenLeft: true })}
+              >
                 <MenuOpenIcon />
               </button>
             </div>
             <SlidingPane
-              closeIcon={<div><CloseRoundedIcon /></div>}
+              closeIcon={
+                <div>
+                  <CloseRoundedIcon />
+                </div>
+              }
               isOpen={state.isPaneOpenLeft}
               title="VASL"
               from="left"
@@ -60,13 +68,27 @@ function Header() {
             >
               <Collapsible trigger="Categories" className="accordian_footer">
                 <ul className="mn_menu_list">
-                  <li><Link to="/Newinn">New Inn</Link></li>
-                  <li><Link to="/Womens">Womens</Link></li>
-                  <li><Link to="/Accessories">Accessories</Link></li>
-                  <li><Link to="/Replicas">Replicas</Link></li>
-                  <li><Link to="/ReadyToWear">Ready to wear</Link></li>
-                  <li><Link to="/Unstiched">Unstiched</Link></li>
-                  <li><Link to="/AClothes">A+ Cloths</Link></li>
+                  <li>
+                    <Link to="/Newinn">New Inn</Link>
+                  </li>
+                  <li>
+                    <Link to="/Womens">Womens</Link>
+                  </li>
+                  <li>
+                    <Link to="/Accessories">Accessories</Link>
+                  </li>
+                  <li>
+                    <Link to="/Replicas">Replicas</Link>
+                  </li>
+                  <li>
+                    <Link to="/ReadyToWear">Ready to wear</Link>
+                  </li>
+                  <li>
+                    <Link to="/Unstiched">Unstiched</Link>
+                  </li>
+                  <li>
+                    <Link to="/AClothes">A+ Cloths</Link>
+                  </li>
                 </ul>
                 {/* <Collapsible trigger="child a" className="accordian_footer">
                   <p>child list</p>
@@ -77,32 +99,52 @@ function Header() {
               </Collapsible>
               <Collapsible trigger="New Inn" className="accordian_footer">
                 <ul className="mn_menu_list">
-                  <li><Link to="/ReadyToWear">Ready to wear</Link></li>
-                  <li><Link to="/Unstiched">Unstiched</Link></li>
+                  <li>
+                    <Link to="/ReadyToWear">Ready to wear</Link>
+                  </li>
+                  <li>
+                    <Link to="/Unstiched">Unstiched</Link>
+                  </li>
                 </ul>
               </Collapsible>
               <Collapsible trigger="Woman" className="accordian_footer">
                 <ul className="mn_menu_list">
-                  <li><Link to="/ReadyToWear">Ready to wear</Link></li>
-                  <li><Link to="/Unstiched">Unstiched</Link></li>
+                  <li>
+                    <Link to="/ReadyToWear">Ready to wear</Link>
+                  </li>
+                  <li>
+                    <Link to="/Unstiched">Unstiched</Link>
+                  </li>
                 </ul>
               </Collapsible>
               <Collapsible trigger="Replicas" className="accordian_footer">
                 <ul className="mn_menu_list">
-                  <li><Link to="/ReadyToWear">Ready to wear</Link></li>
-                  <li><Link to="/Unstiched">Unstiched</Link></li>
+                  <li>
+                    <Link to="/ReadyToWear">Ready to wear</Link>
+                  </li>
+                  <li>
+                    <Link to="/Unstiched">Unstiched</Link>
+                  </li>
                 </ul>
               </Collapsible>
               <Collapsible trigger="Accesories" className="accordian_footer">
                 <ul className="mn_menu_list">
-                  <li><Link to="/bags">Bags</Link></li>
-                  <li><Link to="/scarves">scarves</Link></li>
+                  <li>
+                    <Link to="/bags">Bags</Link>
+                  </li>
+                  <li>
+                    <Link to="/scarves">scarves</Link>
+                  </li>
                 </ul>
               </Collapsible>
               <Collapsible trigger="Beauty" className="accordian_footer">
                 <ul className="mn_menu_list">
-                  <li><Link to="/perfumes">perfumes</Link></li>
-                  <li><Link to="/cosmetics">cosmetics</Link></li>
+                  <li>
+                    <Link to="/perfumes">perfumes</Link>
+                  </li>
+                  <li>
+                    <Link to="/cosmetics">cosmetics</Link>
+                  </li>
                 </ul>
               </Collapsible>
               <Collapsible trigger="User Menu" className="accordian_footer">
@@ -347,7 +389,7 @@ function Header() {
               <AccountBoxOutlinedIcon />
             </Link>
           </li>
-          {/* <li>
+          <li>
             <Link
               to="/FavouriteCart"
               style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
@@ -362,8 +404,8 @@ function Header() {
                 />
               )}
             </Link>
-          </li> */}
-          <li>
+          </li>
+          {/* <li>
             <Link
               to="/FavouriteCart"
               style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
@@ -371,12 +413,14 @@ function Header() {
               <FavoriteBorderIcon
                 style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
               />{" "}
-              <sup style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}>
+              <sup
+                style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
+              >
                 {" "}
                 {favouriteItems.length > 0 ? favouriteItems.length : null}
               </sup>
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               to="/cart"

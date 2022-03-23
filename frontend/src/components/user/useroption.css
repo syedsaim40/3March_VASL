@@ -2,7 +2,7 @@
   position: fixed;
   right: 0vmax;
   top: -1vmax;
-  z-index: 1;
+  z-index: 5;
 }
 
 .speedDialIcon {
