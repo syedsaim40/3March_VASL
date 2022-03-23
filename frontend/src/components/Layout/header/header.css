@@ -169,6 +169,119 @@ ul.szh-menu{
   vertical-align: top;
   margin: 0 10px;
 }
+/* --------------------Mobile Menu Styles----------------- */
+#mobile_menu {
+  display: inline-block;
+  position: absolute;
+  top: 6%;
+  left: 1%;
+}
+.mn_open_btn{
+  box-shadow: none;
+  background: var(--lightColor);
+  border: none;
+  border-radius: 0px;
+}
+.mn_open_btn svg{
+  font-size: large;
+  cursor: pointer;
+}
+div.slide-pane__header {
+  display: block;
+  flex: unset;
+  align-items: center;
+  background: #ebebeb;
+  height: auto;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+div.slide-pane__close {
+  margin-left: 0;
+  padding: 5px 10px;
+  opacity: 1;
+  cursor: pointer;
+  background: var(--themeColor);
+  overflow: hidden;
+  width: 20%;
+  float: right;
+  text-align: center;
+}
+div.slide-pane__close svg {
+  width: auto;
+  padding: 0;
+  display: inline-block;
+  font-size: 20px;
+  color: var(--lightColor);
+}
+div.slide-pane__title-wrapper {
+  display: block;
+  flex: unset;
+  flex-direction: unset;
+  min-width: 0;
+  padding: 5px 10px;
+  width: 80%;
+  margin: 0;
+  float: left;
+  text-align: center;
+}
+div.slide-pane .slide-pane__title {
+  font-size: 18px;
+  font-weight: 400;
+  max-width: none;
+  white-space: nowrap;
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  margin: 0;
+  padding: 0;
+}
+div.slide-pane__content{
+  padding: 0;
+}
+.mn_menu_list li{
+  display: block;
+}
+.mn_menu_list li a{
+  display: block;
+  width: 100%;
+  padding: 20px 10px 20px 30px;
+  background: var(--lightColor);
+  color: var(--themeColor);
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+.mn_menu_list li a:focus,
+.mn_menu_list li a:hover{
+  background: var(--themeColor);
+  color: var(--lightColor) !important;
+}
+.mn_menu_list li a svg{
+  width: 20px;
+  height: 15px;
+}
+.mn_menu_list div.MuiSpeedDial-root {
+  margin-right: auto;
+  position: absolute;
+  bottom: -175%;
+  left: -100%;
+  right: auto;
+  top: 0;
+}
+.mn_menu_list button.MuiFab-sizeSmall {
+  width: 30px;
+  height: 30px;
+}
+header #mobile_menu svg.MuiSvgIcon-root{
+  width: 40px;
+  height: auto;
+}
+/* .mn_menu_list div.MuiSpeedDial-directionLeft div.MuiSpeedDial-actions {
+  margin-right: 0;
+  padding-right: 0px;
+  flex-direction: row-reverse;
+} */
+#mobile_menu{
+  display: none;
+}
 /* --------------------Sidebar Styles----------------- */
 div.MuiSpeedDial-root {
   margin-right: auto;
@@ -404,8 +517,11 @@ ul.bottom_nav li a:hover{
 
 /* ------------------------Media Query for responsive for header ----------------------*/
 @media only screen and (max-width:768px){
-  #vasl-menu{
+  #mobile_menu{
     display: block;
+  }
+  #vasl-menu{
+    display: none;
   }
   .bottom_header{
     display: none;
@@ -580,17 +696,17 @@ ul.bottom_nav li a:hover{
   .mf_box {
     width: 100%;
     display: block;
-    text-align: center;
+    text-align: left;
   }
   .mf_box .mail_link {
     display: block;
     padding: 10px 0;
   }
   ul.services_list {
-    text-align: center;
+    text-align: left;
   }
   .social_icons {
-    text-align: center;
+    text-align: left;
     padding: 20px 0;
   }
   .bottom_footer span:first-child {

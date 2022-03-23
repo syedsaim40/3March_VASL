@@ -129,3 +129,41 @@ ul.services_list li a:hover{
   height: auto;
   margin: 0 20px 0 0;
 }
+div.Collapsible,
+div.Collapsible.accordian_footer{
+  display: none;
+}
+div.Collapsible span.Collapsible__trigger,
+div.Collapsible.accordian_footer span.Collapsible__trigger{
+  display: block;
+  padding: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: pointer;
+  border-bottom: 1px solid #4443;
+  text-transform: uppercase;
+}
+div.Collapsible span.Collapsible__trigger:focus,
+div.Collapsible.accordian_footer span.Collapsible__trigger:focus,
+div.Collapsible span.Collapsible__trigger:hover,
+div.Collapsible.accordian_footer span.Collapsible__trigger:hover{
+  background: #444;
+  color: #fff;
+}
+div.Collapsible .mf_box,
+div.Collapsible.accordian_footer .mf_box{
+  width: 100%;
+}
+@media only screen and (max-width: 768px) {
+  div.Collapsible,
+  div.Collapsible.accordian_footer{
+    display: block;
+  }
+  .mid_footer{
+    display: none;
+  }
+  .bottom_footer,
+  #footer{
+    border-top: 1px solid #4448;
+  }
+}

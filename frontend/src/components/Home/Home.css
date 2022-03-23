@@ -63,6 +63,19 @@
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
+.productCard::after {
+  position: absolute;
+  content: " ";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 0;
+  transition: all ease-in-out 0.3s;
+}
 .productCard:hover ::after {
   visibility: visible;
   opacity: 0.4;
@@ -163,14 +176,16 @@
   bottom: auto;
   text-align: center;
   width: auto;
-  border: 1px solid #fff;
-  background-color: #fff3;
-  padding: 5px 0;
+  border: 1px solid var(--lightColor);
+  background-color: #fff;
+  padding: 3px 0;
   overflow: hidden;
+  cursor: pointer;
 }
 .productCard div.shop_btn:hover{
-  background-color: #fff;
+  background-color: var(--lightColor);
   transition: all ease-in-out 0.3s;
+  background-color: #0008;
 }
 .productCard div.shop_btn svg{
   display: inline-block;
@@ -181,25 +196,37 @@
   transition: all ease-in-out 0.3s;
 }
 .productCard div.shop_btn:hover svg{
-  fill: #444;
+  fill: #fff;
+}
+.sb_bag{
+  transform: translate(-180%, 0px);
+}
+.productCard div.shop_btn:hover .sb_bag{
+  transform: translate(140%, 0px);
 }
 .productCard div.shop_btn span.sbtn_txt{
-  color: #444;
+  color: var(--lightColor);
   display: inline-block;
   vertical-align: top;
   font-size: 15px;
   padding: 2px 0 0 0;
-  transform: translate(-140%, 0px);
   cursor: pointer;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--themeColor);
+  transform: translate(-20%, 0px);
 }
 .productCard div.shop_btn:hover span.sbtn_txt{
-  transform: translate(0, 0px);
+  color: var(--themeColor);
+  /* visibility: hidden;
+  opacity: 0; */
+  transform: translate(-240%, 0px);
 }
 .productCard:hover div.shop_btn {
   top: calc(50% - 50px);
 }
 .productCard div.shop_btn span {
-  display: block;
+  display: inline-block;
   color: var(--lightColor);
 }
 .productCard div.shop_btn svg {
@@ -336,7 +363,7 @@ div.alice-carousel__next-btn {
   position: absolute;
   right: 20px;
   top: 40%;
-  z-index: 1008;
+  z-index: 0;
 }
 div.alice-carousel__prev-btn {
   left: 20px;
@@ -621,7 +648,7 @@ div.alice-carousel__next-btn-wrapper p::after {
   .categorized_products div.cp_item a {
     display: block;
     overflow: hidden;
-    height: 300px;
+    height: 200px;
   }
   .categorized_products div.cp_item .cp_btn {
     position: absolute;

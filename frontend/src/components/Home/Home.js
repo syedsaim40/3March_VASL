@@ -209,21 +209,21 @@ const Home = ({ req }) => {
               </div>
             </div>
             <div className="cp_item">
-              <Link to="/products">
+              <Link to="/womens">
                 <img src={cimg2} className="cp_img" alt="category-img" />
                 <div className="cp_btn">Shop now</div>
               </Link>
               <div className="cp_desp">
-                <h2>day to day</h2>
+                <h2>womens</h2>
               </div>
             </div>
             <div className="cp_item">
-              <Link to="/products">
+              <Link to="/Accessories">
                 <img src={cimg3} className="cp_img" alt="category-img" />
                 <div className="cp_btn">Shop now</div>
               </Link>
               <div className="cp_desp">
-                <h2>the edit</h2>
+                <h2>Accessories</h2>
               </div>
             </div>
             <div className="cp_item">
