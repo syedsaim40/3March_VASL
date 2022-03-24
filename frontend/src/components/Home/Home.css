@@ -48,7 +48,7 @@
   max-width: 100%;
 }
 .productCard {
-  width: calc(25% - 6px);
+  width: calc(25% - 8px);
   border-radius: 0px;
   text-decoration: none;
   transition: all 0.5s;
@@ -62,6 +62,9 @@
   overflow: hidden;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
+}
+.products .productCard {
+  margin: 0 4px;
 }
 /* .productCard.prc_after::after {
   position: absolute;
@@ -93,7 +96,7 @@
   filter: contrast(110%);
   /* filter: grayscale(100%); */
 }
-.productCard div.prc_after{
+.productCard div.prc_after {
   display: block;
   position: relative;
 }
