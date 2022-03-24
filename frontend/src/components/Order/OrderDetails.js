@@ -5,11 +5,11 @@ import MetaData from "../Layout/Metadata";
 import { Link } from "react-router-dom";
 import { Typography } from "@material-ui/core";
 import { getOrderDetails, clearErrors } from "../../redux/action/orderaction";
-// import Loader from "../Layout/Loader/Loader";
+import Loader from "../Layout/Loader/Loader";
 import { useAlert } from "react-alert";
 
 const OrderDetails = ({ match }) => {
-  const { order, error } = useSelector((state) => state.orderDetails);
+  const { order, error, loading } = useSelector((state) => state.orderDetails);
 
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -24,9 +24,9 @@ const OrderDetails = ({ match }) => {
   }, [dispatch, alert, error, match.params.id]);
   return (
     <Fragment>
-      {/* {loading ? (
+      {loading ? (
         <Loader />
-      ) : ( */}
+      ) : (
         <Fragment>
           <MetaData title="Order Details" />
           <div className="orderDetailsPage">
@@ -114,7 +114,7 @@ const OrderDetails = ({ match }) => {
             </div>
           </div>
         </Fragment>
-      {/* )} */}
+      )}
     </Fragment>
   );
 };
