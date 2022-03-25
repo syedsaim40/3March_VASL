@@ -7,6 +7,7 @@ import UserOptions from "../../user/useroption";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import SearchIcon from "@mui/icons-material/Search";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
@@ -14,6 +15,7 @@ import AccountBoxOutlinedIcon from "@mui/icons-material/AccountBoxOutlined";
 import CategoryOutlinedIcon from "@mui/icons-material/CategoryOutlined";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import ListAltIcon from "@material-ui/icons/ListAlt";
 
 import SideNav, { NavItem, NavText } from "@trendmicro/react-sidenav";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
@@ -385,8 +387,8 @@ function Header() {
             </Link>
           </li>
           <li>
-            <Link to="/accounts">
-              <AccountBoxOutlinedIcon />
+            <Link to="/check/order">
+              <ListAltIcon />
             </Link>
           </li>
           <li>

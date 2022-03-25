@@ -5,7 +5,7 @@ import { Typography } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import { useAlert } from "react-alert";
 import { createOrder, clearErrors } from "../../redux/action/orderaction";
-// import { RESETCart } from "../../redux/action/cartAction";
+import { RESETCart } from "../../redux/action/cartAction";
 
 import "./payment.css";
 const Payment = ({ history }) => {
@@ -33,7 +33,8 @@ const Payment = ({ history }) => {
   const submitHandler = async (e) => {
     e.preventDefault();
     dispatch(createOrder(order));
-    // dispatch(RESETCart());
+
+    dispatch(RESETCart());
     history.push("/success");
   };
   useEffect(() => {
