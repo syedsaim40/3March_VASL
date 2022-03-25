@@ -9,7 +9,7 @@ import { getrandomDetails } from "../../redux/action/orderaction";
 import { useAlert } from "react-alert";
 
 const OrderDetails = ({ match }) => {
-  const { order, error } = useSelector((state) => state.orderDetails);
+  const { order } = useSelector((state) => state.orderDetails);
 
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -108,7 +108,7 @@ const OrderDetails = ({ match }) => {
           </div>
         </Fragment>
       ) : (
-        <h1>{error}</h1>
+        <h1>No Records</h1>
       )}
     </Fragment>
   );
