@@ -96,7 +96,7 @@ const NewProduct = ({ history }) => {
       <MetaData title="Create Product" />
       <div className="dashboard">
         <SideBar />
-
+        <h1>remove</h1>
         <div className="newProductContainer">
           <form
             className="createProductForm"
