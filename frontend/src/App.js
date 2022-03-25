@@ -33,6 +33,8 @@ import Payment from "./components/Cart/Payment";
 import OrderSuccess from "./components/Cart/OrderSuccess";
 import MyOrders from "./components/Order/MyOrders";
 import OrderDetails from "./components/Order/OrderDetails";
+import CheckDetails from "./components/Order/checkorder";
+import SearchOrder from "./components/Order/searchorder";
 import "./components/Admin/dashboard.css";
 import Dashboard from "./components/Admin/Dashboard";
 import ProductList from "./components/Admin/ProductList";
@@ -152,6 +154,8 @@ function App() {
           />
 
           <ProtectedRoute exact path="/order/:id" component={OrderDetails} />
+          <Route exact path="/check/order/:id" component={CheckDetails} />
+          <Route exact path="/search/order" component={SearchOrder} />
 
           <ProtectedRoute
             exact

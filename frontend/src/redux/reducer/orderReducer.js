@@ -19,6 +19,9 @@ import {
   ORDER_DETAILS_REQUEST,
   ORDER_DETAILS_SUCCESS,
   ORDER_DETAILS_FAIL,
+  CHECK_ORDER_DETAILS_REQUEST,
+  CHECK_ORDER_DETAILS_SUCCESS,
+  CHECK_ORDER_DETAILS_FAIL,
   CLEAR_ERRORS,
 } from "../constant/orderconstant";
 
@@ -165,17 +168,20 @@ export const orderReducer = (state = {}, action) => {
 export const orderDetailsReducer = (state = { order: {} }, action) => {
   switch (action.type) {
     case ORDER_DETAILS_REQUEST:
+    case CHECK_ORDER_DETAILS_REQUEST:
       return {
         loading: true,
       };
 
     case ORDER_DETAILS_SUCCESS:
+    case CHECK_ORDER_DETAILS_SUCCESS:
       return {
         loading: false,
         order: action.payload,
       };
 
     case ORDER_DETAILS_FAIL:
+    case CHECK_ORDER_DETAILS_FAIL:
       return {
         loading: false,
         error: action.payload,
