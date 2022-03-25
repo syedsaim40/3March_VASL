@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "./orderDetails.css";
 import { useSelector, useDispatch } from "react-redux";
 import MetaData from "../Layout/Metadata";
@@ -6,22 +6,39 @@ import { Link } from "react-router-dom";
 import { Typography } from "@material-ui/core";
 import { getrandomDetails } from "../../redux/action/orderaction";
 // import Loader from "../Layout/Loader/Loader";
-import { useAlert } from "react-alert";
+import { useHistory } from "react-router-dom";
 
-const OrderDetails = ({ match }) => {
+const OrderDetails = () => {
   const { order } = useSelector((state) => state.orderDetails);
+  const [keyword, setKeyword] = useState("");
+  let history = useHistory();
 
   const dispatch = useDispatch();
-  const alert = useAlert();
+  const searchSubmitHandler = (e) => {
+    e.preventDefault();
+  };
 
   useEffect(() => {
-    dispatch(getrandomDetails(match.params.id));
-  }, [dispatch, alert, match.params.id]);
+    dispatch(getrandomDetails(keyword));
+  }, [dispatch, history, keyword]);
   return (
     <Fragment>
+      <div className="search_holder">
+        <div className="search_bar">
+          <form className="searchBox" onSubmit={searchSubmitHandler}>
+            <input
+              type="text"
+              placeholder="Enter a Order ID..."
+              onChange={(e) => setKeyword(e.target.value)}
+            />
+            <input className="btn_primary" type="submit" value="Search" />
+          </form>
+        </div>
+      </div>
       {order ? (
         <Fragment>
           <MetaData title="Order Details" />
+
           <div className="orderDetailsPage">
             <div className="orderDetailsContainer">
               <Typography component="h1">
@@ -108,7 +125,9 @@ const OrderDetails = ({ match }) => {
           </div>
         </Fragment>
       ) : (
-        <h1>No Records</h1>
+        <div className="search_holder">
+          <h1>No Records</h1>
+        </div>
       )}
     </Fragment>
   );
