@@ -3,7 +3,6 @@ const Product = require("../models/productmodel");
 const Errorhandler = require("../utils/errorhandler");
 const catchasyncerror = require("../middleware/asyncerror.js");
 // Create new Order
-
 exports.neworder = catchasyncerror(async (req, res, next) => {
   const {
     shippingInfo,
@@ -36,19 +35,6 @@ exports.getsingleorder = catchasyncerror(async (req, res, next) => {
     "user",
     "name email"
   );
-
-  if (!order) {
-    return next(new Errorhandler("Order not found with this Id", 404));
-  }
-
-  res.status(200).json({
-    success: true,
-    order,
-  });
-});
-// order id
-exports.getrandomcheckorder = catchasyncerror(async (req, res, next) => {
-  const order = await Order.findById(req.params.id);
 
   if (!order) {
     return next(new Errorhandler("Order not found with this Id", 404));
