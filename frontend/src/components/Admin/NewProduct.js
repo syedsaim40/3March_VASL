@@ -29,13 +29,13 @@ const NewProduct = ({ history }) => {
   const [imagesPreview, setImagesPreview] = useState([]);
 
   const categories = [
-    "Womens",
-    "Newinn",
-    "Accessories",
-    "Unstiched",
-    "AClothes",
-    "Replicas",
-    "ReadyToWear",
+    "Men",
+    "T-Shirt",
+    "Women",
+    "UnStitch",
+    "Stitch",
+    "Underware",
+    "Mobiles",
   ];
 
   useEffect(() => {
@@ -66,9 +66,7 @@ const NewProduct = ({ history }) => {
     });
     // const value = Object.fromEntries(myForm.entries());
     // value.topics = myForm.getAll("topics");
-    const value = Object.fromEntries(myForm.entries());
-
-    dispatch(createProduct(value));
+    dispatch(createProduct(myForm));
   };
 
   const createProductImagesChange = (e) => {
@@ -96,7 +94,6 @@ const NewProduct = ({ history }) => {
       <MetaData title="Create Product" />
       <div className="dashboard">
         <SideBar />
-        <h1>remove</h1>
         <div className="newProductContainer">
           <form
             className="createProductForm"

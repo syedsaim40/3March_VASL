@@ -39,13 +39,13 @@ const UpdateProduct = ({ history, match }) => {
   const [imagesPreview, setImagesPreview] = useState([]);
 
   const categories = [
-    "Womens",
-    "Newinn",
-    "Accessories",
-    "Unstiched",
-    "AClothes",
-    "Replicas",
-    "ReadyToWear",
+    "Men",
+    "T-Shirt",
+    "Women",
+    "UnStitch",
+    "Stitch",
+    "Underware",
+    "Mobiles",
   ];
 
   useEffect(() => {
@@ -99,9 +99,7 @@ const UpdateProduct = ({ history, match }) => {
     images.forEach((image) => {
       myForm.append("images", image);
     });
-    const value = Object.fromEntries(myForm.entries());
-
-    dispatch(updateProduct(productId, value));
+    dispatch(updateProduct(productId, myForm));
   };
 
   const updateProductImagesChange = (e) => {
