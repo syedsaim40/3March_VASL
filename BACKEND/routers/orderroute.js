@@ -7,12 +7,14 @@ const {
   getallorder,
   updateorder,
   deleteorder,
+  getrandomcheckorder,
 } = require("../controllers/ordercontroller");
 
 const authenticate = require("../middleware/auth");
 
 router.route("/order/new").post(authenticate, neworder);
 router.route("/order/:id").get(authenticate, getsingleorder);
+router.route("/check/order/:id").get(getrandomcheckorder);
 router.route("/orders/me").get(authenticate, getmyorder);
 router
   .route("/admin/orders")

@@ -17,6 +17,9 @@ import {
   ORDER_DETAILS_REQUEST,
   ORDER_DETAILS_SUCCESS,
   ORDER_DETAILS_FAIL,
+  CHECK_ORDER_DETAILS_REQUEST,
+  CHECK_ORDER_DETAILS_SUCCESS,
+  CHECK_ORDER_DETAILS_FAIL,
   CLEAR_ERRORS,
 } from "../constant/orderconstant";
 
@@ -127,6 +130,21 @@ export const getOrderDetails = (id) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: ORDER_DETAILS_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
+
+export const getrandomDetails = (id) => async (dispatch) => {
+  try {
+    dispatch({ type: CHECK_ORDER_DETAILS_REQUEST });
+
+    const { data } = await axios.get(`/api/vasal/check/order/${id}`);
+
+    dispatch({ type: CHECK_ORDER_DETAILS_SUCCESS, payload: data.order });
+  } catch (error) {
+    dispatch({
+      type: CHECK_ORDER_DETAILS_FAIL,
       payload: error.response.data.message,
     });
   }
