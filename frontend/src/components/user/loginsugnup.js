@@ -7,90 +7,11 @@ import { CLEAR_Errors, login, register } from "../../redux/action/useraction";
 import { useHistory } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { GoogleLogin } from "react-google-login";
+
+
+
 const LoginSignUp = ({ location }) => {
   let history = useHistory();
-  // const dispatch = useDispatch();
-  // const alert = useAlert();
-
-  // const { error, loading, isAuthenticated } = useSelector(
-  //   (state) => state.user
-  // );
-
-  // const loginTab = useRef(null);
-  // const registerTab = useRef(null);
-  // const switcherTab = useRef(null);
-
-  // const [loginEmail, setLoginEmail] = useState("");
-  // const [loginPassword, setLoginPassword] = useState("");
-
-  // const [user, setUser] = useState({
-  //   name: "",
-  //   email: "",
-  //   password: "",
-  // });
-
-  // const { name, email, password } = user;
-
-  // const [avatar, setAvatar] = useState("/Profile.png");
-  // const [avatarPreview, setAvatarPreview] = useState("/Profile.png");
-
-  // const loginSubmit = (e) => {
-  //   e.preventDefault();
-  //   dispatch(login(loginEmail, loginPassword));
-  // };
-
-  // const registerSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   const myForm = new FormData();
-
-  //   myForm.set("name", name);
-  //   myForm.set("email", email);
-  //   myForm.set("password", password);
-  //   myForm.set("avatar", avatar);
-  //   dispatch(register(myForm));
-  // };
-
-  // const registerDataChange = (e) => {
-  //   if (e.target.name === "avatar") {
-  //     const reader = new FileReader();
-
-  //     reader.onload = () => {
-  //       if (reader.readyState === 2) {
-  //         setAvatarPreview(reader.result);
-  //         setAvatar(reader.result);
-  //       }
-  //     };
-
-  //     reader.readAsDataURL(e.target.files[0]);
-  //   } else {
-  //     setUser({ ...user, [e.target.name]: e.target.value });
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   if (error) {
-  //     alert.error(error);
-  //     dispatch(CLEAR_Errors());
-  //   }
-  // }, [dispatch, error, alert, history, isAuthenticated]);
-
-  // const switchTabs = (e, tab) => {
-  //   if (tab === "login") {
-  //     switcherTab.current.classList.add("shiftToNeutral");
-  //     switcherTab.current.classList.remove("shiftToRight");
-
-  //     registerTab.current.classList.remove("shiftToNeutralForm");
-  //     loginTab.current.classList.remove("shiftToLeft");
-  //   }
-  //   if (tab === "register") {
-  //     switcherTab.current.classList.add("shiftToRight");
-  //     switcherTab.current.classList.remove("shiftToNeutral");
-
-  //     registerTab.current.classList.add("shiftToNeutralForm");
-  //     loginTab.current.classList.add("shiftToLeft");
-  //   }
-  // };
 
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -156,6 +77,7 @@ const LoginSignUp = ({ location }) => {
       loginTab.current.classList.add("shiftToLeft");
     }
   };
+
   return (
     <Fragment>
       {/* {loading ? (
@@ -222,13 +144,21 @@ const LoginSignUp = ({ location }) => {
                     cookiePolicy={"single_host_origin"}
                     className="btn_primary social_btn"
                   />
-                  <GoogleLogin
+
+                  {/* <GoogleLogin
+                    clientId="968709430379-dkv5gov48ieuc3t5kmq5s7in57sri6er.apps.googleusercontent.com"
+                    buttonText="Login"
+                    onSuccess={responseGoogle}
+                    onFailure={responseGoogle}
+                    cookiePolicy={'single_host_origin'}
+                  /> */}
+                  {/* <GoogleLogin
                     clientId="968709430379-dkv5gov48ieuc3t5kmq5s7in57sri6er.apps.googleusercontent.com"
                     buttonText="Login Facebook"
                     // onSuccess={responseGoogle}
                     cookiePolicy={"single_host_origin"}
                     className="btn_primary social_btn"
-                  />
+                  /> */}
                   ,{/* For Facebbok Login Authentication */}
                   {/* <FacebookLogin
                       appId="452032583149631"
