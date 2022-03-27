@@ -52,7 +52,8 @@ import Ready from "./components/pages/ReadyToWear";
 import UnStiched from "./components/pages/Unstiched";
 import Aclothes from "./components/pages/AClothes";
 import Beauty from "./components/pages/Beauty";
-import Searchod from "./components/Order/searchorder";
+import Checkorderdetails from "./components/Order/checkorderemaildetails";
+import Checkemail from "./components/Order/checkordermail";
 function App() {
   // const { user, isAuthenticated } = useSelector((state) => state.user);
 
@@ -147,7 +148,13 @@ function App() {
 
           <ProtectedRoute exact path="/order/:id" component={OrderDetails} />
           <Route exact path="/check/order/" component={CheckDetails} />
-          <Route exact path="/search/order/details" component={Searchod} />
+          {/* <Route exact path="/search/order/details" component={Searchod} /> */}
+          <Route exact path="/check/order/email" component={Checkemail} />
+          <Route
+            exact
+            path="/check/order/email/:id"
+            component={Checkorderdetails}
+          />
 
           <ProtectedRoute
             exact

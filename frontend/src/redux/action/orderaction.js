@@ -20,6 +20,9 @@ import {
   CHECK_ORDER_DETAILS_REQUEST,
   CHECK_ORDER_DETAILS_SUCCESS,
   CHECK_ORDER_DETAILS_FAIL,
+  CHECK_EMAIL_DETAILS_REQUEST,
+  CHECK_EMAIL_DETAILS_SUCCESS,
+  CHECK_EMAIL_DETAILS_FAIL,
   CLEAR_ERRORS,
 } from "../constant/orderconstant";
 
@@ -135,11 +138,11 @@ export const getOrderDetails = (id) => async (dispatch) => {
   }
 };
 
-export const getrandomDetails = (user) => async (dispatch) => {
+export const getrandomDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: CHECK_ORDER_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`/api/vasal/check/order/${user}`);
+    const { data } = await axios.get(`/api/vasal/check/order/${id}`);
 
     dispatch({ type: CHECK_ORDER_DETAILS_SUCCESS, payload: data.order });
   } catch (error) {
@@ -149,7 +152,21 @@ export const getrandomDetails = (user) => async (dispatch) => {
     });
   }
 };
+//
+export const getrandomemail = (user) => async (dispatch) => {
+  try {
+    dispatch({ type: CHECK_EMAIL_DETAILS_REQUEST });
 
+    const { data } = await axios.get(`/api/vasal/check/order/email/${user}`);
+
+    dispatch({ type: CHECK_EMAIL_DETAILS_SUCCESS, payload: data.order });
+  } catch (error) {
+    dispatch({
+      type: CHECK_EMAIL_DETAILS_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
 // Clearing Errors
 export const clearErrors = () => async (dispatch) => {
   dispatch({ type: CLEAR_ERRORS });

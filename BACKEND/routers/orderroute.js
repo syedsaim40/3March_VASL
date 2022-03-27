@@ -8,6 +8,7 @@ const {
   updateorder,
   deleteorder,
   getrandomcheckorder,
+  getrandomemailorder,
 } = require("../controllers/ordercontroller");
 
 const authenticate = require("../middleware/auth");
@@ -16,7 +17,7 @@ router.route("/order/new").post(neworder);
 router.route("/order/:id").get(authenticate, getsingleorder);
 router.route("/orders/me").get(authenticate, getmyorder);
 router.route("/check/order/:id").get(getrandomcheckorder);
-// router.route("/check/order/:user").get(getrandomcheckorder);
+router.route("/check/order/email/:user").get(getrandomemailorder);
 router
   .route("/admin/orders")
   .get(authenticate, authorizerole("admin"), getallorder);

@@ -48,19 +48,19 @@ exports.getsingleorder = catchasyncerror(async (req, res, next) => {
   });
 });
 //ye nechy wala email wala ha
-// exports.getrandomcheckorder = catchasyncerror(async (req, res, next) => {
-//   var user = req.params.user;
-//   const order = await Order.find({ user: user });
+exports.getrandomemailorder = catchasyncerror(async (req, res, next) => {
+  var user = req.params.user;
+  const order = await Order.find({ user: user });
 
-//   if (!order) {
-//     return next(new Errorhandler("Order not found with this Id", 404));
-//   }
+  if (!order) {
+    return next(new Errorhandler("Order not found with this Id", 404));
+  }
 
-//   res.status(200).json({
-//     success: true,
-//     order,
-//   });
-// });
+  res.status(200).json({
+    success: true,
+    order,
+  });
+});
 //order id
 exports.getrandomcheckorder = catchasyncerror(async (req, res, next) => {
   const order = await Order.findById(req.params.id);

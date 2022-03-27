@@ -22,6 +22,9 @@ import {
   CHECK_ORDER_DETAILS_REQUEST,
   CHECK_ORDER_DETAILS_SUCCESS,
   CHECK_ORDER_DETAILS_FAIL,
+  CHECK_EMAIL_DETAILS_REQUEST,
+  CHECK_EMAIL_DETAILS_SUCCESS,
+  CHECK_EMAIL_DETAILS_FAIL,
   CLEAR_ERRORS,
 } from "../constant/orderconstant";
 
@@ -198,31 +201,32 @@ export const orderDetailsReducer = (state = { order: {} }, action) => {
 };
 //random
 
-// export const randomDetailsReducer = (state = { order: {} }, action) => {
-//   switch (action.type) {
-//     case CHECK_ORDER_DETAILS_REQUEST:
-//       return {
-//         loading: true,
-//       };
+export const randomemailReducer = (state = { order: [] }, action) => {
+  switch (action.type) {
+    case CHECK_EMAIL_DETAILS_REQUEST:
+      return {
+        loading: true,
+        order: [],
+      };
 
-//     case CHECK_ORDER_DETAILS_SUCCESS:
-//       return {
-//         loading: false,
-//         order: action.payload,
-//       };
+    case CHECK_EMAIL_DETAILS_SUCCESS:
+      return {
+        loading: false,
+        order: action.payload,
+      };
 
-//     case CHECK_ORDER_DETAILS_FAIL:
-//       return {
-//         loading: false,
-//         error: action.payload,
-//       };
-//     case CLEAR_ERRORS:
-//       return {
-//         ...state,
-//         error: null,
-//       };
+    case CHECK_EMAIL_DETAILS_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+    case CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null,
+      };
 
-//     default:
-//       return state;
-//   }
-// };
+    default:
+      return state;
+  }
+};
