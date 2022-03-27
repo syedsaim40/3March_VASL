@@ -7,7 +7,7 @@ import UserOptions from "../../user/useroption";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-
+import ContentPasteSearchIcon from "@mui/icons-material/ContentPasteSearch";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import SearchIcon from "@mui/icons-material/Search";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
@@ -389,6 +389,11 @@ function Header() {
           <li>
             <Link to="/check/order">
               <ListAltIcon />
+            </Link>
+          </li>
+          <li>
+            <Link to="/check/order/email">
+              <ContentPasteSearchIcon />
             </Link>
           </li>
           <li>
