@@ -52,6 +52,7 @@ import Ready from "./components/pages/ReadyToWear";
 import UnStiched from "./components/pages/Unstiched";
 import Aclothes from "./components/pages/AClothes";
 import Beauty from "./components/pages/Beauty";
+import Searchod from "./components/Order/searchorder";
 function App() {
   // const { user, isAuthenticated } = useSelector((state) => state.user);
 
@@ -79,15 +80,11 @@ function App() {
           <Route exact path="/search" component={Search} />
           <Route exact path="/login" component={loginsugnup} />
           <ProtectedRoute exact path="/accounts" component={Profile} />
-          <ProtectedRoute exact path="/cart" component={Cart} />
-          <ProtectedRoute
-            exact
-            path="/FavouriteCart"
-            component={FavouriteCart}
-          />
-          <ProtectedRoute exact path="/shipping" component={Shipping} />
-          <ProtectedRoute exact path="/process/payment" component={Payment} />
-          <ProtectedRoute exact path="/success" component={OrderSuccess} />
+          <Route exact path="/cart" component={Cart} />
+          <Route exact path="/FavouriteCart" component={FavouriteCart} />
+          <Route exact path="/shipping" component={Shipping} />
+          <Route exact path="/process/payment" component={Payment} />
+          <Route exact path="/success" component={OrderSuccess} />
           <ProtectedRoute exact path="/orders" component={MyOrders} />
           {/* ADMIN_ROUTE */}
           <ProtectedRoute
@@ -146,14 +143,11 @@ function App() {
             path="/admin/reviews"
             component={ProductReviews}
           />
-          <ProtectedRoute
-            exact
-            path="/order/confirm"
-            component={ConfirmOrder}
-          />
+          <Route exact path="/order/confirm" component={ConfirmOrder} />
 
           <ProtectedRoute exact path="/order/:id" component={OrderDetails} />
           <Route exact path="/check/order/" component={CheckDetails} />
+          <Route exact path="/search/order/details" component={Searchod} />
 
           <ProtectedRoute
             exact

@@ -48,7 +48,11 @@ const OrderDetails = () => {
               <div className="orderDetailsContainerBox">
                 <div>
                   <p>Name:</p>
-                  <span>{order.user && order.user.name}</span>
+                  <span>{order.shippingInfo && order.shippingInfo.name}</span>
+                </div>
+                <div>
+                  <p>Email:</p>
+                  <span>{order.shippingInfo && order.shippingInfo.email}</span>
                 </div>
                 <div>
                   <p>Phone:</p>
@@ -60,7 +64,7 @@ const OrderDetails = () => {
                   <p>Address:</p>
                   <span>
                     {order.shippingInfo &&
-                      `${order.shippingInfo.address}, ${order.shippingInfo.city}, ${order.shippingInfo.state}, ${order.shippingInfo.pinCode}, ${order.shippingInfo.country}`}
+                      `${order.shippingInfo.address}, ${order.shippingInfo.city}, STATE (${order.shippingInfo.state}),  PINCODE (${order.shippingInfo.pinCode})`}
                   </span>
                 </div>
               </div>

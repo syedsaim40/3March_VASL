@@ -14,6 +14,7 @@ import {
   orderReducer,
   orderDetailsReducer,
   allOrdersReducer,
+  // randomDetailsReducer,
 } from "./orderReducer";
 import {
   allUsersReducer,
@@ -28,6 +29,7 @@ const AllReducer = combineReducers({
   newOrder: newOrderReducer,
   myOrders: myOrdersReducer,
   orderDetails: orderDetailsReducer,
+  // unknownorder: randomDetailsReducer,
   products: productsReducer,
   userDetails: userDetailsReducer,
   productDetails: productDetailsReducer,

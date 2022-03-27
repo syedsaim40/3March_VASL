@@ -21,7 +21,7 @@ exports.neworder = catchasyncerror(async (req, res, next) => {
     shippingPrice,
     totalPrice,
     paidAt: Date.now(),
-    user: req.user._id,
+    user: shippingInfo.email,
   });
 
   res.status(201).json({
@@ -31,10 +31,12 @@ exports.neworder = catchasyncerror(async (req, res, next) => {
 });
 // get Single Order
 exports.getsingleorder = catchasyncerror(async (req, res, next) => {
-  const order = await Order.findById(req.params.id).populate(
-    "user",
-    "name email"
-  );
+  const user = req.user._id;
+  const query = { user: user };
+  const order = await Order.findById(req.params.id).populate({
+    path: "user._id",
+    select: " user name email",
+  });
 
   if (!order) {
     return next(new Errorhandler("Order not found with this Id", 404));
@@ -45,6 +47,20 @@ exports.getsingleorder = catchasyncerror(async (req, res, next) => {
     order,
   });
 });
+//ye nechy wala email wala ha
+// exports.getrandomcheckorder = catchasyncerror(async (req, res, next) => {
+//   var user = req.params.user;
+//   const order = await Order.find({ user: user });
+
+//   if (!order) {
+//     return next(new Errorhandler("Order not found with this Id", 404));
+//   }
+
+//   res.status(200).json({
+//     success: true,
+//     order,
+//   });
+// });
 //order id
 exports.getrandomcheckorder = catchasyncerror(async (req, res, next) => {
   const order = await Order.findById(req.params.id);
@@ -60,7 +76,12 @@ exports.getrandomcheckorder = catchasyncerror(async (req, res, next) => {
 });
 // get logged in user  Orders
 exports.getmyorder = catchasyncerror(async (req, res, next) => {
-  const orders = await Order.find({ user: req.user._id });
+  // const orders = await Order.find({ user: req.user.name }).populate([
+  //   { path: "user", model: "User", select: "name" },
+  // ]);
+  const user = req.user.email;
+  const query = { user: user };
+  const orders = await Order.find(query);
 
   res.status(200).json({
     success: true,

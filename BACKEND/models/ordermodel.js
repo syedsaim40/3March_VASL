@@ -6,6 +6,14 @@ const orderSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
+    name: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+    },
     city: {
       type: String,
       required: true,
@@ -16,10 +24,6 @@ const orderSchema = new mongoose.Schema({
       required: true,
     },
 
-    country: {
-      type: String,
-      required: true,
-    },
     pinCode: {
       type: Number,
       required: true,
@@ -55,10 +59,12 @@ const orderSchema = new mongoose.Schema({
     },
   ],
   user: {
-    type: mongoose.Schema.ObjectId,
+    type: mongoose.Schema.Types.String,
     ref: "user",
-    required: true,
+    // name:user
+    // required: true,
   },
+
   paymentInfo: {
     id: {
       type: String,

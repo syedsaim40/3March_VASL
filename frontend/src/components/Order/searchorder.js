@@ -10,7 +10,7 @@ const Search = () => {
   const searchSubmitHandler = (e) => {
     e.preventDefault();
     if (keyword.trim()) {
-      history.push(`/check/order/${keyword}`);
+      history.push(`/check/order/`);
     } else {
       history.push("/check/orders/");
     }

@@ -135,11 +135,11 @@ export const getOrderDetails = (id) => async (dispatch) => {
   }
 };
 
-export const getrandomDetails = (id) => async (dispatch) => {
+export const getrandomDetails = (user) => async (dispatch) => {
   try {
     dispatch({ type: CHECK_ORDER_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`/api/vasal/check/order/${id}`);
+    const { data } = await axios.get(`/api/vasal/check/order/${user}`);
 
     dispatch({ type: CHECK_ORDER_DETAILS_SUCCESS, payload: data.order });
   } catch (error) {
