@@ -7,6 +7,8 @@ import { CLEAR_Errors, login, register } from "../../redux/action/useraction";
 import { useHistory } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { GoogleLogin } from "react-google-login";
+import Login from "./googleLogin";
+import Logout from "./googleLogout";
 
 
 
@@ -26,9 +28,10 @@ const LoginSignUp = ({ location }) => {
     name: "",
     email: "",
     password: "",
+    Auth: ""
   });
 
-  const { name, email, password } = user;
+  const { name, email, password, Auth } = user;
 
   const registerDataChange = (e) => {
     let name, value;
@@ -77,6 +80,20 @@ const LoginSignUp = ({ location }) => {
       loginTab.current.classList.add("shiftToLeft");
     }
   };
+
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    try {
+        await Auth.signIn(email, password);
+        isAuthenticated(true);
+        history.push("/");
+    } catch (e) {
+        alert(e.message);
+    }
+}
+
 
   return (
     <Fragment>
@@ -144,6 +161,9 @@ const LoginSignUp = ({ location }) => {
                     cookiePolicy={"single_host_origin"}
                     className="btn_primary social_btn"
                   />
+
+                  <Login onChange={handleSubmit} />
+                  <Logout />
 
                   {/* <GoogleLogin
                     clientId="968709430379-dkv5gov48ieuc3t5kmq5s7in57sri6er.apps.googleusercontent.com"
