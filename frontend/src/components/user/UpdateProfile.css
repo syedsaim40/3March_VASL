@@ -1,11 +1,7 @@
 .updateProfileContainer {
-  width: 100vw;
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 20%;
-  left: 0;
+  display: block;
+  text-align: center;
+  padding: 50px 0;
 }
 
 .updateProfileHeading {

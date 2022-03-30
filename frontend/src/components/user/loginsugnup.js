@@ -9,6 +9,7 @@ import { useAlert } from "react-alert";
 import { GoogleLogin } from "react-google-login";
 import Login from "./googleLogin";
 import Logout from "./googleLogout";
+import axios from "axios";
 
 
 
@@ -86,14 +87,28 @@ const LoginSignUp = ({ location }) => {
     event.preventDefault();
 
     try {
-        await Auth.signIn(email, password);
-        isAuthenticated(true);
-        history.push("/");
+      await Auth.signIn(email, password);
+      isAuthenticated(true);
+      history.push("/");
     } catch (e) {
-        alert(e.message);
+      alert(e.message);
     }
-}
+  }
 
+  const responseSuccessGoogle = (response) => {
+    console.log(response)
+    axios({
+      method: "POST",
+      url: "http://localhost:3000",
+      data: { tokenId: response.tokenId }
+    }).then(response => {
+      console.log(response)
+    })
+  }
+
+  const responseErrorGoogle = (response) => {
+
+  }
 
   return (
     <Fragment>
@@ -157,13 +172,14 @@ const LoginSignUp = ({ location }) => {
                   <GoogleLogin
                     clientId="968709430379-dkv5gov48ieuc3t5kmq5s7in57sri6er.apps.googleusercontent.com"
                     buttonText="Login google"
-                    // onSuccess={responseGoogle}
+                    onSuccess={responseSuccessGoogle}
+                    onFailure={responseErrorGoogle}
                     cookiePolicy={"single_host_origin"}
                     className="btn_primary social_btn"
                   />
 
-                  <Login onChange={handleSubmit} />
-                  <Logout />
+                  {/* <Login onChange={handleSubmit} />
+                  <Logout /> */}
 
                   {/* <GoogleLogin
                     clientId="968709430379-dkv5gov48ieuc3t5kmq5s7in57sri6er.apps.googleusercontent.com"

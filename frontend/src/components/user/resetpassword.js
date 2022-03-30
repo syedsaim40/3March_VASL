@@ -49,8 +49,11 @@ const UpdatePassword = ({ history, match }) => {
         <Fragment>
           <div className="updateProfileContainer">
             <div className="LoginSignUpBox">
-              <h2 className="updateProfileHeading">Reset Password</h2>
-
+            <div className="section_heading">
+              <div className="homeHeading">
+                <h2>Reset Password</h2>
+              </div>
+            </div>
               <form className="signinForm" onSubmit={resetPasswordSubmit}>
                 <div className="group_field">
                   <label htmlFor="password">
@@ -78,7 +81,7 @@ const UpdatePassword = ({ history, match }) => {
                 </div>
 
                 <div className="row group_field e_btn">
-                  <button type="submit" value="Change">
+                  <button className="btn_primary" type="submit" value="Change">
                     RESET PASSWORD
                   </button>
                 </div>

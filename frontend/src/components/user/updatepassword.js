@@ -50,58 +50,61 @@ const UpdatePassword = () => {
       {/* {loading ? (
         <Loader />
       ) : ( */}
-        <Fragment>
-          <div className="updateProfileContainer">
-            <div className="LoginSignUpBox">
-              <h2 className="updateProfileHeading">Update Password</h2>
-
-              <form className="signinForm" onSubmit={updatePasswordSubmit}>
-                <div className="group_field">
-                  <label htmlFor="password">
-                    Old Password<span>*</span>
-                  </label>
-                  <input
-                    type="password"
-                    placeholder="Old Password"
-                    required
-                    value={oldpassword}
-                    onChange={(e) => setOldPassword(e.target.value)}
-                  />
-                </div>
-                <div className="group_field">
-                  <label htmlFor="password">
-                    New Password<span>*</span>
-                  </label>
-                  <input
-                    type="password"
-                    placeholder="New Password"
-                    required
-                    value={newpassword}
-                    onChange={(e) => setNewPassword(e.target.value)}
-                  />
-                </div>
-                <div className="group_field">
-                  <label htmlFor="password">
-                    Conform Password<span>*</span>
-                  </label>
-                  <input
-                    type="password"
-                    placeholder="Conform Password"
-                    required
-                    value={conformpassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                  />
-                </div>
-
-                <div className="row group_field e_btn">
-                  <button type="submit" value="Change">
-                    UPDATE
-                  </button>
-                </div>
-              </form>
+      <Fragment>
+        <div className="updateProfileContainer">
+          <div className="LoginSignUpBox">
+            <div className="section_heading">
+              <div className="homeHeading">
+                <h2>Update Password</h2>
+              </div>
             </div>
+            <form className="signinForm" onSubmit={updatePasswordSubmit}>
+              <div className="group_field">
+                <label htmlFor="password">
+                  Old Password<span>*</span>
+                </label>
+                <input
+                  type="password"
+                  placeholder="Old Password"
+                  required
+                  value={oldpassword}
+                  onChange={(e) => setOldPassword(e.target.value)}
+                />
+              </div>
+              <div className="group_field">
+                <label htmlFor="password">
+                  New Password<span>*</span>
+                </label>
+                <input
+                  type="password"
+                  placeholder="New Password"
+                  required
+                  value={newpassword}
+                  onChange={(e) => setNewPassword(e.target.value)}
+                />
+              </div>
+              <div className="group_field">
+                <label htmlFor="password">
+                  Conform Password<span>*</span>
+                </label>
+                <input
+                  type="password"
+                  placeholder="Conform Password"
+                  required
+                  value={conformpassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                />
+              </div>
+
+              <div className="row group_field e_btn">
+                <button className="btn_primary" type="submit" value="Change">
+                  UPDATE
+                </button>
+              </div>
+            </form>
           </div>
-        </Fragment>
+        </div>
+      </Fragment>
       {/* )} */}
     </Fragment>
   );

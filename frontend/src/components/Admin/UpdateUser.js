@@ -76,14 +76,15 @@ const UpdateUser = ({ history, match }) => {
       <div className="dashboard">
         <SideBar />
         <div className="newProductContainer">
-          {loading ? (
-            <Loader />
-          ) : (
             <form
               className="createProductForm"
               onSubmit={updateUserSubmitHandler}
             >
-              <h1>Update User</h1>
+          <div className="section_heading">
+            <div className="homeHeading">
+              <h2>Update User</h2>
+            </div>
+          </div>
 
               <div>
                 <PersonIcon />
@@ -115,17 +116,17 @@ const UpdateUser = ({ history, match }) => {
                 </select>
               </div>
 
-              <Button
+              <button
                 id="createProductBtn"
                 type="submit"
+                className="btn_primary"
                 disabled={
                   updateLoading ? true : false || role === "" ? true : false
                 }
               >
                 Update
-              </Button>
+              </button>
             </form>
-          )}
         </div>
       </div>
     </Fragment>
