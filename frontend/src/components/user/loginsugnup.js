@@ -76,7 +76,7 @@ const LoginSignUp = ({ location }) => {
       dispatch(CLEAR_Errors());
     }
     if (isAuthenticated) {
-      history.push("/");
+      history.push("/accounts");
     }
   }, [dispatch, error, alert, history, isAuthenticated]);
 

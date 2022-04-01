@@ -271,6 +271,8 @@ function Header() {
             </SlidingPane>
           </div>
         </div>
+
+        {/* mobilr */}
         <div id="vasl-menu">
           <SideNav
             onSelect={(selected) => {
