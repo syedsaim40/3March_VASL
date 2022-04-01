@@ -179,7 +179,7 @@ function Header() {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/login">
+                    <Link to="/accounts">
                       <AccountBoxOutlinedIcon />
                       <span>Your Profile</span>
                     </Link>
