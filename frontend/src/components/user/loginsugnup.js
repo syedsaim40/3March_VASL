@@ -7,9 +7,9 @@ import { CLEAR_Errors, login, register } from "../../redux/action/useraction";
 import { useHistory } from "react-router-dom";
 import { useAlert } from "react-alert";
 // import { GoogleLogin } from "react-google-login";
-import Login from "./googleLogin";
-import Logout from "./googleLogout";
-import axios from "axios";
+// import Login from "./googleLogin";
+// import Logout from "./googleLogout";
+// import axios from "axios";
 
 
 
@@ -83,32 +83,31 @@ const LoginSignUp = ({ location }) => {
   };
 
 
-  async function handleSubmit(event) {
-    event.preventDefault();
+  // async function handleSubmit(event) {
+  //   event.preventDefault();
 
-    try {
-      await Auth.signIn(email, password);
-      isAuthenticated(true);
-      history.push("/");
-    } catch (e) {
-      alert(e.message);
-    }
-  }
+  //   try {
+  //     await Auth.signIn(email, password);
+  //     isAuthenticated(true);
+  //     history.push("/");
+  //   } catch (e) {
+  //     alert(e.message);
+  //   }
+  // }
 
-  const responseSuccessGoogle = (response) => {
-    console.log(response)
-    axios({
-      method: "POST",
-      url: "http://localhost:3000",
-      data: { tokenId: response.tokenId }
-    }).then(response => {
-      console.log(response)
-    })
-  }
+  // const responseSuccessGoogle = (response) => {
+  //   console.log(response)
+  //   axios({
+  //     method: "POST",
+  //     url: "http://localhost:3000",
+  //     data: { tokenId: response.tokenId }
+  //   }).then(response => {
+  //     console.log(response)
+  //   })
+  // }
 
-  const responseErrorGoogle = (response) => {
-
-  }
+  // const responseErrorGoogle = (response) => {
+  // }
 
   return (
     <Fragment>
