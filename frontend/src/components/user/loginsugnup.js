@@ -11,17 +11,13 @@ import {
 } from "../../redux/action/useraction";
 import { useHistory } from "react-router-dom";
 import { useAlert } from "react-alert";
-<<<<<<< HEAD
 // import { GoogleLogin } from "react-google-login";
 // import Login from "./googleLogin";
 // import Logout from "./googleLogout";
 // import axios from "axios";
 
-
-=======
 import { GoogleLogin } from "react-google-login";
 import Logout from "./googleLogout";
->>>>>>> 482b7109ae53d4624550a62349765a302f15220c
 
 const LoginSignUp = ({ location }) => {
   let history = useHistory();
@@ -101,8 +97,6 @@ const LoginSignUp = ({ location }) => {
     }
   };
 
-<<<<<<< HEAD
-
   // async function handleSubmit(event) {
   //   event.preventDefault();
 
@@ -129,8 +123,6 @@ const LoginSignUp = ({ location }) => {
   // const responseErrorGoogle = (response) => {
   // }
 
-=======
->>>>>>> 482b7109ae53d4624550a62349765a302f15220c
   return (
     <Fragment>
       {/* {loading ? (
