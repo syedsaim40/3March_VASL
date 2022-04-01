@@ -64,7 +64,7 @@ const LoginSignUp = ({ location }) => {
   const onSuccess = (response) => {
     console.log(response);
     dispatch(googlelogin(response));
-    window.location.reload(false);
+    // window.location.reload(false);
   };
 
   const onFailure = (res) => {
@@ -76,7 +76,7 @@ const LoginSignUp = ({ location }) => {
       dispatch(CLEAR_Errors());
     }
     if (isAuthenticated) {
-      history.push("/");
+      history.push("/accounts");
     }
   }, [dispatch, error, alert, history, isAuthenticated]);
 
