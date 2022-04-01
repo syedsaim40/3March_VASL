@@ -13,11 +13,11 @@ import SearchIcon from "@mui/icons-material/Search";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import AccountBoxOutlinedIcon from "@mui/icons-material/AccountBoxOutlined";
 import CategoryOutlinedIcon from "@mui/icons-material/CategoryOutlined";
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from "@mui/icons-material/Menu";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import ListAltIcon from "@material-ui/icons/ListAlt";
-import LogoutIcon from '@mui/icons-material/Logout';
-import DashboardIcon from '@mui/icons-material/Dashboard';
+import LogoutIcon from "@mui/icons-material/Logout";
+import DashboardIcon from "@mui/icons-material/Dashboard";
 
 import { Logout } from "../../../redux/action/useraction";
 import { useDispatch } from "react-redux";
@@ -222,15 +222,21 @@ function Header() {
                   <li>
                     <Link
                       to="/FavouriteCart"
-                      style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
+                      style={{
+                        color: favouriteItems.length > 0 ? "red" : "unset",
+                      }}
                     >
                       {favouriteItems.length === 0 ? (
                         <FavoriteBorderIcon
-                          style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
+                          style={{
+                            color: favouriteItems.length > 0 ? "red" : "unset",
+                          }}
                         />
                       ) : (
                         <FavoriteIcon
-                          style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
+                          style={{
+                            color: favouriteItems.length > 0 ? "red" : "unset",
+                          }}
                         />
                       )}
                       <span>Favourites</span>

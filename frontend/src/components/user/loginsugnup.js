@@ -3,15 +3,25 @@ import "./loginsignup.css";
 import { Link } from "react-router-dom";
 // import Loader from "./../Layout/Loader/Loader";
 import { useSelector, useDispatch } from "react-redux";
-import { CLEAR_Errors, login, register } from "../../redux/action/useraction";
+import {
+  CLEAR_Errors,
+  login,
+  register,
+  googlelogin,
+} from "../../redux/action/useraction";
 import { useHistory } from "react-router-dom";
 import { useAlert } from "react-alert";
+<<<<<<< HEAD
 // import { GoogleLogin } from "react-google-login";
 // import Login from "./googleLogin";
 // import Logout from "./googleLogout";
 // import axios from "axios";
 
 
+=======
+import { GoogleLogin } from "react-google-login";
+import Logout from "./googleLogout";
+>>>>>>> 482b7109ae53d4624550a62349765a302f15220c
 
 const LoginSignUp = ({ location }) => {
   let history = useHistory();
@@ -29,10 +39,10 @@ const LoginSignUp = ({ location }) => {
     name: "",
     email: "",
     password: "",
-    Auth: ""
+    Auth: "",
   });
 
-  const { name, email, password, Auth } = user;
+  const { name, email, password } = user;
 
   const registerDataChange = (e) => {
     let name, value;
@@ -55,13 +65,22 @@ const LoginSignUp = ({ location }) => {
   // const redirect = location.search
   //   ? location.search.split("=")[1]
   //   : "/accounts";
+  const onSuccess = (response) => {
+    console.log(response);
+    dispatch(googlelogin(response));
+    window.location.reload(false);
+  };
+
+  const onFailure = (res) => {
+    console.log(res);
+  };
   useEffect(() => {
     if (error) {
       alert.error(error);
       dispatch(CLEAR_Errors());
     }
     if (isAuthenticated) {
-      history.push("/accounts");
+      history.push("/");
     }
   }, [dispatch, error, alert, history, isAuthenticated]);
 
@@ -82,6 +101,7 @@ const LoginSignUp = ({ location }) => {
     }
   };
 
+<<<<<<< HEAD
 
   // async function handleSubmit(event) {
   //   event.preventDefault();
@@ -109,6 +129,8 @@ const LoginSignUp = ({ location }) => {
   // const responseErrorGoogle = (response) => {
   // }
 
+=======
+>>>>>>> 482b7109ae53d4624550a62349765a302f15220c
   return (
     <Fragment>
       {/* {loading ? (
@@ -176,10 +198,15 @@ const LoginSignUp = ({ location }) => {
                     cookiePolicy={"single_host_origin"}
                     className="btn_primary social_btn"
                   /> */}
-
-                  {/* <Login onChange={handleSubmit} />
-                  <Logout /> */}
-
+                  <GoogleLogin
+                    clientId="1068904748671-ngjq97fgfjtgp3e82efhf4dmd09j4dkf.apps.googleusercontent.com"
+                    buttonText="Login With Google"
+                    onSuccess={onSuccess}
+                    onFailure={onFailure}
+                    cookiePolicy={"single_host_origin"}
+                    style={{ marginTop: "100px" }}
+                  />
+                  <Logout />
                   {/* <GoogleLogin
                     clientId="968709430379-dkv5gov48ieuc3t5kmq5s7in57sri6er.apps.googleusercontent.com"
                     buttonText="Login"

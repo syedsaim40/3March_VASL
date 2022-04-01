@@ -58,47 +58,51 @@ exports.googlelogin = (req, res) => {
         "1068904748671-ngjq97fgfjtgp3e82efhf4dmd09j4dkf.apps.googleusercontent.com",
     })
     .then((response) => {
-      const { name, email, email_verified, imageUrl } = response.payload;
-      if (email_verified)
-      {
-        User.findOne({email}).exec((err,user)=>{
-          if(err)
-          {
+      const { name, email, picture, email_verified } = response.payload;
+      console.log(response.payload);
+      if (email_verified) {
+        User.findOne({ email }).exec((err, user) => {
+          if (err) {
             return res.status(400).json({
-              error:"This user doesn't exist signup first"
-            })
-          }
-          else{
-            if(user)
-            {
+              error: "This user doesn't exist signup first",
+            });
+          } else {
+            if (user) {
               const token = user.getJWTToken(); //ye access kr rhy token models mein bnya wa ha
 
-              const { _id, name, email, avatar = "imageUrl" } = user;
-              res.json({
-                token,
-                user: { _id, name, email ,avatar},
-              });
-            }else{
-                let password = email + process.env.JWT_SECRE;
-                let newuser=new User({name,email,password})
-                newuser.save((err, data) => {
-                  if (err) {
-                    return res.status(400).json({
-                      error: "Something went wrong...",
-                    });
-                  }
-                  const token = user.getJWTToken(); //ye access kr rhy token models mein bnya wa ha
+              const { _id, name, email, avatar } = user;
+              sendToken(user, 200, res); //ye token bnya wa phly token bn rha or phir send kr rhy
+            } else {
+              let password = email + process.env.JWT_SECRE;
+              // let avatar = response.profileObj.imageUrl;
 
-                  const { _id, name, email, avtar = "imageUrl" } = user;
-                  res.json({
-                    token,
-                    user: { _id, name, email },
+              let newuser = new User({
+                name,
+                email,
+                password,
+                avatar: {
+                  public_id: response.payload.picture,
+                  url: response.payload.picture,
+                },
+              });
+
+              newuser.save((err, data) => {
+                if (err) {
+                  return res.status(400).json({
+                    error: "Something went wrong...",
                   });
-                })
+                }
+                console.log(data);
+                sendToken(newuser, 200, res);
+                // const token = user.getJWTToken(); //ye access kr rhy token models mein bnya wa ha
+
+                // const { _id, name, email, avatar } = user;
+              });
             }
           }
-        })
-      } console.log(response.payload);
+        });
+      }
+      console.log(response.payload);
     });
 };
 //logout
