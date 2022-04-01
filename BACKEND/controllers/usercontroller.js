@@ -5,6 +5,12 @@ const sendToken = require("../utils/getJwt");
 const sendEmail = require("../utils/sendEmail");
 const crypto = require("crypto");
 const cloudinary = require("cloudinary");
+const { OAuth2Client } = require("google-auth-library");
+const { response } = require("express");
+
+const client = new OAuth2Client(
+  "1068904748671-ngjq97fgfjtgp3e82efhf4dmd09j4dkf.apps.googleusercontent.com"
+);
 //register
 exports.registeruser = catchasyncerror(async (req, res, next) => {
   // const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
@@ -42,6 +48,59 @@ exports.loginuser = catchasyncerror(async (req, res, next) => {
   }
   sendToken(user, 200, res); //ye token bnya wa phly token bn rha or phir send kr rhy
 });
+//login with google
+exports.googlelogin = (req, res) => {
+  const { tokenId } = req.body;
+  client
+    .verifyIdToken({
+      idToken: tokenId,
+      audience:
+        "1068904748671-ngjq97fgfjtgp3e82efhf4dmd09j4dkf.apps.googleusercontent.com",
+    })
+    .then((response) => {
+      const { name, email, email_verified, imageUrl } = response.payload;
+      if (email_verified)
+      {
+        User.findOne({email}).exec((err,user)=>{
+          if(err)
+          {
+            return res.status(400).json({
+              error:"This user doesn't exist signup first"
+            })
+          }
+          else{
+            if(user)
+            {
+              const token = user.getJWTToken(); //ye access kr rhy token models mein bnya wa ha
+
+              const { _id, name, email, avatar = "imageUrl" } = user;
+              res.json({
+                token,
+                user: { _id, name, email ,avatar},
+              });
+            }else{
+                let password = email + process.env.JWT_SECRE;
+                let newuser=new User({name,email,password})
+                newuser.save((err, data) => {
+                  if (err) {
+                    return res.status(400).json({
+                      error: "Something went wrong...",
+                    });
+                  }
+                  const token = user.getJWTToken(); //ye access kr rhy token models mein bnya wa ha
+
+                  const { _id, name, email, avtar = "imageUrl" } = user;
+                  res.json({
+                    token,
+                    user: { _id, name, email },
+                  });
+                })
+            }
+          }
+        })
+      } console.log(response.payload);
+    });
+};
 //logout
 exports.logout = catchasyncerror(async (req, res, next) => {
   res.cookie("token", null, {

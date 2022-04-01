@@ -13,11 +13,13 @@ const {
   getsingleuser,
   updaterole,
   deleteuser,
+  googlelogin,
 } = require("../controllers/usercontroller");
 const auth = require("../middleware/auth");
 
 router.route("/register").post(registeruser);
 router.route("/login").post(loginuser);
+router.route("/googlelogin").post(googlelogin);
 router.route("/logout").get(logout);
 router.route("/password/forgot").post(forgotpassword);
 router.route("/password/reset/:token").put(resetpassword);

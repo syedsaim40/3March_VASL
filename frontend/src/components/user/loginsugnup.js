@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { CLEAR_Errors, login, register } from "../../redux/action/useraction";
 import { useHistory } from "react-router-dom";
 import { useAlert } from "react-alert";
-import { GoogleLogin } from "react-google-login";
+// import { GoogleLogin } from "react-google-login";
 import Login from "./googleLogin";
 import Logout from "./googleLogout";
 
@@ -154,13 +154,13 @@ const LoginSignUp = ({ location }) => {
                 </div>
                 <div className="social_login">
                   {/* For Google Login Authentication */}
-                  <GoogleLogin
+                  {/* <GoogleLogin
                     clientId="968709430379-dkv5gov48ieuc3t5kmq5s7in57sri6er.apps.googleusercontent.com"
                     buttonText="Login google"
                     // onSuccess={responseGoogle}
                     cookiePolicy={"single_host_origin"}
                     className="btn_primary social_btn"
-                  />
+                  /> */}
 
                   <Login onChange={handleSubmit} />
                   <Logout />
