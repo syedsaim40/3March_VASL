@@ -176,5 +176,9 @@ fieldset .fl_box > .slider {
     float: none;
     width: 100%;
   }
+  .products {
+    overflow: hidden;
+    padding: 4px;
+  }
 }
 

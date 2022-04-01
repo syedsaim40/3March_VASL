@@ -79,9 +79,12 @@ const UpdateProfile = () => {
       ) : ( */}
       <Fragment>
         <div className="updateProfileContainer">
+          <div className="section_heading">
+            <div className="homeHeading">
+              <h2>Update Profile</h2>
+            </div>
+          </div>
           <div className="LoginSignUpBox">
-            <h2 className="updateProfileHeading">Update Profile</h2>
-
             <form
               className="signinForm"
               encType="application/x-www-form-urlencoded"
@@ -129,7 +132,7 @@ const UpdateProfile = () => {
               </div>
 
               <div className="row group_field e_btn">
-                <button type="submit" value="update">
+                <button className="btn_primary" type="submit" value="update">
                   UPDATE
                 </button>
               </div>

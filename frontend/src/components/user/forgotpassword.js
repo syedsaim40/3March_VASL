@@ -38,37 +38,40 @@ const UpdateProfile = () => {
       {/* {loading ? (
         <Loader />
       ) : ( */}
-        <Fragment>
-          <div className="updateProfileContainer">
-            <div className="LoginSignUpBox">
-              <h2 className="updateProfileHeading">Forgot Password</h2>
-
-              <form className="signinForm" onSubmit={forgotPasswordSubmit}>
-                <div className="group_field">
-                  <label htmlFor="name">
-                    Email<span>*</span>
-                  </label>
-
-                  <input
-                    type="email"
-                    placeholder="Enter Your Email"
-                    required
-                    name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-
-                <div className="row group_field e_btn">
-                  <button type="submit" value="Send">
-                    Verify your email
-                  </button>
-                </div>
-                {/* <input type="submit" value="Update" className="updateProfileBtn" /> */}
-              </form>
+      <Fragment>
+        <div className="updateProfileContainer">
+          <div className="LoginSignUpBox">
+            <div className="section_heading">
+              <div className="homeHeading">
+                <h2>Forgot Password</h2>
+              </div>
             </div>
+            <form className="signinForm" onSubmit={forgotPasswordSubmit}>
+              <div className="group_field">
+                <label htmlFor="name">
+                  Email<span>*</span>
+                </label>
+
+                <input
+                  type="email"
+                  placeholder="Enter Your Email"
+                  required
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+
+              <div className="row group_field e_btn">
+                <button className="btn_primary" type="submit" value="Send">
+                  Verify your email
+                </button>
+              </div>
+              {/* <input type="submit" value="Update" className="updateProfileBtn" /> */}
+            </form>
           </div>
-        </Fragment>
+        </div>
+      </Fragment>
       {/* )} */}
     </Fragment>
   );

@@ -135,10 +135,6 @@ const UsersList = ({ history }) => {
               <h2>ALL USERS</h2>
             </div>
           </div>
-
-          {loading ? (
-            <Loader />
-          ) : (
             <DataGrid
               rows={rows}
               columns={columns}
@@ -147,7 +143,6 @@ const UsersList = ({ history }) => {
               className="productListTable"
               autoHeight
             />
-          )}
         </div>
       </div>
     </Fragment>

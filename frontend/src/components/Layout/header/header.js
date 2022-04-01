@@ -13,9 +13,14 @@ import SearchIcon from "@mui/icons-material/Search";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import AccountBoxOutlinedIcon from "@mui/icons-material/AccountBoxOutlined";
 import CategoryOutlinedIcon from "@mui/icons-material/CategoryOutlined";
-import MenuOpenIcon from "@mui/icons-material/MenuOpen";
+import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import ListAltIcon from "@material-ui/icons/ListAlt";
+import LogoutIcon from '@mui/icons-material/Logout';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+
+import { Logout } from "../../../redux/action/useraction";
+import { useDispatch } from "react-redux";
 
 import SideNav, { NavItem, NavText } from "@trendmicro/react-sidenav";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
@@ -36,6 +41,13 @@ function Header() {
     isPaneOpenLeft: false,
   });
 
+  //for logout the user through mobile menu
+  const dispatch = useDispatch();
+  function logoutUser() {
+    dispatch(Logout());
+    alert.success("Logout Successfully");
+  }
+
   return (
     <header>
       <div className="header_bar">
@@ -53,7 +65,7 @@ function Header() {
                 className="mn_open_btn"
                 onClick={() => setState({ isPaneOpenLeft: true })}
               >
-                <MenuOpenIcon />
+                <MenuIcon />
               </button>
             </div>
             <SlidingPane
@@ -162,14 +174,14 @@ function Header() {
                   </li>
                   <li>
                     <Link to="/login">
-                      <AccountBoxOutlinedIcon />
-                      <span>Your Profile</span>
+                      <FavoriteBorderIcon />
+                      <span>Login</span>
                     </Link>
                   </li>
                   <li>
                     <Link to="/login">
-                      <FavoriteBorderIcon />
-                      <span>Login</span>
+                      <AccountBoxOutlinedIcon />
+                      <span>Your Profile</span>
                     </Link>
                   </li>
                   <li>
@@ -196,14 +208,57 @@ function Header() {
                     </Link>
                   </li>
                   <li>
+                    <Link to="/check/order">
+                      <ListAltIcon />
+                      <span>Check Your Order</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/check/order/email">
+                      <ContentPasteSearchIcon />
+                      <span>Search your order</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/FavouriteCart"
+                      style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
+                    >
+                      {favouriteItems.length === 0 ? (
+                        <FavoriteBorderIcon
+                          style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
+                        />
+                      ) : (
+                        <FavoriteIcon
+                          style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
+                        />
+                      )}
+                      <span>Favourites</span>
+                    </Link>
+                  </li>
+                  <li>
                     {isAuthenticated ? (
                       <UserOptions user={user} />
                     ) : (
                       <Link to="/login">
                         <HowToRegIcon />
-                        <span>Register Your Self</span>
+                        <span>Register Yourself</span>
                       </Link>
                     )}
+                  </li>
+                  <li>
+                    <Link to="/admin/dashboard">
+                      <DashboardIcon />
+                      <span>Dashboard</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <li>
+                      <Link to="/login">
+                        <LogoutIcon />
+                        <span onClick={logoutUser}>Logout</span>
+                      </Link>
+                    </li>
                   </li>
                 </ul>
               </Collapsible>

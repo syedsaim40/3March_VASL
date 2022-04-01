@@ -5,12 +5,14 @@
   border-left: 1px solid var(--themeColor);
   display: flex;
   flex-direction: column;
-  height: 100vh;
+}
+.productListContainer div.MuiDataGrid-root.MuiDataGrid-autoHeight,
+.productListContainer div.MuiDataGrid-root{
+  overflow: auto;
 }
 .DataGrid {
   z-index: 0;
 }
-
 #productListHeading {
   padding: 0.5vmax;
   box-sizing: border-box;
@@ -20,7 +22,7 @@
   text-align: center;
 }
 .productListTable {
-  z-index: 3;
+  z-index: 0;
   background-color: var(--lightColor);
   border: none !important;
 }

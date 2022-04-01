@@ -409,9 +409,6 @@ div.makeStyles-itemWrapper-18{
   .ProductDetails button svg.MuiSvgIcon-root{
     fill: var(--lightColor) !important;
   }
-  .ProductDetails button:hover svg.MuiSvgIcon-root{
-    fill: var(--themeColor) !important;
-  }
   .ProductDetails button.makeStyles-button-43:hover {
     opacity: 1 !important;
     background: #fff;
