@@ -67,6 +67,7 @@ function App() {
     });
     store.dispatch(loadUser());
   }, []);
+
   return (
     <div>
       <Router history={history}>
