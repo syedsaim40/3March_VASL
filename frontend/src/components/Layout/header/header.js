@@ -164,18 +164,9 @@ function Header() {
               <Collapsible trigger="User Menu" className="accordian_footer">
                 <ul className="mn_menu_list">
                   <li>
-                    <Link to="/search">
-                      <form className="search-icon">
-                        {/* <input type="button" value=""></input> */}
-                        <SearchIcon />
-                        <span>Search your choice</span>
-                      </form>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/login">
-                      <FavoriteBorderIcon />
-                      <span>Login</span>
+                    <Link to="/check/order">
+                      <ListAltIcon />
+                      <span>Check Your Order</span>
                     </Link>
                   </li>
                   <li>
@@ -183,74 +174,6 @@ function Header() {
                       <AccountBoxOutlinedIcon />
                       <span>Your Profile</span>
                     </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/cart"
-                      style={{
-                        color: cartItems.length > 0 ? "red" : "unset",
-                      }}
-                    >
-                      <ShoppingCartIcon
-                        style={{
-                          color: cartItems.length > 0 ? "red" : "unset",
-                        }}
-                      />{" "}
-                      <sup
-                        style={{
-                          color: cartItems.length > 0 ? "red" : "unset",
-                        }}
-                      >
-                        {" "}
-                        {cartItems.length > 0 ? cartItems.length : null}
-                      </sup>
-                      <span>Check Your Cart</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/check/order">
-                      <ListAltIcon />
-                      <span>Check Your Order</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/check/order/email">
-                      <ContentPasteSearchIcon />
-                      <span>Search your order</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/FavouriteCart"
-                      style={{
-                        color: favouriteItems.length > 0 ? "red" : "unset",
-                      }}
-                    >
-                      {favouriteItems.length === 0 ? (
-                        <FavoriteBorderIcon
-                          style={{
-                            color: favouriteItems.length > 0 ? "red" : "unset",
-                          }}
-                        />
-                      ) : (
-                        <FavoriteIcon
-                          style={{
-                            color: favouriteItems.length > 0 ? "red" : "unset",
-                          }}
-                        />
-                      )}
-                      <span>Favourites</span>
-                    </Link>
-                  </li>
-                  <li>
-                    {isAuthenticated ? (
-                      <UserOptions user={user} />
-                    ) : (
-                      <Link to="/login">
-                        <HowToRegIcon />
-                        <span>Register Yourself</span>
-                      </Link>
-                    )}
                   </li>
                   <li>
                     <Link to="/admin/dashboard">
@@ -268,161 +191,61 @@ function Header() {
                   </li>
                 </ul>
               </Collapsible>
+              {/* non collapsable list items */}
+              <ul className="non_coll mn_menu_list">
+                <li>
+                  {isAuthenticated ? (
+                    <UserOptions user={user} />
+                  ) : (
+                    <Link to="/login">
+                      <HowToRegIcon />
+                      <span>Login/Register</span>
+                    </Link>
+                  )}
+                </li>
+                <li>
+                  <Link
+                    to="/FavouriteCart"
+                    style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
+                  >
+                    {favouriteItems.length === 0 ? (
+                      <FavoriteBorderIcon
+                        style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
+                      />
+                    ) : (
+                      <FavoriteIcon
+                        style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
+                      />
+                    )}
+                    <span>Whishlist</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/search">
+                    <form className="search-icon">
+                      {/* <input type="button" value=""></input> */}
+                      <SearchIcon />
+                      <span>Search your choice</span>
+                    </form>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/check/order">
+                    <ListAltIcon />
+                    <span>Check Your Order</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/check/order/email">
+                    <ContentPasteSearchIcon />
+                    <span>Search your order</span>
+                  </Link>
+                </li>
+              </ul>
             </SlidingPane>
           </div>
         </div>
 
-        {/* mobilr */}
-        <div id="vasl-menu">
-          <SideNav
-            onSelect={(selected) => {
-              // Add your code here
-            }}
-          >
-            <SideNav.Toggle />
-            <SideNav.Nav>
-              <NavItem>
-                <NavText>
-                  <Link to="/products">
-                    <Inventory2OutlinedIcon />
-                    <span className="item_text">Products</span>
-                    {/* <form className="searchBox">
-                    <input type="button" value="Product"></input>
-                  </form> */}
-                  </Link>
-                </NavText>
-              </NavItem>
-              <NavItem eventKey="categories">
-                <NavText>
-                  <CategoryOutlinedIcon />
-                  <span className="item_text">Categories</span>
-                </NavText>
-                <NavItem eventKey="categories/linechart">
-                  <NavText>
-                    <Link to="/Newinn">New Inn</Link>
-                  </NavText>
-                </NavItem>
-                <NavItem eventKey="categories/linechart">
-                  <NavText>
-                    <Link to="/Womens">Womens</Link>
-                  </NavText>
-                </NavItem>
-                <NavItem eventKey="categories/linechart">
-                  <NavText>
-                    <Link to="/Accessories">Accessories</Link>
-                  </NavText>
-                </NavItem>
-                <NavItem eventKey="categories/linechart">
-                  <NavText>
-                    <Link to="/Replicas">Replicas</Link>
-                  </NavText>
-                </NavItem>
-                <NavItem eventKey="categories/linechart">
-                  <NavText>
-                    <Link to="/ReadyToWear">Ready to wear</Link>
-                  </NavText>
-                </NavItem>
-                <NavItem eventKey="categories/linechart">
-                  <NavText>
-                    <Link to="/Unstiched">Unstiched</Link>
-                  </NavText>
-                </NavItem>
-                <NavItem eventKey="categories/linechart">
-                  <NavText>
-                    <Link to="/AClothes">A+ Cloths</Link>
-                  </NavText>
-                </NavItem>
-              </NavItem>
-              <NavItem>
-                <NavText>
-                  <Link to="/login">
-                    <AccountBoxOutlinedIcon />
-                    <span className="item_text">Profile</span>
-                  </Link>
-                </NavText>
-              </NavItem>
-            </SideNav.Nav>
-            <SideNav.Nav>
-              <NavItem>
-                <NavText>
-                  <ul className="dp-box1 vasl-header-list mobile_menu">
-                    <NavItem>
-                      <NavText>
-                        <li>
-                          <Link to="/search">
-                            <form className="search-icon">
-                              {/* <input type="button" value=""></input> */}
-                              <SearchIcon />
-                            </form>
-                          </Link>
-                        </li>
-                      </NavText>
-                    </NavItem>
-                    <NavItem>
-                      <NavText>
-                        <li>
-                          <Link to="/login">
-                            <AccountBoxOutlinedIcon />
-                          </Link>
-                        </li>
-                      </NavText>
-                    </NavItem>
-                    <NavItem>
-                      <NavText>
-                        <li>
-                          <Link to="/login">
-                            <FavoriteBorderIcon />
-                          </Link>
-                        </li>
-                      </NavText>
-                    </NavItem>
-                    <NavItem>
-                      <NavText>
-                        <li>
-                          <Link
-                            to="/cart"
-                            style={{
-                              color: cartItems.length > 0 ? "red" : "unset",
-                            }}
-                          >
-                            <ShoppingCartIcon
-                              style={{
-                                color: cartItems.length > 0 ? "red" : "unset",
-                              }}
-                            />{" "}
-                            <sup
-                              style={{
-                                color: cartItems.length > 0 ? "red" : "unset",
-                              }}
-                            >
-                              {" "}
-                              {cartItems.length > 0 ? cartItems.length : null}
-                            </sup>
-                          </Link>
-                        </li>
-                      </NavText>
-                    </NavItem>
-                  </ul>
-                </NavText>
-              </NavItem>
-            </SideNav.Nav>
-            <SideNav.Nav>
-              <NavItem>
-                <NavText>
-                  <li>
-                    {isAuthenticated ? (
-                      <UserOptions user={user} />
-                    ) : (
-                      <Link to="/login">
-                        <HowToRegIcon />
-                      </Link>
-                    )}
-                  </li>
-                </NavText>
-              </NavItem>
-            </SideNav.Nav>
-          </SideNav>
-        </div>
         <div className="logo">
           <h1>
             <Link to="/">
@@ -491,6 +314,38 @@ function Header() {
               </sup>
             </Link>
           </li> */}
+          <li>
+            <Link
+              to="/cart"
+              style={{ color: cartItems.length > 0 ? "red" : "unset" }}
+            >
+              <ShoppingCartIcon
+                style={{ color: cartItems.length > 0 ? "red" : "unset" }}
+              />{" "}
+              <sup style={{ color: cartItems.length > 0 ? "red" : "unset" }}>
+                {" "}
+                {cartItems.length > 0 ? cartItems.length : null}
+              </sup>
+            </Link>
+          </li>
+        </ul>
+        <ul className="dp-box1 mobile_header_list vasl-header-list">
+          <li>
+            <Link
+              to="/FavouriteCart"
+              style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
+            >
+              {favouriteItems.length === 0 ? (
+                <FavoriteBorderIcon
+                  style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
+                />
+              ) : (
+                <FavoriteIcon
+                  style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
+                />
+              )}
+            </Link>
+          </li>
           <li>
             <Link
               to="/cart"

@@ -19,6 +19,8 @@ import Metadata from "./../Layout/Metadata";
 import "../Layout/Loader/imageload.css";
 import { addItemsToCart, FavouriteToCart } from "../../redux/action/cartAction";
 
+import Speech from 'react-speech';
+
 import {
   Dialog,
   DialogActions,
@@ -166,7 +168,7 @@ const ProductDetails = ({ match }) => {
                   className="CarouselImage"
                   src={item.url}
                   alt={`${i} Slide`}
-                  // onLoad={stuffLoaded}
+                // onLoad={stuffLoaded}
                 />
               ))}
           </AliceCarousel>
@@ -216,6 +218,13 @@ const ProductDetails = ({ match }) => {
                 {" "}
                 Description : <p>{product.description}</p>
               </div>
+
+              {/* Speech text button */}
+              <Speech
+                stop={true}
+                pause={true}
+                resume={true}
+                text={product.description} />
               <div className="product_tabs">
                 <BasicTabs />
               </div>

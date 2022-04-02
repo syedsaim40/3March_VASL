@@ -475,6 +475,13 @@ div.makeStyles-itemWrapper-18{
     font: 300 5vw cursive;
   }
 }
+span.rs-container button.rs-play,
+span.rs-container button.rs-stop,
+span.rs-container button.rs-pause,
+span.rs-container button.rs-resume{
+  display: inline-block;
+  width: 20px;
+}
 
 @media screen and (max-width: 480px) {
   .ProductDetails > div:first-child {

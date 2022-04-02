@@ -135,6 +135,9 @@ ul.dp-box1 li {
   float: right;
   text-align: center;
 }
+.mobile_header_list.vasl-header-list{
+  display: none !important;
+}
 .vasl-header-list.dp-box1 .css-i4bv87-MuiSvgIcon-root{
   width: 20px;
   height: 20px;
@@ -541,7 +544,7 @@ ul.bottom_nav li a:hover{
   }
   header .logo {
     width: 35%;
-    transform: translate(6px, 1px);
+    transform: translate(25px, 1px);
   }
   header img.main_logo {
     width: 60%;
@@ -569,6 +572,9 @@ ul.bottom_nav li a:hover{
   }
   .vasl-header-list{
     display: none;
+  }
+  .mobile_header_list.vasl-header-list{
+    display: block !important;
   }
   .dp-box1.vasl-header-list.mobile_menu{
     display: block;
