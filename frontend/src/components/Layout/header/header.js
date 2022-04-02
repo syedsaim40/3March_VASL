@@ -10,9 +10,9 @@ import ShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import ContentPasteSearchIcon from "@mui/icons-material/ContentPasteSearch";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import SearchIcon from "@mui/icons-material/Search";
-import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
+// import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import AccountBoxOutlinedIcon from "@mui/icons-material/AccountBoxOutlined";
-import CategoryOutlinedIcon from "@mui/icons-material/CategoryOutlined";
+// import CategoryOutlinedIcon from "@mui/icons-material/CategoryOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import ListAltIcon from "@material-ui/icons/ListAlt";
@@ -22,7 +22,7 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import { Logout } from "../../../redux/action/useraction";
 import { useDispatch } from "react-redux";
 
-import SideNav, { NavItem, NavText } from "@trendmicro/react-sidenav";
+// import SideNav, { NavItem, NavText } from "@trendmicro/react-sidenav";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 
 import SlidingPane from "react-sliding-pane";
@@ -57,7 +57,6 @@ function Header() {
         </ul>
       </div>
       <div className="top_header">
-        {/* Here start vasl main menu for header (generic) */}
         <div id="mobile_menu">
           <div>
             <div style={{}}>
@@ -104,12 +103,6 @@ function Header() {
                     <Link to="/AClothes">A+ Cloths</Link>
                   </li>
                 </ul>
-                {/* <Collapsible trigger="child a" className="accordian_footer">
-                  <p>child list</p>
-                  <Link to="/products">
-                    <span className="item_text">child Products</span>
-                  </Link>
-                </Collapsible> */}
               </Collapsible>
               <Collapsible trigger="New Inn" className="accordian_footer">
                 <ul className="mn_menu_list">
@@ -162,64 +155,51 @@ function Header() {
                 </ul>
               </Collapsible>
               <Collapsible trigger="User Menu" className="accordian_footer">
-                <ul className="mn_menu_list">
+                <ul className="non_coll mn_menu_list">
                   <li>
-                    <Link to="/check/order">
-                      <ListAltIcon />
-                      <span>Check Your Order</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/accounts">
-                      <AccountBoxOutlinedIcon />
-                      <span>Your Profile</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/admin/dashboard">
-                      <DashboardIcon />
-                      <span>Dashboard</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <li>
+                    {isAuthenticated ? (
+                      <ul>
+                        <li>
+                          <Link to="/orders">
+                            <ListAltIcon />
+                            <span>Orders</span>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/accounts">
+                            <AccountBoxOutlinedIcon />
+                            <span>Profile</span>
+                          </Link>
+                        </li>
+
+                        {user.role === "admin" ? (
+                          <li>
+                            <Link to="/admin/dashboard">
+                              <DashboardIcon />
+                              <span>Dashboard</span>
+                            </Link>
+                          </li>
+                        ) : null}
+                        <li>
+                          <li>
+                            <Link to="/login">
+                              <LogoutIcon />
+                              <span onClick={logoutUser}>Logout</span>
+                            </Link>
+                          </li>
+                        </li>
+                      </ul>
+                    ) : (
                       <Link to="/login">
-                        <LogoutIcon />
-                        <span onClick={logoutUser}>Logout</span>
+                        <HowToRegIcon />
+                        <span>Login/Register</span>
                       </Link>
-                    </li>
+                    )}
                   </li>
                 </ul>
               </Collapsible>
-              {/* non collapsable list items */}
+
               <ul className="non_coll mn_menu_list">
-                <li>
-                  {isAuthenticated ? (
-                    <UserOptions user={user} />
-                  ) : (
-                    <Link to="/login">
-                      <HowToRegIcon />
-                      <span>Login/Register</span>
-                    </Link>
-                  )}
-                </li>
-                <li>
-                  <Link
-                    to="/FavouriteCart"
-                    style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
-                  >
-                    {favouriteItems.length === 0 ? (
-                      <FavoriteBorderIcon
-                        style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
-                      />
-                    ) : (
-                      <FavoriteIcon
-                        style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
-                      />
-                    )}
-                    <span>Whishlist</span>
-                  </Link>
-                </li>
                 <li>
                   <Link to="/search">
                     <form className="search-icon">
@@ -229,16 +209,41 @@ function Header() {
                     </form>
                   </Link>
                 </li>
+
                 <li>
                   <Link to="/check/order">
                     <ListAltIcon />
-                    <span>Check Your Order</span>
+                    <span>Check Order ID</span>
                   </Link>
                 </li>
                 <li>
+                  <Link
+                    to="/FavouriteCart"
+                    style={{
+                      color: favouriteItems.length > 0 ? "red" : "unset",
+                    }}
+                  >
+                    {favouriteItems.length === 0 ? (
+                      <FavoriteBorderIcon
+                        style={{
+                          color: favouriteItems.length > 0 ? "red" : "unset",
+                        }}
+                      />
+                    ) : (
+                      <FavoriteIcon
+                        style={{
+                          color: favouriteItems.length > 0 ? "red" : "unset",
+                        }}
+                      />
+                    )}
+                    <span>Whishlist</span>
+                  </Link>
+                </li>
+
+                <li>
                   <Link to="/check/order/email">
                     <ContentPasteSearchIcon />
-                    <span>Search your order</span>
+                    <span>Search order Gmail</span>
                   </Link>
                 </li>
               </ul>
@@ -260,14 +265,12 @@ function Header() {
             ) : (
               <Link to="/login">
                 <HowToRegIcon />
-                {/* Sign In */}
               </Link>
             )}
           </li>
           <li>
             <Link to="/search">
               <form className="search-icon">
-                {/* <input type="button" value=""></input> */}
                 <SearchIcon />
               </form>
             </Link>
@@ -298,22 +301,7 @@ function Header() {
               )}
             </Link>
           </li>
-          {/* <li>
-            <Link
-              to="/FavouriteCart"
-              style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
-            >
-              <FavoriteBorderIcon
-                style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
-              />{" "}
-              <sup
-                style={{ color: favouriteItems.length > 0 ? "red" : "unset" }}
-              >
-                {" "}
-                {favouriteItems.length > 0 ? favouriteItems.length : null}
-              </sup>
-            </Link>
-          </li> */}
+
           <li>
             <Link
               to="/cart"
@@ -372,21 +360,9 @@ function Header() {
           </li>
           <li>
             <Link to="/Accessories">ACCESSORIES</Link>
-            {/* <ul>
-              <li>Shoes</li>
-              <li>Bags</li>
-              <li>Scarves</li>
-              <li>Socks</li>
-            </ul> */}
           </li>
           <li>
             <Link to="/Beauty">Beauty</Link>
-            {/* <ul>
-              <li>Fragrances</li>
-              <li>Cosmetics</li>
-              <li>Scarves</li>
-              <li>Socks</li>
-            </ul> */}
           </li>
           <li>
             <Link to="/Replicas">replicas</Link>

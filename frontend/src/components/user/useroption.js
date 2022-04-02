@@ -5,12 +5,13 @@ import Backdrop from "@material-ui/core/Backdrop";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import PersonIcon from "@material-ui/icons/Person";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import ListAltIcon from "@material-ui/icons/ListAlt";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { useHistory } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { Logout } from "../../redux/action/useraction";
 import { useDispatch, useSelector } from "react-redux";
-import NoteAltIcon from "@mui/icons-material/NoteAlt";
+
 const UserOptions = ({ user }) => {
   const { cartItems } = useSelector((state) => state.cart);
 
@@ -20,7 +21,7 @@ const UserOptions = ({ user }) => {
   const dispatch = useDispatch();
 
   const options = [
-    { icon: <NoteAltIcon />, name: "Orders", func: orders },
+    { icon: <ListAltIcon />, name: "Orders", func: orders },
     { icon: <PersonIcon />, name: "Profile", func: account },
     {
       icon: (
@@ -64,13 +65,13 @@ const UserOptions = ({ user }) => {
 
   return (
     <Fragment>
-      <Backdrop open={open} style={{ zIndex: "999" }} />
+      <Backdrop open={open} style={{ zIndex: "10" }} />
       <SpeedDial
         ButtonProps={{ color: "secondary" }}
         ariaLabel="SpeedDial tooltip example"
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
-        style={{ zIndex: "999" }}
+        style={{ zIndex: "11" }}
         open={open}
         direction="left"
         className="speedDial"
@@ -88,7 +89,7 @@ const UserOptions = ({ user }) => {
             icon={item.icon}
             tooltipTitle={item.name}
             onClick={item.func}
-            tooltipOpen={window.innerWidth <= 800 ? true : false}
+            // tooltipOpen={window.innerWidth <= 800 ? true : false}
           />
         ))}
       </SpeedDial>
