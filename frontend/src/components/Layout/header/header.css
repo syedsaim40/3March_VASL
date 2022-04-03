@@ -531,7 +531,7 @@ div.Collapsible.accordian_footer{
 span.Collapsible__trigger.is-open::after{
   position: absolute;
   font-family: "Material Icons";
-  content: "\e256";
+  content: "\e15b";
   top: 10px;
   right: 10px;
   width: 20px;
