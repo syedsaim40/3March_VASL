@@ -619,7 +619,7 @@ function Header() {
                         ) : null}
                         <li>
                           <li>
-                            <Link to="/login">
+                            <Link>
                               <LogoutIcon />
                               <span onClick={logoutUser}>Logout</span>
                             </Link>
