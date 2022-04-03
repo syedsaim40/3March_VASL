@@ -533,7 +533,7 @@ span.Collapsible__trigger.is-open::after{
   position: absolute;
   font-family: "Material Icons";
   content: "\e15b";
-  top: calc(50% - 15px);
+  top: calc(50% - 11px);
   right: 10px;
   width: 20px;
   height: auto;
@@ -544,9 +544,17 @@ span.Collapsible__trigger.is-open::after{
 }
 span.Collapsible__trigger.is-closed::before{
   content: "\e145";
+  color: #4449;
 }
+span.Collapsible__trigger.is-closed:focus::before,
+span.Collapsible__trigger.is-closed:hover::before {
+  transition: all ease-in-out 0.2s;
+  color: #fff;
+}
+span.Collapsible__trigger.is-open:hover::before,
 span.Collapsible__trigger.is-open:hover::before {
   transition: all ease-in-out 0.2s;
+  color: #fff;
 }
 span.Collapsible__trigger.is-closed::after,
 span.Collapsible__trigger.is-open::before{
