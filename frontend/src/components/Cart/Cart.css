@@ -144,15 +144,16 @@
     box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
   }
   .cartInput {
-    display: block;
+    display: flex;
     text-align: center;
   }
   .delitem {
     width: 35px;
     display: inline-block;
+    flex: 1;
   }
   p.delitem svg{
-    font-size: 20px;
+    font-size: 30px;
   }
   .cartInput > input {
     width: 5vmax;
@@ -169,10 +170,11 @@
     width: 10%;
     height: 40px;
     margin: 0 auto;
+    flex: 1;
   }
   .cartSubtotal {
-    padding: 1.5vmax;
-    height: 20vmax;
+    padding: 10px;
+    height: auto;
   }
   .cartGrossProfit {
     display: grid;
