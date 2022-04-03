@@ -409,14 +409,14 @@ div.alice-carousel__prev-btn-wrapper p::after {
   position: absolute;
   content: " ";
   font-family: "Material Icons";
-  content: "arrow_back";
+  content: "\e5e0";
   color: var(--themeColor);
   font-size: 40px;
   top: 0;
   left: -10px;
 }
 div.alice-carousel__next-btn-wrapper p::after {
-  content: "arrow_forward";
+  content: "\e5e1";
 }
 .alice-carousel__prev-btn-item:hover,
 .alice-carousel__next-btn-item:hover {

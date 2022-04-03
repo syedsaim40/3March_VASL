@@ -522,7 +522,6 @@ span.Collapsible__trigger {
   display: flex !important;
   justify-content: space-between;
   align-items: center;
-  transition: all linear 0.2s;
   transform: rotate(0deg);
 }
 div.Collapsible.accordian_footer{
@@ -564,7 +563,6 @@ span.Collapsible__trigger.is-open::before{
 }
 span.Collapsible__trigger.is-open svg {
   transform: rotate(180deg);
-  transition: all linear 0.2s;
 }
 
 /* ------------------------Media Query for responsive for header ----------------------*/
