@@ -318,7 +318,7 @@ const ProductDetails = ({ match }) => {
               renderButtonGroupOutside={false}
               renderDotsOutside={false}
               autoPlay={true}
-              autoPlaySpeed={1000000000}
+              autoPlaySpeed={3000}
               /*
               swipeable={false}
               draggable={false}

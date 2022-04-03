@@ -113,7 +113,7 @@ const Home = ({ req }) => {
            renderButtonGroupOutside={false}
            renderDotsOutside={false}
            autoPlay={false}
-           autoPlaySpeed={3000}
+           autoPlaySpeed={20000}
           /*
           swipeable={false}
           draggable={false}
@@ -121,7 +121,7 @@ const Home = ({ req }) => {
           responsive={responsive}
           ssr          
           containerClass=" container"
-          slidesToSlide={4}
+          slidesToSlide={3}
           infinite={true}         
             >
               
@@ -164,7 +164,7 @@ const Home = ({ req }) => {
                renderButtonGroupOutside={false}
                renderDotsOutside={false}
                autoPlay={false}
-               autoPlaySpeed={1000000000}
+               autoPlaySpeed={20000}
               /*
               swipeable={false}
               draggable={false}
@@ -173,7 +173,7 @@ const Home = ({ req }) => {
               ssr          
               containerClass=" container"
               slidesToSlide={1}
-              infinite={false}
+              infinite={true}
             >
               {products ?
                 products.slice(5, 11).map((product) => (
