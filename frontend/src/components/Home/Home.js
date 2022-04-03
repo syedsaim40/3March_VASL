@@ -33,7 +33,7 @@ import cimg3 from '../../../src/images/cimg3.jpg';
 import cimg4 from '../../../src/images/cimg4.jpg';
 import "react-multi-carousel/lib/styles.css";
 const Home = ({ req }) => {
- 
+
   const alert = useAlert();
   const dispatch = useDispatch();
   const { products, error } = useSelector((state) => state.products);
@@ -99,32 +99,32 @@ const Home = ({ req }) => {
             </div>
           </div>
           <div className="product_slider">
-          <Carousel 
-           additionalTransfrom={0}
-           arrows
-           centerMode={false}
-           className=""
-           dotListClass=""
-           draggable={false}
-           focusOnSelect={false}
-           itemClass=""
-           keyBoardControl
-           minimumTouchDrag={80}
-           renderButtonGroupOutside={false}
-           renderDotsOutside={false}
-           autoPlay={false}
-           autoPlaySpeed={20000}
-          /*
-          swipeable={false}
-          draggable={false}
-          */
-          responsive={responsive}
-          ssr          
-          containerClass=" container"
-          slidesToSlide={3}
-          infinite={true}         
+            <Carousel
+              additionalTransfrom={0}
+              arrows
+              centerMode={false}
+              className=""
+              dotListClass=""
+              draggable={false}
+              focusOnSelect={false}
+              itemClass=""
+              keyBoardControl
+              minimumTouchDrag={80}
+              renderButtonGroupOutside={false}
+              renderDotsOutside={false}
+              autoPlay={false}
+              autoPlaySpeed={20000}
+              /*
+              swipeable={false}
+              draggable={false}
+              */
+              responsive={responsive}
+              ssr
+              containerClass=" container"
+              slidesToSlide={3}
+              infinite={true}
             >
-              
+
               {products ?
                 products.slice(0, 10).map((product) => (
 
@@ -151,28 +151,28 @@ const Home = ({ req }) => {
 
           <div className="product_slider">
             <Carousel
-               additionalTransfrom={0}
-               arrows
-               centerMode={false}
-               className=""
-               dotListClass=""
-               draggable
-               focusOnSelect={true}
-               itemClass=""
-               keyBoardControl
-               minimumTouchDrag={80}
-               renderButtonGroupOutside={false}
-               renderDotsOutside={false}
-               autoPlay={false}
-               autoPlaySpeed={20000}
+              additionalTransfrom={0}
+              arrows
+              centerMode={false}
+              className=""
+              dotListClass=""
+              draggable={false}
+              focusOnSelect={false}
+              itemClass=""
+              keyBoardControl
+              minimumTouchDrag={80}
+              renderButtonGroupOutside={false}
+              renderDotsOutside={false}
+              autoPlay={false}
+              autoPlaySpeed={20000}
               /*
               swipeable={false}
               draggable={false}
               */
               responsive={responsive}
-              ssr          
+              ssr
               containerClass=" container"
-              slidesToSlide={1}
+              slidesToSlide={3}
               infinite={true}
             >
               {products ?
