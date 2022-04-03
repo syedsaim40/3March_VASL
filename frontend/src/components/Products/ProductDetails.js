@@ -326,7 +326,7 @@ const ProductDetails = ({ match }) => {
               responsive={responsive}
               ssr
               containerClass=" container"
-              slidesToSlide={4}
+              slidesToSlide={1}
               infinite={false}
             >
               {product.reviews &&

@@ -849,12 +849,8 @@ span.Collapsible__trigger.is-open svg {
     display: block;
   }
   .reviewCard {
-    flex: none;
     box-shadow: 0 0 5px rgb(0 0 0 / 23%);
     border: 1px solid rgba(56, 56, 56, 0.116);
-    width: 50%;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     margin: 0;
     padding: 1vmax;
