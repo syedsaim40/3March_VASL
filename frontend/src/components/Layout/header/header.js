@@ -18,7 +18,6 @@ import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import ListAltIcon from "@material-ui/icons/ListAlt";
 import LogoutIcon from "@mui/icons-material/Logout";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import { Logout } from "../../../redux/action/useraction";
 import { useDispatch } from "react-redux";
