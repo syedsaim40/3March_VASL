@@ -62,8 +62,11 @@ const LoginSignUp = ({ location }) => {
   //   : "/accounts";
   const onSuccess = (response) => {
     console.log(response);
-    dispatch(googlelogin(response));
-    // window.location.reload(false);
+
+    setTimeout(() => {
+      dispatch(googlelogin(response));
+      window.location.reload(false);
+    }, 2000);
   };
 
   const onFailure = (res) => {
