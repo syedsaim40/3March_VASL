@@ -80,7 +80,7 @@ function Header() {
               width="300px"
               onRequestClose={() => setState({ isPaneOpenLeft: false })}
             >
-              <Collapsible trigger={["Categories", <KeyboardArrowDownIcon />, <KeyboardArrowDownIcon />]} className="accordian_footer">
+              <Collapsible trigger="Categories" className="accordian_footer">
                 <ul className="mn_menu_list">
                   <li>
                     <Link to="/Newinn">New Inn</Link>
