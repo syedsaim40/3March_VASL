@@ -1,7 +1,7 @@
 const product = require("../models/productmodel"); //ye model bnya wa database mein
 const Errorhandler = require("../utils/errorhandler"); //ye hum ny product error k liye bnya mtlb glt id dy user to server bnd naw ho
 const catchasyncerror = require("../middleware/asyncerror.js"); //ye asunc error k liye bnya ha hum nyk sync method k sth agr hum aawait useni krty to server close naw ho mtlb try catch bnadiya comon middleware mein or is k andr hum ny function dy diya apna or hum createein agr required field naw day jesy name tb b error a jta tha servor bnd h jta tha
-const ApiFeatures= require("../utils/apifeatures");
+const ApiFeatures = require("../utils/apifeatures");
 const cloudinary = require("cloudinary");
 //createproduct -- Admin
 exports.newproduct = catchasyncerror(async (req, res, next) => {
@@ -44,29 +44,28 @@ exports.allproduct = catchasyncerror(async (req, res) => {
   // let apifeat = new ApiFeatures(product.find(), req.query)
   //   .search()
   //   .filter()
-    
+
   //   let allproducts  = await apifeat.query;
 
   //   let filteredProductsCount = allproducts.length;
-  
+
   //   apifeat.pagination(resultperpage);
   //    allproducts  = await apifeat.query;
   const resultperpage = 8;
-  const productcount= await product.countDocuments();
+  const productcount = await product.countDocuments();
 
   const apiFeature = new ApiFeatures(product.find(), req.query)
     .search()
-    .filter()
- //.pagination(resultperpage)
+    .filter();
+  //.pagination(resultperpage)
   //  let allproducts = await apiFeature.query.clone();
 
   //  let filteredProductsCount =  allproducts.length;
 
   // apiFeature.pagination(resultperpage);
 
-   allproducts = await apiFeature.query;
+  allproducts = await apiFeature.query;
 
- 
   res.status(200).json({
     success: true,
     allproducts,
