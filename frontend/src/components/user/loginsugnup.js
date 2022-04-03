@@ -17,7 +17,6 @@ import { useAlert } from "react-alert";
 // import axios from "axios";
 
 import { GoogleLogin } from "react-google-login";
-import Logout from "./googleLogout";
 
 const LoginSignUp = ({ location }) => {
   let history = useHistory();
@@ -198,7 +197,6 @@ const LoginSignUp = ({ location }) => {
                     cookiePolicy={"single_host_origin"}
                     style={{ marginTop: "100px" }}
                   />
-                  <Logout />
                   {/* <GoogleLogin
                     clientId="968709430379-dkv5gov48ieuc3t5kmq5s7in57sri6er.apps.googleusercontent.com"
                     buttonText="Login"
