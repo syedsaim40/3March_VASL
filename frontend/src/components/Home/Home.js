@@ -105,15 +105,15 @@ const Home = ({ req }) => {
            centerMode={false}
            className=""
            dotListClass=""
-           draggable
-           focusOnSelect={true}
+           draggable={false}
+           focusOnSelect={false}
            itemClass=""
            keyBoardControl
            minimumTouchDrag={80}
            renderButtonGroupOutside={false}
            renderDotsOutside={false}
            autoPlay={false}
-           autoPlaySpeed={1000000000}
+           autoPlaySpeed={3000}
           /*
           swipeable={false}
           draggable={false}
@@ -122,7 +122,7 @@ const Home = ({ req }) => {
           ssr          
           containerClass=" container"
           slidesToSlide={4}
-          infinite={false}         
+          infinite={true}         
             >
               
               {products ?

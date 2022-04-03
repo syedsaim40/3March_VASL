@@ -317,7 +317,7 @@ const ProductDetails = ({ match }) => {
               minimumTouchDrag={80}
               renderButtonGroupOutside={false}
               renderDotsOutside={false}
-              autoPlay={false}
+              autoPlay={true}
               autoPlaySpeed={1000000000}
               /*
               swipeable={false}
