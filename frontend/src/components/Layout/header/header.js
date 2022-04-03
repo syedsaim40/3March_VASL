@@ -4,6 +4,8 @@ import logo from "../../../images/logo.png";
 import "./header.css";
 import { useSelector } from "react-redux";
 import UserOptions from "../../user/useroption";
+import AccordionSummary from "@mui/material/AccordionSummary";
+
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
@@ -28,8 +30,9 @@ import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 import SlidingPane from "react-sliding-pane";
 import "react-sliding-pane/dist/react-sliding-pane.css";
 
-import Collapsible from "react-collapsible";
-
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import AddIcon from "@mui/icons-material/Add";
+import Accordion from "@mui/material/Accordion";
 //creating the unique header component for all vasl pages
 function Header() {
   const { user, isAuthenticated } = useSelector((state) => state.user);
@@ -79,7 +82,14 @@ function Header() {
               width="300px"
               onRequestClose={() => setState({ isPaneOpenLeft: false })}
             >
-              <Collapsible trigger="Categories" className="accordian_footer">
+              <Accordion trigger="Categories" className="accordian_footer">
+                <AccordionSummary
+                  expandIcon={<AddIcon />}
+                  aria-controls="panel1bh-content"
+                  id="panel1bh-header"
+                >
+                  CATEGORIES
+                </AccordionSummary>
                 <ul className="mn_menu_list">
                   <li>
                     <Link to="/Newinn">New Inn</Link>
@@ -103,8 +113,15 @@ function Header() {
                     <Link to="/AClothes">A+ Cloths</Link>
                   </li>
                 </ul>
-              </Collapsible>
-              <Collapsible trigger="New Inn" className="accordian_footer">
+              </Accordion>
+              <Accordion trigger="New Inn" className="accordian_footer">
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1bh-content"
+                  id="panel1bh-header"
+                >
+                  NEW INN
+                </AccordionSummary>
                 <ul className="mn_menu_list">
                   <li>
                     <Link to="/ReadyToWear">Ready to wear</Link>
@@ -113,8 +130,15 @@ function Header() {
                     <Link to="/Unstiched">Unstiched</Link>
                   </li>
                 </ul>
-              </Collapsible>
-              <Collapsible trigger="Woman" className="accordian_footer">
+              </Accordion>
+              <Accordion trigger="Woman" className="accordian_footer">
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1bh-content"
+                  id="panel1bh-header"
+                >
+                  WOMAN
+                </AccordionSummary>
                 <ul className="mn_menu_list">
                   <li>
                     <Link to="/ReadyToWear">Ready to wear</Link>
@@ -123,8 +147,15 @@ function Header() {
                     <Link to="/Unstiched">Unstiched</Link>
                   </li>
                 </ul>
-              </Collapsible>
-              <Collapsible trigger="Replicas" className="accordian_footer">
+              </Accordion>
+              <Accordion trigger="Replicas" className="accordian_footer">
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1bh-content"
+                  id="panel1bh-header"
+                >
+                  REPLICAS
+                </AccordionSummary>
                 <ul className="mn_menu_list">
                   <li>
                     <Link to="/ReadyToWear">Ready to wear</Link>
@@ -133,8 +164,15 @@ function Header() {
                     <Link to="/Unstiched">Unstiched</Link>
                   </li>
                 </ul>
-              </Collapsible>
-              <Collapsible trigger="Accesories" className="accordian_footer">
+              </Accordion>
+              <Accordion trigger="Accesories" className="accordian_footer">
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1bh-content"
+                  id="panel1bh-header"
+                >
+                  ACCESORIES
+                </AccordionSummary>
                 <ul className="mn_menu_list">
                   <li>
                     <Link to="/bags">Bags</Link>
@@ -143,8 +181,15 @@ function Header() {
                     <Link to="/scarves">scarves</Link>
                   </li>
                 </ul>
-              </Collapsible>
-              <Collapsible trigger="Beauty" className="accordian_footer">
+              </Accordion>
+              <Accordion trigger="Beauty" className="accordian_footer">
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1bh-content"
+                  id="panel1bh-header"
+                >
+                  BEAUTY
+                </AccordionSummary>
                 <ul className="mn_menu_list">
                   <li>
                     <Link to="/perfumes">perfumes</Link>
@@ -153,8 +198,15 @@ function Header() {
                     <Link to="/cosmetics">cosmetics</Link>
                   </li>
                 </ul>
-              </Collapsible>
-              <Collapsible trigger="User Menu" className="accordian_footer">
+              </Accordion>
+              <Accordion trigger="User Menu" className="accordian_footer">
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1bh-content"
+                  id="panel1bh-header"
+                >
+                  USER MENU
+                </AccordionSummary>
                 <ul className="non_coll mn_menu_list">
                   <li>
                     {isAuthenticated ? (
@@ -197,7 +249,7 @@ function Header() {
                     )}
                   </li>
                 </ul>
-              </Collapsible>
+              </Accordion>
 
               <ul className="non_coll mn_menu_list">
                 <li>
