@@ -31,6 +31,8 @@ import {
 
 import { NEW_REVIEW_RESET } from "../../redux/constant/productConstants";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 // import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 // import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -131,6 +133,26 @@ const ProductDetails = ({ match }) => {
     }
     dispatch(getProductDetails(id));
   }, [dispatch, id, error, alert, reviewError, success]);
+
+
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 2000, min: 102 },
+      items: 4,
+      paritialVisibilityGutter: 0
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+      paritialVisibilityGutter: 0
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      paritialVisibilityGutter: 0
+    }
+  };
+
   return (
     <Fragment>
       {/* {loading ? (
@@ -219,19 +241,25 @@ const ProductDetails = ({ match }) => {
                 Description : <p>{product.description}</p>
               </div>
 
-              {/* Speech text button */}
+              {/* THIS IS OUR NEW FEATURE As Speech text button */}
               <Speech
                 stop={true}
                 pause={true}
                 resume={true}
                 text={product.description} />
+
+
               <div className="product_tabs">
                 <BasicTabs />
               </div>
             </div>
           </div>
-        </div>
-        <h3 className="reviewsHeading">REVIEWS</h3>
+        </div>     
+          <div className="section_heading">
+            <div className="homeHeading">
+              <h2>REVIEWS</h2>
+            </div>
+          </div>
         <Dialog
           aria-labelledby="simple-dialog-title"
           open={open}
@@ -276,14 +304,42 @@ const ProductDetails = ({ match }) => {
         {/* <h1>{product.reviews} </h1> */}
         {product.reviews && product.reviews[0] ? (
           <div className="reviews">
-            {product.reviews &&
-              product.reviews.map((review) => (
-                <ReviewCard key={review._id} review={review} />
-              ))}
+            <Carousel
+              additionalTransfrom={0}
+              arrows
+              centerMode={false}
+              className=""
+              dotListClass=""
+              draggable
+              focusOnSelect={true}
+              itemClass=""
+              keyBoardControl
+              minimumTouchDrag={80}
+              renderButtonGroupOutside={false}
+              renderDotsOutside={false}
+              autoPlay={false}
+              autoPlaySpeed={1000000000}
+              /*
+              swipeable={false}
+              draggable={false}
+              */
+              responsive={responsive}
+              ssr
+              containerClass=" container"
+              slidesToSlide={4}
+              infinite={false}
+            >
+              {product.reviews &&
+                product.reviews.map((review) => (
+                  <ReviewCard key={review._id} review={review} />
+                ))}
+            </Carousel>
           </div>
-        ) : (
-          <div className="reviews_section">
-            <p className="noReviews">No Reviews Yet</p>
+        ) : (          
+          <div className="section_heading">
+            <div className="homeHeading">
+              <h2>No Reviews</h2>
+            </div>
           </div>
         )}
       </Fragment>
