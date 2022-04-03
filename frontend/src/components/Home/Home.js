@@ -172,7 +172,7 @@ const Home = ({ req }) => {
               responsive={responsive}
               ssr
               containerClass=" container"
-              slidesToSlide={3}
+              slidesToSlide={1}
               infinite={true}
             >
               {products ?
