@@ -11,10 +11,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import jazzcash from "../../../images/jazzcash.png";
 import cod from "../../../images/cod.png";
 
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AddIcon from "@mui/icons-material/Add";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Collapsible from "react-collapsible";
 
 const ButtonMailto = ({ mailto, label }) => {
   return (
@@ -31,25 +28,12 @@ const ButtonMailto = ({ mailto, label }) => {
 };
 
 const Footer = () => {
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
-  };
   return (
     <footer id="footer">
-      <Accordion
-        expanded={expanded === "panel1"}
-        onChange={handleChange("panel1")}
+      <Collapsible
+        trigger="Get in Touch"
         className="accordian_footer hide_footer"
       >
-        <AccordionSummary
-          expandIcon={<AddIcon />}
-          aria-controls="panel1bh-content"
-          id="panel1bh-header"
-        >
-          GET IN TOUCH
-        </AccordionSummary>
         <div className="mf_box">
           <address>
             VASL Wearhouse 2-Km, Main G.T Road, Off to Wireless Colony Besides
@@ -70,20 +54,11 @@ const Footer = () => {
             <span>+92(0)3 209-455-811</span>
           </div>
         </div>
-      </Accordion>
-
-      <Accordion
+      </Collapsible>
+      <Collapsible
         trigger="Customer Care"
         className="accordian_footer hide_footer"
       >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1bh-content"
-          id="panel1bh-header"
-        >
-          CUSTOMER CARE
-        </AccordionSummary>
-
         <div className="mf_box">
           <ul className="unstyled services_list">
             <li>
@@ -103,15 +78,11 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-      </Accordion>
-      <Accordion trigger="Information" className="accordian_footer hide_footer">
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1bh-content"
-          id="panel1bh-header"
-        >
-          INFORMATION
-        </AccordionSummary>
+      </Collapsible>
+      <Collapsible
+        trigger="Information"
+        className="accordian_footer hide_footer"
+      >
         <div className="mf_box">
           <ul className="unstyled services_list">
             <li>
@@ -134,15 +105,8 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-      </Accordion>
-      <Accordion trigger="Join Us" className="accordian_footer hide_footer">
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1bh-content"
-          id="panel1bh-header"
-        >
-          ABOUT US
-        </AccordionSummary>
+      </Collapsible>
+      <Collapsible trigger="Join Us" className="accordian_footer hide_footer">
         <div className="mf_box">
           <div className="mail_link">
             <MailOutlineIcon />
@@ -173,7 +137,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-      </Accordion>
+      </Collapsible>
       {/* <div className="top_footer">
         <div className="tf_box">
           <Link to="/orders" className="tf_con">
