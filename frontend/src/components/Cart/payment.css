@@ -2,7 +2,7 @@
   display: grid;
   place-items: center;
   background-color: rgb(255, 255, 255);
-  height: 65vh;
+  height: auto;
   margin: 2vmax;
 }
 
@@ -12,7 +12,6 @@
 }
 
 .paymentForm > p {
-  font: 400 2vmax "Roboto";
   color: rgba(0, 0, 0, 0.753);
   border-bottom: 1px solid rgba(0, 0, 0, 0.13);
   padding: 1vmax 0;
@@ -48,7 +47,6 @@
   border: none;
   background-color: #444;
   color: white;
-  font: 300 0.9vmax "Roboto";
   width: 100%;
   padding: 0.8vmax;
   cursor: pointer;
@@ -61,14 +59,115 @@
   border: 1px solid black;
   color: black;
 }
-
-@media screen and (max-width: 600px) {
+.order_info{
+  width: 50%;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: var(--boxShadow);
+}
+.payment_info{
+  overflow: hidden;
+  border-bottom: 1px solid #4443;
+  padding: 10px 2px 30px 2px;
+  margin-bottom: 20px;
+}
+.payment_info h2{
+  float: right;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--themeColor);
+  font-size: 18px;
+}
+.payment_info h2:first-child{
+  float: left;
+}
+.product_info{
+  overflow: hidden;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 10px 2px 30px 2px;
+  margin-bottom: 20px;
+  color: var(--themeColor);
+}
+.product_info p{
+  float: left;
+}
+.product_info span{
+  float: right;
+}
+.ftotal_prc,
+.total_prc{
+  overflow: hidden;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 10px 2px 30px 2px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #4443;
+}
+.ftotal_prc span,
+.total_prc span{
+  float: right;
+  color: red;
+  border-top: 1px solid #4443;
+  padding-top: 10px;
+}
+.ftotal_prc span:first-child,
+.total_prc span:first-child{
+  float: left;
+  border: none;
+}
+.ftotal_prc span{
+  border-top: none;
+}
+.shipping_fee{
+  border-bottom: 1px solid #4443;
+  padding: 10px 2px 30px 2px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.shipping_fee h2{
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 18px;
+  text-transform: capitalize;
+  color: var(--themeColor);
+}
+.shipping_fee span{
+  float: right;
+}
+.shipping_fee p{
+  float: left;
+}
+.payment_accordian div.Collapsible,
+.payment_accordian div.Collapsible.accordian_footer{
+  display: block;
+}
+.payment_accordian{
+  overflow: hidden;
+}
+.pa_box{
+  display: block;
+  padding: 10px;
+}
+label {
+  visibility: hidden;
+  opacity: 0;
+  background: lightgrey;
+  display: block;
+  width: 100%;
+}
+#demo:checked + label {
+  visibility: visible;
+  opacity: 1;
+  background: blue;
+  color: white;
+}
+@media screen and (max-width: 768px) {
   .paymentForm {
     width: 90%;
   }
 
   .paymentForm > p {
-    font: 400 8vw "Roboto";
     padding: 4vw 0;
     width: 60%;
   }
@@ -86,7 +185,6 @@
   }
 
   .paymentFormBtn {
-    font: 300 4vw "Roboto";
     padding: 4vw;
   }
 }
