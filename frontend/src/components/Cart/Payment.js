@@ -80,41 +80,48 @@ const Payment = ({ history }) => {
           <div className="payment_accordian">
             <form action="submit">
               <div className="pa_box">
-                <span>Bank Transfer Payment</span>
-                <input type="radio" id="demo" name="pa_value" value="Bank Transfer Payment" />
-                <label for="demo">
-                  <p>
-                    Payment Details:
-                    Bank Title : Azeem Mehmood
-                    Bank Name : Meezan Bank
-                    Bank Account #: 09050104237471
-                    IBAN #: PK27 MEZN 0009 05014237471
-                  </p>
-                  <p>
-                    Bank Title : Azeem Mehmood
-                    Bank Name : United Bank Limited (UBL) Sheikhupura Road Branch
-                    Bank Account #: 0667 000256812396
-                    IBAN #: PK79 UNIL 0109 000256812396
-                  </p>
-                  <p>
-                    Bank Title : Azeem Mehmood
-                    Bank Name : Muslim Commercial Bank (MCB)
-                    Bank Account #: 0642735701002214
-                    IBAN #: PK62MUCB0642735701002214
-                  </p>
-                  <p>
-                    Please Send transaction number or screenshot of receipt to email: admin@smarteshop.pk or whatsapp number: 0331-5865152</p>
-                </label>
+                <div className="pa_text">
+                  <label className="lShow">Bank Transfer Payment</label>
+                  <input type="radio" id="demo" name="pa_value" value="Bank Transfer Payment" />
+                  <label for="demo">
+                    <p>
+                      <span>Payment Details:</span>
+                      <span>Bank Title : Azeem Mehmood</span>
+                      <span>Bank Name : Meezan Bank</span>
+                      <span>Bank Account #: 09050104237471</span>
+                      <span>IBAN #: PK27 MEZN 0009 05014237471</span>
+                    </p>
+                    <p>
+                      Please Send transaction number or screenshot of receipt to email: admin@smarteshop.pk or whatsapp number: 0331-5865152</p>
+                  </label>
+                </div>
               </div>
               <div className="pa_box">
-                <span>Bank Transfer Payment</span>
-                <input type="radio" id="demo" name="pa_value" value="Bank Transfer Payment" />
-                <label for="demo">demo 2</label>
+                <div className="pa_text">
+                  <label className="lShow">Easy Paisa and JazzCash Transfer</label>
+                  <input type="radio" id="demo" name="pa_value" value="Bank Transfer Payment" />
+                  <label for="demo">
+                    <p>
+                      <span>Payment Details:</span>
+                      <span>EasyPaisa Account : 03455865152</span>
+                      <span>Jazzcash Account : 03135865152</span>
+                      <span>Acounts Holder Name : Azeem Mehmood</span>
+                    </p>
+                    <p>
+                      Please Send transaction number or screenshot of receipt to email: admin@smarteshop.pk or whatsapp number: 0331-5865152</p>
+                  </label>
+                </div>
               </div>
               <div className="pa_box">
-                <span>Bank Transfer Payment</span>
-                <input type="radio" id="demo" name="pa_value" value="Bank Transfer Payment" />
-                <label for="demo">demo 3</label>
+                <div className="pa_text">
+                  <label className="lShow">Cash on delivery</label>
+                  <input type="radio" id="demo" name="pa_value" value="Bank Transfer Payment" />
+                  <label for="demo">
+                    <p>
+                      <span>Pay with cash upon delivery.</span>
+                    </p>
+                  </label>
+                </div>
               </div>
             </form>
 

@@ -11,7 +11,7 @@
   height: 100%;
 }
 
-.paymentForm > p {
+.paymentForm>p {
   color: rgba(0, 0, 0, 0.753);
   border-bottom: 1px solid rgba(0, 0, 0, 0.13);
   padding: 1vmax 0;
@@ -20,7 +20,7 @@
   margin: auto;
 }
 
-.paymentForm > div {
+.paymentForm>div {
   display: flex;
   align-items: center;
   margin: 2vmax 0;
@@ -36,7 +36,7 @@
   outline: none;
 }
 
-.paymentForm > div > svg {
+.paymentForm>div>svg {
   position: absolute;
   transform: translateX(1vmax);
   font-size: 1.6vmax;
@@ -59,29 +59,34 @@
   border: 1px solid black;
   color: black;
 }
-.order_info{
+
+.order_info {
   width: 50%;
   background-color: #fff;
   padding: 30px;
   box-shadow: var(--boxShadow);
 }
-.payment_info{
+
+.payment_info {
   overflow: hidden;
   border-bottom: 1px solid #4443;
   padding: 10px 2px 30px 2px;
   margin-bottom: 20px;
 }
-.payment_info h2{
+
+.payment_info h2 {
   float: right;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--themeColor);
   font-size: 18px;
 }
-.payment_info h2:first-child{
+
+.payment_info h2:first-child {
   float: left;
 }
-.product_info{
+
+.product_info {
   overflow: hidden;
   font-weight: 400;
   font-size: 14px;
@@ -89,14 +94,17 @@
   margin-bottom: 20px;
   color: var(--themeColor);
 }
-.product_info p{
+
+.product_info p {
   float: left;
 }
-.product_info span{
+
+.product_info span {
   float: right;
 }
+
 .ftotal_prc,
-.total_prc{
+.total_prc {
   overflow: hidden;
   font-weight: 500;
   font-size: 16px;
@@ -104,75 +112,113 @@
   margin-bottom: 20px;
   border-bottom: 1px solid #4443;
 }
+
 .ftotal_prc span,
-.total_prc span{
+.total_prc span {
   float: right;
   color: red;
   border-top: 1px solid #4443;
   padding-top: 10px;
 }
+
 .ftotal_prc span:first-child,
-.total_prc span:first-child{
+.total_prc span:first-child {
   float: left;
   border: none;
 }
-.ftotal_prc span{
+
+.ftotal_prc span {
   border-top: none;
 }
-.shipping_fee{
+
+.shipping_fee {
   border-bottom: 1px solid #4443;
   padding: 10px 2px 30px 2px;
   margin-bottom: 20px;
   overflow: hidden;
 }
-.shipping_fee h2{
+
+.shipping_fee h2 {
   margin-bottom: 20px;
   font-weight: 400;
   font-size: 18px;
   text-transform: capitalize;
   color: var(--themeColor);
 }
-.shipping_fee span{
+
+.shipping_fee span {
   float: right;
 }
-.shipping_fee p{
+
+.shipping_fee p {
   float: left;
 }
+
 .payment_accordian div.Collapsible,
-.payment_accordian div.Collapsible.accordian_footer{
+.payment_accordian div.Collapsible.accordian_footer {
   display: block;
 }
-.payment_accordian{
+
+.payment_accordian {
   overflow: hidden;
 }
-.pa_box{
+
+.pa_box {
   display: block;
   padding: 10px;
+  position: relative;
 }
-label {
-  visibility: hidden;
-  opacity: 0;
-  background: lightgrey;
+
+.pa_box span.pa_title {
+  position: absolute;
+  left: 20px;
+  top: calc(50% - 12px);
+}
+
+.pa_box p,
+.pa_box span {
   display: block;
+  margin-bottom: 5px;
+}
+
+label {
+  background: #fffff5;
+  display: none;
   width: 100%;
+  color: var(--themeColor);
+  opacity: 0.8;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  padding: 20px;
 }
-#demo:checked + label {
-  visibility: visible;
-  opacity: 1;
-  background: blue;
-  color: white;
+
+#demo:checked+label {
+  color: var(--themeColor);
+  display: block;
 }
+
+label.lShow {
+  display: block;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 0;
+  position: absolute;
+  left: 5%;
+  top: 11px;
+}
+
 @media screen and (max-width: 768px) {
   .paymentForm {
     width: 90%;
   }
 
-  .paymentForm > p {
+  .paymentForm>p {
     padding: 4vw 0;
     width: 60%;
   }
 
-  .paymentForm > div {
+  .paymentForm>div {
     margin: 10vw 0;
   }
 
@@ -180,7 +226,7 @@ label {
     padding: 4vw 10vw;
   }
 
-  .paymentForm > div > svg {
+  .paymentForm>div>svg {
     font-size: 6vw;
   }
 
