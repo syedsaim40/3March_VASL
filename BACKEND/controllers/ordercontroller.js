@@ -1,7 +1,10 @@
 const Order = require("../models/ordermodel");
 const Product = require("../models/productmodel");
 const Errorhandler = require("../utils/errorhandler");
+const sendEmail = require("../utils/sendEmail");
 const catchasyncerror = require("../middleware/asyncerror.js");
+const nodemailer = require("nodemailer");
+
 // Create new Order
 exports.neworder = catchasyncerror(async (req, res, next) => {
   const {
@@ -12,7 +15,36 @@ exports.neworder = catchasyncerror(async (req, res, next) => {
     shippingPrice,
     totalPrice,
   } = req.body;
+  const message = `CHECK YOUR EMAIL THANK YOU!`;
 
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    service: process.env.SMPT_SERVICE,
+    auth: {
+      user: process.env.SMPT_MAIL,
+      pass: process.env.SMPT_PASSWORD,
+    },
+  });
+  const mailoption = {
+    from: process.env.SMPT_MAIL,
+    to: shippingInfo.email,
+    subject: "VASAL CLOTHES SHOPPING",
+    text: message,
+  };
+  transporter.sendMail(mailoption, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent: " + info.response);
+    }
+  });
+
+  // sendEmail({
+  //   email: shippingInfo.email,
+  //   subject: " VASAL CLOTHES SHOPPING",
+  //   message,
+  // });
   const order = await Order.create({
     shippingInfo,
     orderItems,
