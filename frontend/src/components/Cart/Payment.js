@@ -142,12 +142,10 @@ const Payment = ({ history }) => {
               </div>
             </Collapsible> */}
           </div>
+          <form className="paymentForm" onSubmit={(e) => submitHandler(e)}>
+            <input type="submit" className="paymentFormBtn btn_primary" />
+          </form>
         </div>
-        <form className="paymentForm" onSubmit={(e) => submitHandler(e)}>
-          <Typography>CASH INFO</Typography>
-          <button type="submit" className="btn_primary">Submit</button>
-          <input type="submit" className="paymentFormBtn btn_primary" />
-        </form>
       </div>
     </Fragment>
   );
