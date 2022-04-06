@@ -80,18 +80,8 @@ const Payment = ({ history }) => {
               <div className="pa_box">
                 <div className="pa_text">
                   <label className="lShow">Bank Transfer Payment</label>
-<<<<<<< HEAD
                   <input type="radio" id="demo" name="pa_value" value="Bank Transfer Payment" />
                   <label for="demo" className="pa_lbl">
-=======
-                  <input
-                    type="radio"
-                    id="demo"
-                    name="pa_value"
-                    value="Bank Transfer Payment"
-                  />
-                  <label for="demo">
->>>>>>> aa23670d65ec21a401df56d324784257a3cf39d6
                     <p>
                       <span>Payment Details:</span>
                       <span>Bank Title : Azeem Mehmood</span>
@@ -100,31 +90,15 @@ const Payment = ({ history }) => {
                       <span>IBAN #: PK27 MEZN 0009 05014237471</span>
                     </p>
                     <p>
-                      Please Send transaction number or screenshot of receipt to
-                      email: admin@smarteshop.pk or whatsapp number:
-                      0331-5865152
-                    </p>
+                      Please Send transaction number or screenshot of receipt to email: admin@smarteshop.pk or whatsapp number: 0331-5865152</p>
                   </label>
                 </div>
               </div>
               <div className="pa_box">
                 <div className="pa_text">
-<<<<<<< HEAD
                   <label className="lShow">Easy Paisa and JazzCash Transfer</label>
                   <input type="radio" id="demo" name="pa_value" value="Bank Transfer Payment" />
                   <label for="demo" className="pa_lbl">
-=======
-                  <label className="lShow">
-                    Easy Paisa and JazzCash Transfer
-                  </label>
-                  <input
-                    type="radio"
-                    id="demo"
-                    name="pa_value"
-                    value="Bank Transfer Payment"
-                  />
-                  <label for="demo">
->>>>>>> aa23670d65ec21a401df56d324784257a3cf39d6
                     <p>
                       <span>Payment Details:</span>
                       <span>EasyPaisa Account : 03455865152</span>
@@ -132,28 +106,15 @@ const Payment = ({ history }) => {
                       <span>Acounts Holder Name : Azeem Mehmood</span>
                     </p>
                     <p>
-                      Please Send transaction number or screenshot of receipt to
-                      email: admin@smarteshop.pk or whatsapp number:
-                      0331-5865152
-                    </p>
+                      Please Send transaction number or screenshot of receipt to email: admin@smarteshop.pk or whatsapp number: 0331-5865152</p>
                   </label>
                 </div>
               </div>
               <div className="pa_box">
                 <div className="pa_text">
                   <label className="lShow">Cash on delivery</label>
-<<<<<<< HEAD
                   <input type="radio" id="demo" name="pa_value" value="Bank Transfer Payment" />
                   <label for="demo" className="pa_lbl">
-=======
-                  <input
-                    type="radio"
-                    id="demo"
-                    name="pa_value"
-                    value="Bank Transfer Payment"
-                  />
-                  <label for="demo">
->>>>>>> aa23670d65ec21a401df56d324784257a3cf39d6
                     <p>
                       <span>Pay with cash upon delivery.</span>
                     </p>
