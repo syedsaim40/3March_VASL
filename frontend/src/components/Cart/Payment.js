@@ -25,14 +25,18 @@ const Payment = ({ history }) => {
     totalPrice: orderInfo.totalPrice,
     paymentInfo: {
       id: selectedval,
-      status: "succeeded",
+      status: "succeede",
     },
   };
   const handlechange = (e) => {
     setselectedval(e.target.value);
   };
+  // if (!selectedval) {
+  //   alert("Select 1 " + selectedval + " Input");
+  // }
   const submitHandler = async (e) => {
     e.preventDefault();
+
     dispatch(createOrder(order));
 
     dispatch(RESETCart());
@@ -171,7 +175,11 @@ const Payment = ({ history }) => {
             </Collapsible> */}
           </div>
           <form className="paymentForm" onSubmit={(e) => submitHandler(e)}>
-            <input type="submit" className="paymentFormBtn btn_primary" />
+            <input
+              type="submit"
+              className="paymentFormBtn btn_primary"
+              disabled={!selectedval}
+            />
           </form>
         </div>
       </div>
