@@ -30,9 +30,6 @@ import "react-sliding-pane/dist/react-sliding-pane.css";
 
 import Collapsible from "react-collapsible";
 
-import Button from "@material-ui/core/Button";
-import Menu from "@material-ui/core/Menu";
-import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 
 //creating the unique header component for all vasl pages
 function Header() {
@@ -51,49 +48,6 @@ function Header() {
     dispatch(Logout());
     alert.success("Logout Successfully");
   }
-
-  //for dropdown
-  // const theme = createTheme({});
-  // const MyMenu = () => {
-  //   const [anchorEl, setAnchorEl] = useState(null);
-  //   const [open, setOpen] = useState(false);
-
-  //   const handleOpen = (event) => {
-  //     setAnchorEl(event.currentTarget);
-  //     setOpen(true);
-  //   };
-
-  //   const handleClose = (e) => {
-  //     if (e.currentTarget.localName !== "ul") {
-  //       const menu = document.getElementById("simple-menu").children[2];
-  //       const menuBoundary = {
-  //         left: menu.offsetLeft,
-  //         top: e.currentTarget.offsetTop + e.currentTarget.offsetHeight,
-  //         right: menu.offsetLeft + menu.offsetHeight,
-  //         bottom: menu.offsetTop + menu.offsetHeight
-  //       };
-  //       if (
-  //         e.clientX >= menuBoundary.left &&
-  //         e.clientX <= menuBoundary.right &&
-  //         e.clientY <= menuBoundary.bottom &&
-  //         e.clientY >= menuBoundary.top
-  //       ) {
-  //         return;
-  //       }
-  //     }
-
-  //     setOpen(false);
-  //   };
-
-  //   theme.props = {
-  //     MuiList: {
-  //       onMouseLeave: (e) => {
-  //         handleClose(e);
-  //       }
-  //     }
-  //   };
-  // }
-
 
   return (
     <header>

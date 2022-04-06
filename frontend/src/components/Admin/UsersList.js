@@ -9,7 +9,6 @@ import MetaData from "../Layout/Metadata";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import SideBar from "./Sidebar";
-import Loader from "../Layout/Loader/Loader";
 
 import {
   getAllUsers,
@@ -23,7 +22,7 @@ const UsersList = ({ history }) => {
 
   const alert = useAlert();
 
-  const { error, users, loading } = useSelector((state) => state.allUsers);
+  const { error, users } = useSelector((state) => state.allUsers);
 
   const {
     error: deleteError,

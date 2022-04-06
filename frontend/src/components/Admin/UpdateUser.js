@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useAlert } from "react-alert";
-import { Button } from "@material-ui/core";
 import MetaData from "../Layout/Metadata";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import PersonIcon from "@material-ui/icons/Person";
@@ -13,13 +12,12 @@ import {
   updateUser,
   CLEAR_Errors,
 } from "../../redux/action/useraction";
-import Loader from "../Layout/Loader/Loader";
 
 const UpdateUser = ({ history, match }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
-  const { loading, error, user } = useSelector((state) => state.userDetails);
+  const { error, user } = useSelector((state) => state.userDetails);
 
   const {
     loading: updateLoading,
