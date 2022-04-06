@@ -1,10 +1,13 @@
+.shippingContainer{
+  text-align: center;
+}
 .shippingBox {
   background-color: var(--lightColor);
-  width: auto;
+  width: 50%;
   height: auto;
   box-sizing: border-box;
   overflow: hidden;
-  overflow: hidden;
+  margin: 0 auto;
 }
 .shippingForm {
   display: flex;

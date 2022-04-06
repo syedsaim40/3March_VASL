@@ -29,8 +29,9 @@ exports.neworder = catchasyncerror(async (req, res, next) => {
   const mailoption = {
     from: process.env.SMPT_MAIL,
     to: shippingInfo.email,
-    subject: "VASAL CLOTHES SHOPPING",
+    subject: "VASL CLOTHS SHOPPING",
     text: message,
+    html: '<strong style="color:red;">Thank You! For shop at VASL</strong>',
   };
   transporter.sendMail(mailoption, function (error, info) {
     if (error) {
