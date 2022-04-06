@@ -57,6 +57,7 @@ import Bags from "./components/pages/Bags";
 import Scarves from "./components/pages/Scarves";
 import Perfumes from "./components/pages/Perfumes";
 import Cosmetics from "./components/pages/Cosmetics";
+import EmailTemplate from "./components/pages/EmailTemplate";
 
 import Checkorderdetails from "./components/Order/checkorderemaildetails";
 import Checkemail from "./components/Order/checkordermail";
@@ -195,6 +196,7 @@ function App() {
           <Route exact path="/Scarves" component={Scarves} />
           <Route exact path="/Perfumes" component={Perfumes} />
           <Route exact path="/Cosmetics" component={Cosmetics} />
+          <Route exact path="/EmailTemplate" component={EmailTemplate} />
         </Switch>
         <Footer />
       </Router>
