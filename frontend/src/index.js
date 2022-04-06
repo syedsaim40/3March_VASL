@@ -7,6 +7,9 @@ import store from "./redux/store";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { positions, transitions, Provider as Alertprovider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
+
+
+
 store.subscribe(() => console.log(store.getState()));
 
 const options = {

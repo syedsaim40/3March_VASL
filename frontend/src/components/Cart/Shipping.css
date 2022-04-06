@@ -1,16 +1,9 @@
-.shippingContainer {
-  width: 100vw;
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 .shippingBox {
   background-color: var(--lightColor);
   width: auto;
   height: auto;
   box-sizing: border-box;
+  overflow: hidden;
   overflow: hidden;
 }
 .shippingForm {
@@ -20,7 +13,7 @@
   margin: auto;
   padding: 2vmax;
   justify-content: space-evenly;
-  height: 80%;
+  height: auto;
   transition: all 0.5s;
 }
 .shippingForm > div {
@@ -39,8 +32,6 @@
   width: 100%;
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.267);
-  border-radius: 4px;
-  font: 300 0.9vmax cursive;
   outline: none;
 }
 .shippingForm > div > svg {
@@ -52,15 +43,11 @@
 
 
 @media screen and (max-width: 768px) {
-  .shippingBox {
-    width: 100vw;
-    height: 95vh;
-  }
   .shippingHeading {
     padding: 5vw;
   }
   .shippingForm {
-    padding: 11vw;
+    padding: 50px 100px;
   }
   .shippingForm > div > input,
   .shippingForm > div > select {
@@ -72,5 +59,10 @@
   }
   .shippingBtn {
     padding: 4vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .shippingForm {
+    padding: 20px;
   }
 }
