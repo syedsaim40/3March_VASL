@@ -241,7 +241,7 @@ const Home = ({ req }) => {
           <div className="ms_desp">
             <div className="ms_holder">
               <h2>#Vasl Featured</h2>
-              <Link to="/products">shop now</Link>
+              <Link to="/VaslFeatured">shop now</Link>
             </div>
           </div>
           <div id="mosaic_wrapper">

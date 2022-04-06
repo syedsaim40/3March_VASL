@@ -36,6 +36,11 @@ const NewProduct = ({ history }) => {
     "AClothes",
     "Replicas",
     "ReadyToWear",
+    "VaslFeatured",
+    "Bags",
+    "Scarves",
+    "Perfumes",
+    "Cosmetics"
   ];
 
   useEffect(() => {

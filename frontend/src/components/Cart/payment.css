@@ -5,12 +5,6 @@
   height: auto;
   margin: 2vmax;
 }
-
-.paymentForm {
-  width: 22%;
-  height: 100%;
-}
-
 .paymentForm>p {
   color: rgba(0, 0, 0, 0.753);
   border-bottom: 1px solid rgba(0, 0, 0, 0.13);
@@ -49,11 +43,17 @@
   outline: none;
   box-shadow: none;
 }
+.paymentForm{
+  text-align: center;
+}
 input[type="submit"]{
   width: 100%;
   cursor: pointer;
   outline: none;
   box-shadow: none;
+  width: 50%;
+  margin: 0 auto;
+  background: transparent;
 }
 input[type="submit"]:hover{
   background-color: #444;
@@ -147,20 +147,17 @@ input[type="submit"]:hover{
 .shipping_fee span {
   float: right;
 }
-
 .shipping_fee p {
   float: left;
 }
-
 .payment_accordian div.Collapsible,
 .payment_accordian div.Collapsible.accordian_footer {
   display: block;
 }
-
 .payment_accordian {
   overflow: hidden;
+  margin-bottom: 30px;
 }
-
 .pa_box {
   display: block;
   padding: 10px;
@@ -179,14 +176,14 @@ input[type="submit"]:hover{
   margin-bottom: 5px;
 }
 
-label {
+.login_phase label {
   background: #fffff5;
   display: none;
   width: 100%;
   color: var(--themeColor);
   opacity: 0.8;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 14px;
   padding: 20px;
 }

@@ -1,8 +1,8 @@
 .orderSuccess {
   margin: auto;
   text-align: center;
-  padding: 10vmax;
-  height: 50vh;
+  padding: 100px 50px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,25 +16,13 @@
   font-size: 2vmax;
 }
 .orderSuccess > a {
-  background-color: rgb(51, 51, 51);
-  color: white;
-  border: none;
-  padding: 1vmax 3vmax;
-  cursor: pointer;
-  font: 400 1vmax "Roboto";
+  display: inline-block;
   text-decoration: none;
-  margin: 2vmax;
-}
-.orderSuccess > a:hover {
-  background-color: white;
-  border: 1px solid black;
-  color: black;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .orderSuccess > a {
     padding: 3vw 6vw;
-    font: 400 4vw "Roboto";
     margin: 2vmax;
   }
 
