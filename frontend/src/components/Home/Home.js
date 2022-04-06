@@ -93,6 +93,9 @@ const Home = ({ req }) => {
           </AliceCarousel>
         </div>
         <div className="product_showcase">
+          <svg className="vasl_svg" width="100vw" height="100vh">
+            <text x="45%" y="55%">VASL</text>
+          </svg>
           <div className="section_heading">
             <div className="homeHeading">
               <h2>Trending</h2>
