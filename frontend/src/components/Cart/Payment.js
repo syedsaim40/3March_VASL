@@ -80,7 +80,12 @@ const Payment = ({ history }) => {
               <div className="pa_box">
                 <div className="pa_text">
                   <label className="lShow">Bank Transfer Payment</label>
-                  <input type="radio" id="demo" name="pa_value" value="Bank Transfer Payment" />
+                  <input
+                    type="radio"
+                    id="demo"
+                    name="pa_value"
+                    value="Bank Transfer Payment"
+                  />
                   <label for="demo" className="pa_lbl">
                     <p>
                       <span>Payment Details:</span>
@@ -90,14 +95,24 @@ const Payment = ({ history }) => {
                       <span>IBAN #: PK27 MEZN 0009 05014237471</span>
                     </p>
                     <p>
-                      Please Send transaction number or screenshot of receipt to email: admin@smarteshop.pk or whatsapp number: 0331-5865152</p>
+                      Please Send transaction number or screenshot of receipt to
+                      email: admin@smarteshop.pk or whatsapp number:
+                      0331-5865152
+                    </p>
                   </label>
                 </div>
               </div>
               <div className="pa_box">
                 <div className="pa_text">
-                  <label className="lShow">Easy Paisa and JazzCash Transfer</label>
-                  <input type="radio" id="demo" name="pa_value" value="Bank Transfer Payment" />
+                  <label className="lShow">
+                    Easy Paisa and JazzCash Transfer
+                  </label>
+                  <input
+                    type="radio"
+                    id="demo"
+                    name="pa_value"
+                    value="Bank Transfer Payment"
+                  />
                   <label for="demo" className="pa_lbl">
                     <p>
                       <span>Payment Details:</span>
@@ -106,14 +121,22 @@ const Payment = ({ history }) => {
                       <span>Acounts Holder Name : Azeem Mehmood</span>
                     </p>
                     <p>
-                      Please Send transaction number or screenshot of receipt to email: admin@smarteshop.pk or whatsapp number: 0331-5865152</p>
+                      Please Send transaction number or screenshot of receipt to
+                      email: admin@smarteshop.pk or whatsapp number:
+                      0331-5865152
+                    </p>
                   </label>
                 </div>
               </div>
               <div className="pa_box">
                 <div className="pa_text">
                   <label className="lShow">Cash on delivery</label>
-                  <input type="radio" id="demo" name="pa_value" value="Bank Transfer Payment" />
+                  <input
+                    type="radio"
+                    id="demo"
+                    name="pa_value"
+                    value="Bank Transfer Payment"
+                  />
                   <label for="demo" className="pa_lbl">
                     <p>
                       <span>Pay with cash upon delivery.</span>
