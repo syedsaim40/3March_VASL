@@ -113,7 +113,7 @@ input[type="submit"]:hover{
 .ftotal_prc span,
 .total_prc span {
   float: right;
-  color: red;
+  color: black;
   border-top: 1px solid #4443;
   padding-top: 10px;
 }

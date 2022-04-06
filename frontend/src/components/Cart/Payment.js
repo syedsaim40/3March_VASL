@@ -11,7 +11,7 @@ const Payment = ({ history }) => {
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
   const dispatch = useDispatch();
   const alert = useAlert();
-
+  const [selectedval, setselectedval] = React.useState("");
   const { shippingInfo, cartItems } = useSelector((state) => state.cart);
 
   const { error } = useSelector((state) => state.newOrder);
@@ -24,11 +24,13 @@ const Payment = ({ history }) => {
     shippingPrice: orderInfo.shippingCharges,
     totalPrice: orderInfo.totalPrice,
     paymentInfo: {
-      id: "sample paymentinfo",
+      id: selectedval,
       status: "succeeded",
     },
   };
-
+  const handlechange = (e) => {
+    setselectedval(e.target.value);
+  };
   const submitHandler = async (e) => {
     e.preventDefault();
     dispatch(createOrder(order));
@@ -51,7 +53,9 @@ const Payment = ({ history }) => {
         <div className="order_info">
           <div className="section_heading">
             <div className="homeHeading">
-              <h2>PAyment Info</h2>
+              <h2>
+                <b>PAyment Info</b>
+              </h2>
             </div>
           </div>
           <div className="shipping_fee">
@@ -65,8 +69,12 @@ const Payment = ({ history }) => {
             <span>{orderInfo.shippingCharges}</span>
           </div>
           <div className="ftotal_prc">
-            <span>TOTAL</span>
-            <span>{orderInfo.totalPrice}</span>
+            <span>
+              <b>TOTAL</b>
+            </span>
+            <span>
+              <b>{orderInfo.totalPrice}</b>
+            </span>
           </div>
           <div className="payment_accordian">
             <form action="submit">
@@ -77,6 +85,8 @@ const Payment = ({ history }) => {
                     type="radio"
                     id="demo"
                     name="pa_value"
+                    checked={selectedval === "Bank Transfer Payment"}
+                    onChange={handlechange}
                     value="Bank Transfer Payment"
                   />
                   <label for="demo" className="pa_lbl">
@@ -104,7 +114,9 @@ const Payment = ({ history }) => {
                     type="radio"
                     id="demo"
                     name="pa_value"
-                    value="Bank Transfer Payment"
+                    checked={selectedval === "Easy Paisa and JazzCash Transfer"}
+                    value="Easy Paisa and JazzCash Transfer"
+                    onChange={handlechange}
                   />
                   <label for="demo" className="pa_lbl">
                     <p>
@@ -128,7 +140,9 @@ const Payment = ({ history }) => {
                     type="radio"
                     id="demo"
                     name="pa_value"
-                    value="Bank Transfer Payment"
+                    checked={selectedval === "Cash on delivery"}
+                    value="Cash on delivery"
+                    onChange={handlechange}
                   />
                   <label for="demo" className="pa_lbl">
                     <p>
