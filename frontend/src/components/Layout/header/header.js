@@ -30,6 +30,10 @@ import "react-sliding-pane/dist/react-sliding-pane.css";
 
 import Collapsible from "react-collapsible";
 
+import Button from "@material-ui/core/Button";
+import Menu from "@material-ui/core/Menu";
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+
 //creating the unique header component for all vasl pages
 function Header() {
   const { user, isAuthenticated } = useSelector((state) => state.user);
@@ -47,6 +51,11 @@ function Header() {
     dispatch(Logout());
     alert.success("Logout Successfully");
   }
+
+
+
+
+  
 
   return (
     <header>
