@@ -54,18 +54,6 @@ const Payment = ({ history }) => {
               <h2>PAyment Info</h2>
             </div>
           </div>
-          <div className="payment_info">
-            <h2>product</h2>
-            <h2>subtotal</h2>
-          </div>
-          <div className="product_info">
-            <p className="product_name">Yaha Product name aye ga</p>
-            <span className="product_price">Yaha product price any hai</span>
-          </div>
-          <div className="total_prc">
-            <span>SUBTOTAL</span>
-            <span>Yaha Sub-Total Price any hai</span>
-          </div>
           <div className="shipping_fee">
             <h2>Shipping</h2>
             <p>shipping fee:</p>
