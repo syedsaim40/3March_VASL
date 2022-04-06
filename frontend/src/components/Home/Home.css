@@ -790,3 +790,26 @@ div.alice-carousel__next-btn-wrapper p::after {
     height: 1px;
   }
 }
+
+
+svg.vasl_svg{
+  background: #fff;
+}
+svg.vasl_svg text{
+  font-size: 10rem;
+  stroke-width: 7px;
+  fill: transparent;
+  stroke: #444;
+  letter-spacing: 2px;
+  animation: effect 2s infinite alternate;
+}
+
+@keyframes effect{
+  0%{
+    stroke-dasharray: 0 70%;
+  }
+  100%{
+    stroke-dasharray: 50% 0;
+    stroke-dashoffset: 10%;
+  }
+}
