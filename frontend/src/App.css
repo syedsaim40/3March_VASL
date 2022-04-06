@@ -49,10 +49,14 @@ body {
   background: transparent;
   z-index: 0;
 }
+.btn_primary.active,
 .btn_primary:focus,
 .btn_primary:hover {
   color: var(--lightColor);
   box-shadow: var(--boxShadow);
+}
+.btn_primary.active{
+  background: var(--themeColor);
 }
 .btn_primary::after {
   position: absolute;

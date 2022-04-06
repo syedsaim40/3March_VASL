@@ -104,7 +104,7 @@ const ConfirmOrder = ({ history }) => {
               <span>PKR {totalPrice}</span>
             </div>
 
-            <button className="btn_primary" onClick={proceedToPayment}>
+            <button className="btn_primary active" onClick={proceedToPayment}>
               Proceed To Payment
             </button>
           </div>

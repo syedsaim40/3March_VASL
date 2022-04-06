@@ -1,6 +1,6 @@
 .confirmOrderPage {
   height: auto;
-  background-color: white;
+  background-color: var(--lightColor);
   display: grid;
   grid-template-columns: 6fr 3fr;
 }
@@ -37,20 +37,22 @@
 .confirmCartItemsContainer > div {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin: 2vmax 0;
+  justify-content: left;
 }
 .confirmCartItemsContainer > div > img {
   width: 3vmax;
+  margin-right: 20px;
 }
 .confirmCartItemsContainer > div > a {
-  color: #575757;
-  margin: 0 2vmax;
-  width: 60%;
+  color: var(--themeColor);
+  margin: 0;
+  width: 50%;
   text-decoration: none;
+  text-align: left;
 }
 .confirmCartItemsContainer > div > span {
-  color: #5e5e5e;
+  color: var(--themeColor);
 }
 .orderSummary {
   padding: 7vmax;
