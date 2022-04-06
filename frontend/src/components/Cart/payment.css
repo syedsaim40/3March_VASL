@@ -194,11 +194,11 @@ label.pa_lbl {
 label.lShow {
   display: block;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 14px;
   padding: 0;
   position: absolute;
   left: 5%;
-  top: 11px;
+  top: 10px;
 }
 
 @media screen and (max-width: 768px) {
