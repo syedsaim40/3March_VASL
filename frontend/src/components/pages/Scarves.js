@@ -10,7 +10,7 @@ import { useParams } from "react-router-dom";
 
 
 const Products = () => {
-const cateogories = "Sacrves";
+const cateogories = "Scarves";
     
   const { keyword } = useParams();
   const dispatch = useDispatch();
@@ -39,10 +39,10 @@ let r=products &&
 
   return (
     <Fragment>
-      <MetaData title="Sacrves-VASL" />
+      <MetaData title="Scarves-VASL" />
       <div className="section_heading">
         <div className="homeHeading">
-          <h2>Sacrves</h2>
+          <h2>Scarves</h2>
         </div>
       </div>
 

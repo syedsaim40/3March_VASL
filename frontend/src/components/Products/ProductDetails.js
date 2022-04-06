@@ -159,7 +159,7 @@ const ProductDetails = ({ match }) => {
         <Loader />
       ) : ( */}
       <Fragment>
-        <Metadata title={`${product.name} ----ECOMMERECE`} />
+        <Metadata title={`${product.name}-VASL`} />
         <div className="ProductDetails">
           {/* <Carousel
               next={() => {

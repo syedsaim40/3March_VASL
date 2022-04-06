@@ -233,7 +233,7 @@ const Home = ({ req }) => {
               </div>
             </div>
             <div className="cp_item">
-              <Link to="/products">
+              <Link to="/VaslFeatured">
                 <img src={cimg4} className="cp_img" alt="category-img" />
                 <div className="cp_btn">Shop now</div>
               </Link>
