@@ -55,13 +55,18 @@ const Payment = ({ history }) => {
             </div>
           </div>
           <div className="shipping_fee">
+            <h2>Subtotal:</h2>
+            <p>Subtotal</p>
+            <span>{orderInfo.subtotal}</span>
+          </div>
+          <div className="shipping_fee">
             <h2>Shipping</h2>
             <p>shipping fee:</p>
-            <span>200</span>
+            <span>{orderInfo.shippingCharges}</span>
           </div>
           <div className="ftotal_prc">
             <span>TOTAL</span>
-            <span>Yaha Total Price any hai</span>
+            <span>{orderInfo.totalPrice}</span>
           </div>
           <div className="payment_accordian">
             <form action="submit">
