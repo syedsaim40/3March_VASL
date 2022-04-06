@@ -52,6 +52,12 @@ import Ready from "./components/pages/ReadyToWear";
 import UnStiched from "./components/pages/Unstiched";
 import Aclothes from "./components/pages/AClothes";
 import Beauty from "./components/pages/Beauty";
+import VaslFeatured from "./components/pages/VaslFeatured";
+import Bags from "./components/pages/Bags";
+import Scarves from "./components/pages/Scarves";
+import Perfumes from "./components/pages/Perfumes";
+import Cosmetics from "./components/pages/Cosmetics";
+
 import Checkorderdetails from "./components/Order/checkorderemaildetails";
 import Checkemail from "./components/Order/checkordermail";
 function App() {
@@ -184,6 +190,11 @@ function App() {
           <Route exact path="/AClothes" component={Aclothes} />
           <Route exact path="/Unstiched" component={UnStiched} />
           <Route exact path="/Beauty" component={Beauty} />
+          <Route exact path="/VaslFeatured" component={VaslFeatured} />
+          <Route exact path="/Bags" component={Bags} />
+          <Route exact path="/Scarves" component={Scarves} />
+          <Route exact path="/Perfumes" component={Perfumes} />
+          <Route exact path="/Cosmetics" component={Cosmetics} />
         </Switch>
         <Footer />
       </Router>

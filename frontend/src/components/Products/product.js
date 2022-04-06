@@ -19,6 +19,11 @@ const cateogories = [
   "AClothes",
   "Replicas",
   "ReadyToWear",
+  "VaslFeatured",
+  "Bags",
+  "Scarves",
+  "Perfumes",
+  "Cosmetics"
 ];
 const Products = () => {
   const { keyword } = useParams();

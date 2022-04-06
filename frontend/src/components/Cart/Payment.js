@@ -1,12 +1,10 @@
 import React, { Fragment, useEffect } from "react";
 import CheckoutSteps from "../Cart/CheckoutSteps";
 import MetaData from "../Layout/Metadata";
-import { Typography } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import { useAlert } from "react-alert";
 import { createOrder, clearErrors } from "../../redux/action/orderaction";
 import { RESETCart } from "../../redux/action/cartAction";
-import Collapsible from "react-collapsible";
 
 import "./payment.css";
 const Payment = ({ history }) => {

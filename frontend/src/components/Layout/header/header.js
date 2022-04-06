@@ -102,6 +102,9 @@ function Header() {
                   <li>
                     <Link to="/AClothes">A+ Cloths</Link>
                   </li>
+                  <li>
+                    <Link to="/VaslFeatured">A+ Cloths</Link>
+                  </li>
                 </ul>
               </Collapsible>
               <Collapsible trigger="New Inn" className="accordian_footer">
@@ -137,20 +140,20 @@ function Header() {
               <Collapsible trigger="Accesories" className="accordian_footer">
                 <ul className="mn_menu_list">
                   <li>
-                    <Link to="/bags">Bags</Link>
+                    <Link to="/Bags">Bags</Link>
                   </li>
                   <li>
-                    <Link to="/scarves">scarves</Link>
+                    <Link to="/Scarves">scarves</Link>
                   </li>
                 </ul>
               </Collapsible>
               <Collapsible trigger="Beauty" className="accordian_footer">
                 <ul className="mn_menu_list">
                   <li>
-                    <Link to="/perfumes">perfumes</Link>
+                    <Link to="/Perfumes">perfumes</Link>
                   </li>
                   <li>
-                    <Link to="/cosmetics">cosmetics</Link>
+                    <Link to="/Cosmetics">cosmetics</Link>
                   </li>
                 </ul>
               </Collapsible>
