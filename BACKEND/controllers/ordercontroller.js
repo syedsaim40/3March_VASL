@@ -31,6 +31,7 @@ exports.neworder = catchasyncerror(async (req, res, next) => {
     to: shippingInfo.email,
     subject: "VASL CLOTHS SHOPPING",
     text: message,
+
     html: '<strong style="color:red;">Thank You! For shop at VASL</strong>',
 
     // html: '<strong style="color:red;">Thank You! For shop at VASL</strong>',
