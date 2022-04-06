@@ -73,7 +73,11 @@ const ProcessOrder = ({ history, match }) => {
                   <div className="orderDetailsContainerBox">
                     <div>
                       <p>Name:</p>
-                      <span>{order.user && order.user.name}</span>
+                      <span>{order.user && order.shippingInfo.name}</span>
+                    </div>
+                    <div>
+                      <p>Email:</p>
+                      <span>{order.user && order.user}</span>
                     </div>
                     <div>
                       <p>Phone:</p>
