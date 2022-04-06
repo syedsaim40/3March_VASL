@@ -4,7 +4,7 @@ const Errorhandler = require("../utils/errorhandler");
 const sendEmail = require("../utils/sendEmail");
 const catchasyncerror = require("../middleware/asyncerror.js");
 const nodemailer = require("nodemailer");
-const hbs = require("nodemailer-express-handlebars");
+
 // Create new Order
 exports.neworder = catchasyncerror(async (req, res, next) => {
   const {
@@ -26,20 +26,12 @@ exports.neworder = catchasyncerror(async (req, res, next) => {
       pass: process.env.SMPT_PASSWORD,
     },
   });
-  transporter.use(
-    "compile",
-    hbs({
-      viewEngine: "express-handlebars",
-      viewPath: "../views/layout",
-    })
-  );
   const mailoption = {
     from: process.env.SMPT_MAIL,
     to: shippingInfo.email,
     subject: "VASL CLOTHS SHOPPING",
     text: message,
-    // html: '<strong style="color:red;">Thank You! For shop at VASL</strong>',
-    template: "index",
+    html: '<strong style="color:red;">Thank You! For shop at VASL</strong>',
   };
   transporter.sendMail(mailoption, function (error, info) {
     if (error) {
