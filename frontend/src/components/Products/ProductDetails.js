@@ -242,11 +242,14 @@ const ProductDetails = ({ match }) => {
               </div>
 
               {/* THIS IS OUR NEW FEATURE As Speech text button */}
+              <div className="audio_product">
+                <h2>Speech the Description</h2>
               <Speech
                 stop={true}
                 pause={true}
                 resume={true}
                 text={product.description} />
+                </div>
 
 
               <div className="product_tabs">

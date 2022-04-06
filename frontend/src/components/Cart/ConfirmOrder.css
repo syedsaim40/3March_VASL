@@ -80,7 +80,7 @@
   padding: 2vmax 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .confirmOrderPage {
     grid-template-columns: 1fr;
     height: unset;
@@ -113,7 +113,20 @@
     padding: 5vw 0;
   }
   .orderSummary > button {
-    padding: 4vw;
-    margin: 4vw auto;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .confirmCartItemsContainer > div {
+    display: block;
+    align-items: center;
+    margin: 0;
+    justify-content: center;
+  }
+  .confirmCartItemsContainer > div > a {
+    margin: 0;
+    width: 100%;
+    display: block;
   }
 }

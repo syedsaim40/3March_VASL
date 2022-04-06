@@ -175,7 +175,15 @@ input.btn_primary:hover::after {
   transform: translate(0);
 }
 
+@media screen and (max-width: 768px) {
+  input.btn_primary {
+    padding: 25px 20px;
+  }
+}
 @media screen and (max-width: 480px) {
+  input.btn_primary {
+    padding: 10px 20px;
+  }
   .btn_p{
     padding: 2px 10px;
     line-height: 0;

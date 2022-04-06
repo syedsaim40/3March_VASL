@@ -13,13 +13,11 @@
   width: 50%;
   margin: auto;
 }
-
 .paymentForm>div {
   display: flex;
   align-items: center;
   margin: 2vmax 0;
 }
-
 .paymentInput {
   padding: 1vmax 4vmax;
   padding-right: 1vmax;
@@ -29,14 +27,12 @@
   border-radius: 4px;
   outline: none;
 }
-
 .paymentForm>div>svg {
   position: absolute;
   transform: translateX(1vmax);
   font-size: 1.6vmax;
   color: rgba(0, 0, 0, 0.623);
 }
-
 .paymentFormBtn {
   width: 100%;
   cursor: pointer;
@@ -63,14 +59,12 @@ input[type="submit"]:hover{
   padding: 30px;
   box-shadow: var(--boxShadow);
 }
-
 .payment_info {
   overflow: hidden;
   border-bottom: 1px solid #4443;
   padding: 10px 2px 30px 2px;
   margin-bottom: 20px;
 }
-
 .payment_info h2 {
   float: right;
   text-transform: uppercase;
@@ -78,11 +72,9 @@ input[type="submit"]:hover{
   color: var(--themeColor);
   font-size: 18px;
 }
-
 .payment_info h2:first-child {
   float: left;
 }
-
 .product_info {
   overflow: hidden;
   font-weight: 400;
@@ -91,15 +83,12 @@ input[type="submit"]:hover{
   margin-bottom: 20px;
   color: var(--themeColor);
 }
-
 .product_info p {
   float: left;
 }
-
 .product_info span {
   float: right;
 }
-
 .ftotal_prc,
 .total_prc {
   overflow: hidden;
@@ -109,7 +98,6 @@ input[type="submit"]:hover{
   margin-bottom: 20px;
   border-bottom: 1px solid #4443;
 }
-
 .ftotal_prc span,
 .total_prc span {
   float: right;
@@ -117,24 +105,20 @@ input[type="submit"]:hover{
   border-top: 1px solid #4443;
   padding-top: 10px;
 }
-
 .ftotal_prc span:first-child,
 .total_prc span:first-child {
   float: left;
   border: none;
 }
-
 .ftotal_prc span {
   border-top: none;
 }
-
 .shipping_fee {
   border-bottom: 1px solid #4443;
   padding: 10px 2px 30px 2px;
   margin-bottom: 20px;
   overflow: hidden;
 }
-
 .shipping_fee h2 {
   margin-bottom: 20px;
   font-weight: 400;
@@ -142,7 +126,6 @@ input[type="submit"]:hover{
   text-transform: capitalize;
   color: var(--themeColor);
 }
-
 .shipping_fee span {
   float: right;
 }
@@ -162,13 +145,11 @@ input[type="submit"]:hover{
   padding: 10px;
   position: relative;
 }
-
 .pa_box span.pa_title {
   position: absolute;
   left: 20px;
   top: calc(50% - 12px);
 }
-
 .pa_box p,
 .pa_box span {
   display: block;
@@ -205,25 +186,29 @@ label.lShow {
   .paymentForm {
     width: 90%;
   }
-
   .paymentForm>p {
     padding: 4vw 0;
     width: 60%;
   }
-
   .paymentForm>div {
     margin: 10vw 0;
   }
-
   .paymentInput {
     padding: 4vw 10vw;
   }
-
   .paymentForm>div>svg {
     font-size: 6vw;
   }
-
   .paymentFormBtn {
     padding: 4vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .order_info {
+    width: 90%;
+    padding: 20px;
+  }
+  label.lShow{
+    left: 10%;
   }
 }

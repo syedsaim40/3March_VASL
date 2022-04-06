@@ -350,8 +350,64 @@ div.makeStyles-itemWrapper-18{
 .reviews_section{
   margin-bottom: 30px;
 }
+.audio_product{
+  padding: 20px 10px;
+}
+.audio_product h2{
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: red;
+}
+span.rs-container button.rs-play,
+span.rs-container button.rs-stop,
+span.rs-container button.rs-pause,
+span.rs-container button.rs-resume{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  border: 0;
+  padding: 2px;
+  border: 1px solid transparent !important;
+  border-radius: 0px !important;
+}
+span.rs-container button.rs-play{
+  background-color: green !important;
+}
+span.rs-container button.rs-play:hover{
+  background-color: transparent !important;
+  border-color: green !important;
+}
+span.rs-container button.rs-play:hover svg{
+  fill: green !important;
+}
 
+span.rs-container button.rs-stop{
+  background-color: red !important;
+}
+span.rs-container button.rs-stop:hover{
+  background-color: transparent !important;
+  border-color: red !important;
+}
+span.rs-container button.rs-stop:hover svg{
+  fill: red !important;
+}
 
+span.rs-container button.rs-pause{
+  background-color: yellow !important;
+}
+span.rs-container button.rs-pause:hover{
+  background-color: transparent !important;
+  border-color: yellow !important;
+}
+span.rs-container button.rs-pause:hover svg{
+  fill: yellow !important;
+}
+
+span.rs-container button.rs-resume{
+  display: none !important;
+}
 @media screen and (max-width: 768px) {
   .ProductDetails div.alice-carousel__prev-btn,
   .ProductDetails div.alice-carousel__next-btn {
@@ -468,13 +524,6 @@ div.makeStyles-itemWrapper-18{
   .reviewCardComment {
     font: 300 5vw cursive;
   }
-}
-span.rs-container button.rs-play,
-span.rs-container button.rs-stop,
-span.rs-container button.rs-pause,
-span.rs-container button.rs-resume{
-  display: inline-block;
-  width: 20px;
 }
 
 @media screen and (max-width: 480px) {

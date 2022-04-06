@@ -524,6 +524,16 @@ span.Collapsible__trigger {
   align-items: center;
   transform: rotate(0deg);
 }
+/* span.Collapsible__trigger::after{
+  position: absolute;
+  content: " ";
+  top: 0;
+  bottom: 0;
+  right: 30px;
+  width: 5px;
+  height: 100%;
+  background-color: #444;
+} */
 div.Collapsible.accordian_footer{
   position: relative;
 }
@@ -780,7 +790,7 @@ span.Collapsible__trigger.is-open svg {
 
 @media only screen and (max-width:480px){
   .dp-box1 li sup{
-    right: 48%;
+    right: 5%;
   }
   button.sidenav---sidenav-toggle---1KRjR {
     padding: 10px;
@@ -859,6 +869,6 @@ span.Collapsible__trigger.is-open svg {
     padding: 10px 10px;
   }
   #mobile_menu {
-    top: 4%;
+    top: 5%;
   }
 }
