@@ -81,7 +81,7 @@ const Payment = ({ history }) => {
                 <div className="pa_text">
                   <label className="lShow">Bank Transfer Payment</label>
                   <input type="radio" id="demo" name="pa_value" value="Bank Transfer Payment" />
-                  <label for="demo">
+                  <label for="demo" className="pa_lbl">
                     <p>
                       <span>Payment Details:</span>
                       <span>Bank Title : Azeem Mehmood</span>
@@ -98,7 +98,7 @@ const Payment = ({ history }) => {
                 <div className="pa_text">
                   <label className="lShow">Easy Paisa and JazzCash Transfer</label>
                   <input type="radio" id="demo" name="pa_value" value="Bank Transfer Payment" />
-                  <label for="demo">
+                  <label for="demo" className="pa_lbl">
                     <p>
                       <span>Payment Details:</span>
                       <span>EasyPaisa Account : 03455865152</span>
@@ -114,7 +114,7 @@ const Payment = ({ history }) => {
                 <div className="pa_text">
                   <label className="lShow">Cash on delivery</label>
                   <input type="radio" id="demo" name="pa_value" value="Bank Transfer Payment" />
-                  <label for="demo">
+                  <label for="demo" className="pa_lbl">
                     <p>
                       <span>Pay with cash upon delivery.</span>
                     </p>

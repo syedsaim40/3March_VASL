@@ -124,6 +124,53 @@ body {
   transform: translate(0);
 }
 
+
+input.btn_primary {
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 0px;
+  padding: 5px 20px;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all ease-in-out 0.3s;
+  border: 1px solid var(--themeColor);
+  color: var(--themeColor);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: transparent;
+  z-index: 0;
+}
+input.btn_primary:focus,
+input.btn_primary:hover {
+  color: var(--lightColor);
+  box-shadow: var(--boxShadow);
+}
+input.btn_primary::after {
+  position: absolute;
+  content: " ";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  transform: translateX(-102%);
+  left: 0;
+  width: 0;
+  transition: all ease-in-out 0.3s;
+  background: var(--themeColor);
+}
+input.btn_primary:focus::after,
+input.btn_primary:hover::after {
+  border: 1px solid transparent;
+  width: 100%;
+  color: var(--lightColor);
+  transform: translate(0);
+}
+
 @media screen and (max-width: 480px) {
   .btn_p{
     padding: 2px 10px;

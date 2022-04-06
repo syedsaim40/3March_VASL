@@ -53,7 +53,6 @@ input[type="submit"]{
   box-shadow: none;
   width: 50%;
   margin: 0 auto;
-  background: transparent;
 }
 input[type="submit"]:hover{
   background-color: #444;
@@ -175,8 +174,7 @@ input[type="submit"]:hover{
   display: block;
   margin-bottom: 5px;
 }
-
-.login_phase label {
+label.pa_lbl {
   background: #fffff5;
   display: none;
   width: 100%;
@@ -188,7 +186,7 @@ input[type="submit"]:hover{
   padding: 20px;
 }
 
-#demo:checked+label {
+#demo:checked + label.pa_lbl {
   color: var(--themeColor);
   display: block;
 }

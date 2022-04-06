@@ -46,7 +46,11 @@ const Shipping = ({ history }) => {
       <CheckoutSteps activeStep={0} />
       <div className="shippingContainer">
         <div className="shippingBox">
-          <h2 className="shippingHeading">Shipping Details</h2>
+          <div className="section_heading">
+            <div className="homeHeading">
+              <h2>Shipping Details</h2>
+            </div>
+          </div>
 
           <form
             className="shippingForm"
@@ -147,7 +151,7 @@ const Shipping = ({ history }) => {
             <input
               type="submit"
               value="Continue"
-              className="shippingBtn"
+              className="shippingBtn btn_primary"
               disabled={state ? false : true}
             />
           </form>
