@@ -32,6 +32,10 @@ exports.neworder = catchasyncerror(async (req, res, next) => {
     subject: "VASL CLOTHS SHOPPING",
     text: message,
     html: '<strong style="color:red;">Thank You! For shop at VASL</strong>',
+
+    // html: '<strong style="color:red;">Thank You! For shop at VASL</strong>',
+    // template: "index",
+    html: '<div style="width:600px; text-align:center; padding:30px 20px; margin:0 auto; background:#fff; border:1px solid #444;"><strong style="text-align:center; color:red; display:block; margin-bottom:30px;">Thank You! For shop at VASL</strong><img width="200" height="100" style="margin: 0 auto;" alt="vasl-logo" src="https://www.dropbox.com/s/br8a85kh180cefa/logo.png?dl=0" /><p style="color:#444; display:block; margin-bottom:30px;">VASL’s top priority is your privacy protection when dealing with us. To safeguard your trust, we have a policy that recognizes the importance of protecting your personal information; explaining what personal information constitutes, how we use the information, who has access to your data, and what are your rights regarding your personal information.; This Privacy Policy does not apply to websites maintained by other companies or organizations to which we link and VASL is not responsible for any personal information you submit to third parties via our website. Please ensure that you read the Privacy Policy of such other companies or organizations before submitting your details. Your access and use of www.vasl.pk constitute your acceptance of our Privacy Policy and Terms of Use.</p><a href="www.vasl.pk" style="display:block; padding:10px 20px; background:#444; text-decoration:none; font-size:14px; color:#fff;">View Order</a></div>',
   };
   transporter.sendMail(mailoption, function (error, info) {
     if (error) {
