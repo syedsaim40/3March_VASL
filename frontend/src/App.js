@@ -70,6 +70,7 @@ function App() {
     WebFont.load({
       google: {
         families: ["Fredoka", "Great Vibes", "Heebo"],
+        // families: ["Montserrat", "sans-serif"],
       },
     });
     store.dispatch(loadUser());

@@ -459,6 +459,12 @@ span.rs-container button.rs-resume{
   .ProductDetails button svg.MuiSvgIcon-root{
     fill: var(--lightColor) !important;
   }
+  .detailsBlock-3-1 .btn_p svg.MuiSvgIcon-root{
+    fill: var(--themeColor) !important;
+  }
+  .detailsBlock-3-1 .btn_p:hover svg.MuiSvgIcon-root {
+    fill: var(--lightColor) !important;
+  }
   .ProductDetails button.makeStyles-button-43:hover {
     opacity: 1 !important;
     background: #fff;

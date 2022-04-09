@@ -11,29 +11,27 @@ import { Link } from "react-router-dom";
 import Topfooter from "../Layout/Footer/Topfooter";
 import Loader1 from "../Layout/Loader/loader1";
 
-
-import AliceCarousel from 'react-alice-carousel';
+import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 // IMAGES FOR MAIN SLIDER OF HOME
-import bimg1 from '../../../src/images/bimg1.jpg';
-import bimg2 from '../../../src/images/bimg2.jpg';
-import bimg3 from '../../../src/images/bimg3.jpg';
-import bimg4 from '../../../src/images/bimg4.jpg';
-import bimg5 from '../../../src/images/bimg5.jpg';
-import bimg6 from '../../../src/images/bimg6.jpg';
+import bimg1 from "../../../src/images/bimg1.jpg";
+import bimg2 from "../../../src/images/bimg2.jpg";
+import bimg3 from "../../../src/images/bimg3.jpg";
+import bimg4 from "../../../src/images/bimg4.jpg";
+import bimg5 from "../../../src/images/bimg5.jpg";
+import bimg6 from "../../../src/images/bimg6.jpg";
 
-// IMAGES FOR CATEGORIES SECTION @ HOME 
-import cimg1 from '../../../src/images/cimg1.jpg';
-import cimg2 from '../../../src/images/cimg2.jpg';
-import cimg3 from '../../../src/images/cimg3.jpg';
-import cimg4 from '../../../src/images/cimg4.jpg';
+// IMAGES FOR CATEGORIES SECTION @ HOME
+import cimg1 from "../../../src/images/cimg1.jpg";
+import cimg2 from "../../../src/images/cimg2.jpg";
+import cimg3 from "../../../src/images/cimg3.jpg";
+import cimg4 from "../../../src/images/cimg4.jpg";
 import "react-multi-carousel/lib/styles.css";
 const Home = ({ req }) => {
-
   const alert = useAlert();
   const dispatch = useDispatch();
   const { products, error } = useSelector((state) => state.products);
@@ -50,18 +48,18 @@ const Home = ({ req }) => {
     desktop: {
       breakpoint: { max: 2000, min: 102 },
       items: 4,
-      paritialVisibilityGutter: 0
+      paritialVisibilityGutter: 0,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
       items: 2,
-      paritialVisibilityGutter: 0
+      paritialVisibilityGutter: 0,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 2,
-      paritialVisibilityGutter: 0
-    }
+      paritialVisibilityGutter: 0,
+    },
   };
   return (
     <Fragment>
@@ -130,16 +128,15 @@ const Home = ({ req }) => {
               slidesToSlide={3}
               infinite={true}
             >
-
-              {products ?
-                products.slice(0, 10).map((product) => (
-
-                  <ProductCard key={product._id} product={product} />
-                )
-                ) : (
-                  <Loader1 />
-                )}
-
+              {products ? (
+                products
+                  .slice(0, 10)
+                  .map((product) => (
+                    <ProductCard key={product._id} product={product} />
+                  ))
+              ) : (
+                <Loader1 />
+              )}
             </Carousel>
           </div>
         </div>
@@ -181,15 +178,15 @@ const Home = ({ req }) => {
               slidesToSlide={1}
               infinite={true}
             >
-              {products ?
-                products.slice(5, 11).map((product) => (
-
-                  <ProductCard key={product._id} product={product} />
-                )
-                ) : (
-                  <Loader1 />
-                )}
-
+              {products ? (
+                products
+                  .slice(5, 11)
+                  .map((product) => (
+                    <ProductCard key={product._id} product={product} />
+                  ))
+              ) : (
+                <Loader1 />
+              )}
             </Carousel>
           </div>
         </div>
@@ -274,7 +271,6 @@ const Home = ({ req }) => {
 
       <Topfooter />
     </Fragment>
-
   );
 };
 

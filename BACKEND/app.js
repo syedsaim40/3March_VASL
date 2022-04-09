@@ -2,6 +2,20 @@ const express = require("express");
 const app = express();
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
+// const path = require("path");
+
+// var hbs = require("nodemailer-express-handlebars");
+// app.engine(
+//   "hbs",
+//   hbs({
+//     layoutsDir: __dirname + "./views/layouts",
+//     //new configuration parameter
+//     extname: "hbs",
+//     defaultLayout: "layout",
+//   })
+// );
+// app.set("views", path.join(__dirname, "./views/layouts"));
+// app.set("view engine", "hbs");
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
