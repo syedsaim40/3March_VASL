@@ -44,12 +44,6 @@ exports.neworder = catchasyncerror(async (req, res, next) => {
     subject: "VASL CLOTHES SHOPPING",
     text: message,
     template: "email",
-    // context: {
-    //   name: "Muhammad Hamza",
-    //   company: "Vasal Clothing",
-    // },
-    // html: '<strong style="color:red;">Thank You! For shop at VASL</strong>',
-    // html: '<div style="width:600px; text-align:center; padding:30px 20px; margin:0 auto; background:#fff; border:1px solid #444;"><strong style="text-align:center; color:#444; display:block; margin-bottom:30px;">Thank You! For shop at VASL</strong><img width="200" height="100" style="margin: 0 auto;" alt="vasl-logo" src="https://res.cloudinary.com/vaslcloth/image/upload/v1649262973/avatars/logo_geoqbu.png" /><strong style="text-align:center; color:#444; display:block; margin-bottom:30px;">You can check your Order Status by putting your email at VASL</strong><p style="color:#444; display:block; margin-bottom:30px;">VASL’s top priority is your privacy protection when dealing with us. To safeguard your trust, we have a policy that recognizes the importance of protecting your personal information; explaining what personal information constitutes, how we use the information, who has access to your data, and what are your rights regarding your personal information.; This Privacy Policy does not apply to websites maintained by other companies or organizations to which we link and VASL is not responsible for any personal information you submit to third parties via our website. Please ensure that you read the Privacy Policy of such other companies or organizations before submitting your details. Your access and use of www.vasl.pk constitute your acceptance of our Privacy Policy and Terms of Use.</p><a href="www.vasl.pk" style="display:block; padding:10px 20px; background:#444; text-decoration:none; font-size:14px; color:#fff;">View Order</a></div>',
   };
   transporter.sendMail(mailoption, function (error, info) {
     if (error) {
