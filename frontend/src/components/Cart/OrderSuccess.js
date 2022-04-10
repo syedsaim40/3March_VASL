@@ -3,10 +3,10 @@ import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import "./orderSuccess.css";
 import { Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch, connect } from "react-redux";
+import { useSelector, connect } from "react-redux";
 
 const OrderSuccess = (props) => {
-  const { error, isAuthenticated } = useSelector((state) => state.user);
+  const { isAuthenticated } = useSelector((state) => state.user);
 
   console.log(props.newOrder);
   return (
@@ -22,7 +22,7 @@ const OrderSuccess = (props) => {
             isAuthenticated
               ? "/orders"
               : props.newOrder
-              ? `/check/order/`
+              ? `/check/order/email/${props.newOrder.order._id}`
               : "/check/order/email"
           }
           className="btn_primary"
