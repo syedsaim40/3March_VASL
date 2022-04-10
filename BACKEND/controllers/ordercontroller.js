@@ -15,6 +15,17 @@ exports.neworder = catchasyncerror(async (req, res, next) => {
     shippingPrice,
     totalPrice,
   } = req.body;
+
+  const order = await Order.create({
+    shippingInfo,
+    orderItems,
+    paymentInfo,
+    itemsPrice,
+    shippingPrice,
+    totalPrice,
+    paidAt: Date.now(),
+    user: shippingInfo.email,
+  });
   const message = `Thank You! For shop at VASL`;
 
   const transporter = nodemailer.createTransport({
@@ -43,6 +54,11 @@ exports.neworder = catchasyncerror(async (req, res, next) => {
     to: shippingInfo.email,
     subject: "VASL CLOTHES SHOPPING",
     text: message,
+    context: {
+      orderId: order._id,
+      Name: shippingInfo.name,
+      Date: order.createdAt,
+    },
     template: "email",
   };
   transporter.sendMail(mailoption, function (error, info) {
@@ -51,17 +67,6 @@ exports.neworder = catchasyncerror(async (req, res, next) => {
     } else {
       console.log("Email sent: " + info.response);
     }
-  });
-
-  const order = await Order.create({
-    shippingInfo,
-    orderItems,
-    paymentInfo,
-    itemsPrice,
-    shippingPrice,
-    totalPrice,
-    paidAt: Date.now(),
-    user: shippingInfo.email,
   });
 
   res.status(201).json({
