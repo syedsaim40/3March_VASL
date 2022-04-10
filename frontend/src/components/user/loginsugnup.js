@@ -66,7 +66,7 @@ const LoginSignUp = ({ location }) => {
     setTimeout(() => {
       dispatch(googlelogin(response));
       window.location.reload(false);
-    }, 1000);
+    }, 2000);
   };
 
   const onFailure = (res) => {

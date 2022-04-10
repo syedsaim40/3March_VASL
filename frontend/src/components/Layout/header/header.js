@@ -30,7 +30,6 @@ import "react-sliding-pane/dist/react-sliding-pane.css";
 
 import Collapsible from "react-collapsible";
 
-
 //creating the unique header component for all vasl pages
 function Header() {
   const { user, isAuthenticated } = useSelector((state) => state.user);
@@ -186,9 +185,9 @@ function Header() {
                         ) : null}
                         <li>
                           <li>
-                            <Link to="/login">
+                            <Link onClick={logoutUser}>
                               <LogoutIcon />
-                              <span onClick={logoutUser}>Logout</span>
+                              <span>Logout</span>
                             </Link>
                           </li>
                         </li>
@@ -357,7 +356,7 @@ function Header() {
       <div className="bottom_header">
         <ul className="unstyled bottom_nav">
           <li>
-                <Link to="/Newinn">New In</Link>
+            <Link to="/Newinn">New In</Link>
           </li>
           <li>
             <Link to="/Womens">women</Link>

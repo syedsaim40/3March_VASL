@@ -4,9 +4,18 @@ import MetaData from "../Layout/Metadata";
 // import Loader from "../Layout/Loader/Loader";
 import { Link } from "react-router-dom";
 import "./Profile.css";
+import LogoutIcon from "@mui/icons-material/Logout";
+import { useDispatch } from "react-redux";
+import { Logout } from "../../redux/action/useraction";
 
 const Profile = ({ history }) => {
+  const dispatch = useDispatch();
+
   const { user, isAuthenticated } = useSelector((state) => state.user);
+  function logoutUser() {
+    dispatch(Logout());
+    alert.success("Logout Successfully");
+  }
 
   useEffect(() => {
     if (isAuthenticated === false) {
@@ -31,6 +40,9 @@ const Profile = ({ history }) => {
             <img src={user.avatar.url} alt={user.name} />
             <Link className="btn_primary" to="/profile/update">
               Edit Profile
+            </Link>
+            <Link className="btn_primary" onClick={logoutUser}>
+              Logout
             </Link>
           </div>
           <div>
