@@ -1,13 +1,13 @@
 import React, { Fragment, useEffect } from "react";
 import CheckoutSteps from "../Cart/CheckoutSteps";
 import MetaData from "../Layout/Metadata";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch, connect } from "react-redux";
 import { useAlert } from "react-alert";
 import { createOrder, clearErrors } from "../../redux/action/orderaction";
 import { RESETCart } from "../../redux/action/cartAction";
 
 import "./payment.css";
-const Payment = ({ history }) => {
+const Payment = ({ history }, props) => {
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -37,7 +37,9 @@ const Payment = ({ history }) => {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    dispatch(createOrder(order));
+    dispatch(createOrder(order)).then(function (result) {
+      console.log(result);
+    });
 
     dispatch(RESETCart());
     history.push("/success");
@@ -186,4 +188,7 @@ const Payment = ({ history }) => {
     </Fragment>
   );
 };
-export default Payment;
+const mapStateToProps = (state) => ({
+  newOrder: state,
+});
+export default connect(mapStateToProps)(Payment);
