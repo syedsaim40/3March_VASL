@@ -102,6 +102,7 @@ const OrderDetails = () => {
             disableSelectionOnClick
             className="myOrdersTable"
             autoHeight
+            
           />
         </div>
       </div>
