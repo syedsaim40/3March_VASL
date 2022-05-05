@@ -11,7 +11,7 @@ import { Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { useAlert } from "react-alert";
 import DeleteForeverRoundedIcon from "@mui/icons-material/DeleteForeverRounded";
-import RemoveShoppingCartOutlinedIcon from '@mui/icons-material/RemoveShoppingCartOutlined';
+import RemoveShoppingCartOutlinedIcon from "@mui/icons-material/RemoveShoppingCartOutlined";
 
 const Cart = ({ history }) => {
   const alert = useAlert();
@@ -51,9 +51,11 @@ const Cart = ({ history }) => {
     <Fragment>
       {cartItems.length === 0 ? (
         <div className="emptyCart">
-          <RemoveShoppingCartOutlinedIcon /> 
+          <RemoveShoppingCartOutlinedIcon />
           <Typography>No Product in Your Cart</Typography>
-          <Link className="btn_primary" to="/products">View Products</Link>
+          <Link className="btn_primary" to="/products">
+            View Products
+          </Link>
         </div>
       ) : (
         <Fragment>
@@ -71,6 +73,7 @@ const Cart = ({ history }) => {
             <div className="cartHeader">
               <p>Product</p>
               <p>Quantity</p>
+
               <p>Subtotal</p>
             </div>
             <div
@@ -117,21 +120,8 @@ const Cart = ({ history }) => {
                     >
                       +
                     </button>
-
-                    {/* {item.quantity ? (
-                      item.qunatity
-                    ) : (
-                      <Backdrop
-                        sx={{
-                          color: "#fff",
-                          zIndex: (theme) => theme.zIndex.drawer + 1,
-                        }}
-                        open
-                      >
-                        <CircularProgress color="inherit" />
-                      </Backdrop>
-                    )} */}
                   </div>
+
                   <p className="cartSubtotal">{`PKR${
                     item.price * item.quantity
                   }`}</p>
@@ -149,7 +139,9 @@ const Cart = ({ history }) => {
               </div>
               <div></div>
               <div className="checkOutBtn">
-                <button className="btn_primary" onClick={checkoutHandler}>Check Out</button>
+                <button className="btn_primary" onClick={checkoutHandler}>
+                  Check Out
+                </button>
               </div>
             </div>
           </div>

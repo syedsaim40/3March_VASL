@@ -14,9 +14,17 @@ const OrderSuccess = (props) => {
       {/* {props.newOrder ? ( */}
       <div className="orderSuccess">
         <CheckCircleIcon />
-
         <Typography>Your Order has been Placed successfully </Typography>
-        <h1> {props.newOrder && props.newOrder.order._id}</h1>
+        {/* <h1> {props.newOrder && props.newOrder.order._id}</h1> */}
+        <span>ORDER NUMBER | {props.newOrder && props.newOrder.order._id}</span>
+        <span>DATE | {props.newOrder && props.newOrder.order.createdAt}</span>
+        <span>
+          TOTAL | RS {props.newOrder && props.newOrder.order.totalPrice}
+        </span>
+        <span>
+          PAYMENT METHOD |{" "}
+          {props.newOrder && props.newOrder.order.paymentInfo.id}
+        </span>
         <Link
           to={
             isAuthenticated

@@ -24,6 +24,7 @@ const OrderDetails = ({ match }) => {
   }, [dispatch, alert, error, match.params.id]);
   return (
     <Fragment>
+      {order ? (
         <Fragment>
           <MetaData title="Order Details" />
           <div className="orderDetailsPage">
@@ -115,6 +116,11 @@ const OrderDetails = ({ match }) => {
             </div>
           </div>
         </Fragment>
+      ) : (
+        <div className="search_holder">
+          <h1>Please wait...</h1>
+        </div>
+      )}
     </Fragment>
   );
 };

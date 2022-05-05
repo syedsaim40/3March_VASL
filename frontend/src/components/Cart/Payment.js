@@ -86,14 +86,14 @@ const Payment = ({ history }, props) => {
             <form action="submit">
               <div className="pa_box">
                 <div className="pa_text">
-                  <label className="lShow">Bank Transfer Payment</label>
+                  <label className="lShow">BANK TRANSFER PAYMENT</label>
                   <input
                     type="radio"
                     id="demo"
                     name="pa_value"
-                    checked={selectedval === "Bank Transfer Payment"}
+                    checked={selectedval === "BANK  PAYMENT"}
                     onChange={handlechange}
-                    value="Bank Transfer Payment"
+                    value="BANK  PAYMENT"
                   />
                   <label for="demo" className="pa_lbl">
                     <p>
@@ -114,14 +114,14 @@ const Payment = ({ history }, props) => {
               <div className="pa_box">
                 <div className="pa_text">
                   <label className="lShow">
-                    Easy Paisa and JazzCash Transfer
+                    EASY PAISA & JAZZCASH TRANSFER
                   </label>
                   <input
                     type="radio"
                     id="demo"
                     name="pa_value"
-                    checked={selectedval === "Easy Paisa and JazzCash Transfer"}
-                    value="Easy Paisa and JazzCash Transfer"
+                    checked={selectedval === "EASY PAISA & JAZZCASH"}
+                    value="EASY PAISA & JAZZCASH"
                     onChange={handlechange}
                   />
                   <label for="demo" className="pa_lbl">
@@ -141,13 +141,13 @@ const Payment = ({ history }, props) => {
               </div>
               <div className="pa_box">
                 <div className="pa_text">
-                  <label className="lShow">Cash on delivery</label>
+                  <label className="lShow">CASH ON DELIVERY</label>
                   <input
                     type="radio"
                     id="demo"
                     name="pa_value"
-                    checked={selectedval === "Cash on delivery"}
-                    value="Cash on delivery"
+                    checked={selectedval === "CASH ON DELIVERY"}
+                    value="CASH ON DELIVERY"
                     onChange={handlechange}
                   />
                   <label for="demo" className="pa_lbl">

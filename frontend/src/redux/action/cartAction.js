@@ -22,6 +22,7 @@ export const addItemsToCart = (id, quantity) => async (dispatch, getState) => {
       image: data.sproduct.images[0].url,
       stock: data.sproduct.stock,
       quantity,
+      tprice: quantity * data.sproduct.price,
     },
   });
 
@@ -58,7 +59,7 @@ export const saveShippingInfo = (data) => async (dispatch) => {
   localStorage.setItem("shippingInfo", JSON.stringify(data));
 };
 
-// Add to Cart
+// favouriteAdd to Cart
 export const FavouriteToCart = (id, quantity) => async (dispatch, getState) => {
   const { data } = await axios.get(`/api/vasal/oneproduct/${id}`);
   console.log(data);

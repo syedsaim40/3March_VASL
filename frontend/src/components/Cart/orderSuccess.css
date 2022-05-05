@@ -1,12 +1,15 @@
 .orderSuccess {
   margin: auto;
   text-align: center;
-  padding: 100px 50px;
+  padding: 50px 50px;
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.orderSuccess span{
+  padding: 10px;
 }
 .orderSuccess > svg {
   font-size: 7vmax;
